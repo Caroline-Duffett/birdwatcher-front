@@ -54,14 +54,6 @@ export class BirdService {
     );
   }
 
-  // //PUT update the bird on the server
-  // updateBird(bird: Bird): Observable<any> {
-  //   return this.http.put(this.birdsUrl, bird, this.httpOptions).pipe(
-  //     //tap(_ => this.log(`updated bird id=${bird.id}`)),
-  //     catchError(this.handleError<any>('updateBird'))
-  //   );
-  // }
-
 
   //PUT update the bird on the server
   updateBird(bird: Bird): Observable<any> {
@@ -108,6 +100,17 @@ export class BirdService {
   //   return this.http.get<Bird>(url).pipe(
   //     //tap(_ => this.log(`fetched bird id=${id}`)),
   //     catchError(this.handleError<Bird>(`getBird id=${id}`))
+  //   );
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
+
+
+//------------------------------------------------------------------------------ Original PUT Route (did not work) ---//
+  // //PUT update the bird on the server
+  // updateBird(bird: Bird): Observable<any> {
+  //   return this.http.put(this.birdsUrl, bird, this.httpOptions).pipe(
+  //     //tap(_ => this.log(`updated bird id=${bird.id}`)),
+  //     catchError(this.handleError<any>('updateBird'))
   //   );
   // }
 //--------------------------------------------------------------------------------------------------------------------//
