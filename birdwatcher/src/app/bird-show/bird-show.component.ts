@@ -41,6 +41,20 @@ export class BirdShowComponent implements OnInit {
     this.location.back()
   }
 
+
+  // submitted = false;
+  //
+  // editSubmit() {this.submitted = true;}
+
+  editSubmit(): void {
+    if (this.bird) {
+      this.birdService.updateBird(this.bird)
+      .subscribe(() => this);
+    }
+  }
+
+
+
 }
 
 

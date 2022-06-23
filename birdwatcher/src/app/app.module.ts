@@ -14,7 +14,7 @@ import { BirdShowComponent } from './bird-show/bird-show.component';
   declarations: [
     AppComponent,
     BirdsIndexComponent,
-    BirdShowComponent
+    BirdShowComponent,
   ],
   imports: [
     BrowserModule,
