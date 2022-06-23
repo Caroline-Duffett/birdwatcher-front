@@ -16,23 +16,7 @@ export class AddFormComponent implements OnInit {
 
   }
 
-  name = ''
-  scientificName= ''
-  image = ''
-  location = ''
-  status = ''
-  description = ''
 
-  addSubmit(): void {
-    const newBird = {
-      name: this.name,
-      scientificName: this.scientificName,
-      image: this.image,
-      location: this.location,
-      status: this.status,
-      description: this.description
-    }
-  }
 
 }
 
@@ -82,8 +66,38 @@ export class AddFormComponent implements OnInit {
 
 
 
-
-
+//--- Attempt 2 (Get lots of errors)
+// import { Component, OnInit } from '@angular/core';
+// import {Bird} from '../bird';
+// import {BirdService} from '../bird.service';
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css']
+// })
+//
+// export class AddFormComponent implements OnInit {
+//
+//   constructor(private birdService: BirdService) { }
+//
+//   ngOnInit(): void {
+//
+//   }
+//
+//   addSubmit(name: string, scientificName: string, image: string, location: string, status: string, description: string ): void {
+//    name = name.trim();
+//    scientificName =  scientificName.trim();
+//    image = image.trim();
+//    location = location.trim();
+//    status = status.trim();
+//    description = description.trim();
+//
+//    if (!name, !scientificName, !image, !location, !status, !description) { return; }
+//    this.birdService.addBird({ name, scientificName, image, location, status, description } as Bird)
+//    }
+//
+// }
 
 
 
