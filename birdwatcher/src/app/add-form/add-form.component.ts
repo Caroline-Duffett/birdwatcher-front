@@ -1,31 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-import {Bird} from '../bird';
-import {BirdService} from '../bird.service';
-
-@Component({
-  selector: 'app-add-form',
-  templateUrl: './add-form.component.html',
-  styleUrls: ['./add-form.component.css']
-})
-
-export class AddFormComponent implements OnInit {
-
-  constructor(private birdService: BirdService) { }
-
-  ngOnInit(): void {
-
-  }
-
-
-
-}
-
-
-
-
-
-
-//--- Attempt 1 (Declaration or statement expected)
 // import { Component, OnInit } from '@angular/core';
 // import {Bird} from '../bird';
 // import {BirdService} from '../bird.service';
@@ -44,25 +16,53 @@ export class AddFormComponent implements OnInit {
 //
 //   }
 //
-//   name = ''
-//   scientificName= ''
-//   image = ''
-//   location = ''
-//   status = ''
-//   description = ''
 //
-//   addSubmit(): void {
-//     const newBird = {
-//       name: this.name,
-//       scientificName: this.scientificName,
-//       image: this.image,
-//       location: this.location,
-//       status: this.status,
-//       description: this.description
-//     }
-//   }
 //
 // }
+
+
+
+
+
+
+//--- Attempt 1 (Declaration or statement expected)
+import { Component, OnInit } from '@angular/core';
+import {Bird} from '../bird';
+import {BirdService} from '../bird.service';
+
+@Component({
+  selector: 'app-add-form',
+  templateUrl: './add-form.component.html',
+  styleUrls: ['./add-form.component.css']
+})
+
+export class AddFormComponent implements OnInit {
+
+  constructor(private birdService: BirdService) { }
+
+  ngOnInit(): void {
+
+  }
+
+  name = ''
+  scientificName= ''
+  image = ''
+  location = ''
+  status = ''
+  description = ''
+
+  addSubmit(): void {
+    const newBird = {
+      name: this.name,
+      scientificName: this.scientificName,
+      image: this.image,
+      location: this.location,
+      status: this.status,
+      description: this.description
+    }
+  }
+
+}
 
 
 
