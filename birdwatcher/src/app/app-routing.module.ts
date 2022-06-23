@@ -6,8 +6,8 @@ import {BirdShowComponent} from './bird-show/bird-show.component'//Imports out B
 
 //Where we set the routes we want
 const routes: Routes = [
-  { path: 'info/:id', component: BirdShowComponent},
-  { path: 'birdss', component: BirdsIndexComponent},
+  { path: 'birds/:id', component: BirdShowComponent},
+  { path: 'birds', component: BirdsIndexComponent},
 ];
 
 

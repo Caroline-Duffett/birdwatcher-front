@@ -22,13 +22,22 @@ export class BirdService {
     private http: HttpClient,
   ) { }
 
-  /** GET brids from the server */
+  // GET brids (index) from the server
   getBirds(): Observable<Bird[]> {
     return this.http.get<Bird[]>(this.birdsUrl)
       .pipe(
         //tap(_ => this.log('fetched birds')),
         catchError(this.handleError<Bird[]>('getBirds', []))
       );
+  }
+
+  // GET bird (show) by id. Will 404 if id not found
+  getBird(id: number): Observable<Bird> {
+    const url = `${this.birdsUrl}/${id}`;
+    return this.http.get<Bird>(url).pipe(
+      tap(_ => this.log(`fetched bird id=${id}`)),
+      catchError(this.handleError<Bird>(`getBird id=${id}`))
+    );
   }
 
 
