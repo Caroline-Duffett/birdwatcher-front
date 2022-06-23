@@ -1,20 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-//
-// @Component({
-//   selector: 'app-bird-show',
-//   templateUrl: './bird-show.component.html',
-//   styleUrls: ['./bird-show.component.css']
-// })
-// export class BirdShowComponent implements OnInit {
-//
-//   constructor() { }
-//
-//   ngOnInit(): void {
-//   }
-//
-// }
-
-
 import { Component, OnInit} from '@angular/core'; //makes this a component in angular
 import { Bird } from '../bird'; //calls in the bird model/schema we made
 import { ActivatedRoute } from '@angular/router';
@@ -46,12 +29,7 @@ export class BirdShowComponent implements OnInit {
     this.getBird();
   }
 
-  // //Gets the bird you clicked on, doing so by id
-  // getBird(): void {
-  //    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
-  //    this.birdService.getBird(id)
-  //      .subscribe(bird => this.bird = bird);
-  // }
+
 
   //Gets the bird you clicked on, doing so by id
   getBird(): void {
@@ -61,3 +39,16 @@ export class BirdShowComponent implements OnInit {
   }
 
 }
+
+
+//====================================================================================================================//
+//                                                      Grave Yard
+//====================================================================================================================//
+//-------------------------------------------------------------------------------------------- If id were a number ---//
+  // //Gets the bird you clicked on, doing so by id
+  // getBird(): void {
+  //    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
+  //    this.birdService.getBird(id)
+  //      .subscribe(bird => this.bird = bird);
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
