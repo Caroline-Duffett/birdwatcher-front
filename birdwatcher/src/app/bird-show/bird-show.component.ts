@@ -55,7 +55,7 @@ export class BirdShowComponent implements OnInit {
 
   //Gets the bird you clicked on, doing so by id
   getBird(): void {
-     const id = this.route.snapshot.paramMap.get('_id')!;
+     const id = this.route.snapshot.paramMap.get('id')!;
      this.birdService.getBird(id)
        .subscribe(bird => this.bird = bird);
   }
