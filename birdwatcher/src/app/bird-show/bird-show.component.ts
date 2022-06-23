@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core'; //makes this a component in angular
 import { Bird } from '../bird'; //calls in the bird model/schema we made
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router'; //shows current snapshot of the route?
+import { Location } from '@angular/common'; //interacts with the browser URL
 import { BirdService } from '../bird.service'; //imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
 
 // links the premade files that goes with this component
@@ -29,14 +29,31 @@ export class BirdShowComponent implements OnInit {
     this.getBird();
   }
 
-
-
   //Gets the bird you clicked on, doing so by id
   getBird(): void {
      const id = this.route.snapshot.paramMap.get('id')!;
      this.birdService.getBird(id)
        .subscribe(bird => this.bird = bird);
   }
+
+  //Back button
+  backBtn(): void {
+    this.location.back()
+  }
+
+
+  // submitted = false;
+  //
+  // editSubmit() {this.submitted = true;}
+
+  editSubmit(): void {
+    if (this.bird) {
+      this.birdService.updateBird(this.bird)
+      .subscribe(() => this);
+    }
+  }
+
+
 
 }
 
