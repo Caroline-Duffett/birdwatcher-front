@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module'; //let us set up routes 
 import { AppComponent } from './app.component';
 import { BirdsIndexComponent } from './birds-index/birds-index.component';
 import { BirdShowComponent } from './bird-show/bird-show.component';
+import { AddFormComponent } from './add-form/add-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BirdsIndexComponent,
     BirdShowComponent,
+    AddFormComponent,
   ],
   imports: [
     BrowserModule,

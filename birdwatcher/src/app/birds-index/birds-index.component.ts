@@ -27,4 +27,13 @@ export class BirdsIndexComponent implements OnInit {
     .subscribe(birds => this.birds = birds);
   }
 
+  // addSubmit(name: string): void {
+  //   name = name.trim();
+  //   if (!name) { return; }
+  //   this.birdService.addBird({ name } as Bird)
+  //     .subscribe(bird => {
+  //       this.birds.push(bird);
+  //     });
+  // }
+
 }
