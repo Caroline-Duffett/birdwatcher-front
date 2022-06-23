@@ -122,9 +122,34 @@ export class AddFormComponent implements OnInit {
 
   submitted = false;
 
-  addSubmit() {
-    this.submitted = true;
-  }
+  // addSubmit() {
+  //   this.submitted = true;
+  // }
+
+
+  // addSubmit(name: string): void {
+  //  name = name.trim();
+  //  if (!name) { return; }
+  //  this.birdService.addBird({ name } as Bird)
+  //    .subscribe(bird => {
+  //      this.birds.push(bird);
+  //    });
+  //  }
+
+  addSubmit(name: string, scientificName: string, image: string, location: string, status: string, description: string ): void {
+   name = name.trim();
+   scientificName =  scientificName.trim();
+   image = image.trim();
+   location = location.trim();
+   status = status.trim();
+   description = description.trim();
+
+   if (!name, !scientificName, !image, !location, !status, !description) { return; }
+   this.birdService.addBird({ name, scientificName, image, location, status, description } as Bird)
+     .subscribe(bird => {
+       this.birds.push(bird);
+     });
+   }
 
   //model = new Bird ('', '', '', '', '', '')
 
