@@ -126,7 +126,7 @@ export class AddFormComponent implements OnInit {
     this.submitted = true;
   }
 
-  model = new Bird ('', '', '', '', '', '')
+  //model = new Bird ('', '', '', '', '', '')
 
   //
   // name: string = ''
