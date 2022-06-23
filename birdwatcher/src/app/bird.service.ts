@@ -35,7 +35,7 @@ export class BirdService {
   getBird(id: number): Observable<Bird> {
     const url = `${this.birdsUrl}/${id}`;
     return this.http.get<Bird>(url).pipe(
-      tap(_ => this.log(`fetched bird id=${id}`)),
+      //tap(_ => this.log(`fetched bird id=${id}`)),
       catchError(this.handleError<Bird>(`getBird id=${id}`))
     );
   }
