@@ -1,7 +1,7 @@
-<!-- <h1>Add Form</h1>
+<h1>Add Form</h1>
 
-<div [hidden]="submitted">
-  <form (ngSubmit)="addSubmit()" #addForm="ngForm">
+<div>
+  <form #addForm>
 
     <div class="form-group">
       <label for="name">Name: </label>
@@ -36,14 +36,16 @@
     <button type="button" (click)="addSubmit(); addForm.reset()">Submit</button>
 
   </form>
-</div> -->
+</div>
 
 
-<h1>Add Form</h1>
 
-<div [hidden]="submitted">
-  <form (ngSubmit)="addSubmit(name, scientificName, image, location, status, description)" #addForm="ngForm">
 
+
+<!-- <h1>Add Form</h1>
+
+<div>
+  <form #addForm>
     <div class="form-group">
       <label for="name">Name: </label>
       <input type="text" id="name" #name name="name" placeholder="Name" required>
@@ -74,7 +76,7 @@
       <input type="text" id="description" #description name="description" placeholder="Description" required>
     </div>
 
-    <button type="button" (click)="addSubmit(name, scientificName, image, location, status, description); addForm.reset()">Submit</button>
+    <button type="button" (click)="addSubmit(); addForm.reset()">Submit</button>
 
   </form>
-</div>
+</div> -->

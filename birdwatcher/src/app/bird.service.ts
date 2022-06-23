@@ -54,6 +54,15 @@ export class BirdService {
     );
   }
 
+  //POST add a new bird to the server */
+  addBird(bird: Bird): Observable<Bird> {
+    return this.http.post<bird>(this.birdsUrl, bird, this.httpOptions).pipe(
+      //tap((newBird: Bird) => this.log(`added bird with id=${newBird._id}`)),
+      catchError(this.handleError<Bird>('addBird'))
+    );
+  }
+
+
 
   //PUT update the bird on the server
   updateBird(bird: Bird): Observable<any> {
