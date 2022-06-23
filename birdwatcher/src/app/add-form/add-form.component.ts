@@ -25,15 +25,15 @@
 //  //     });
 //  // }
 //
-//   model = new Bird('', '', '', '', '', '', '');
-//
-//   submitted = false;
-//
-//   addSubmit() {this.submitted = true;}
-//
-//   newBird() {
-//     this.model = new Bird('', '', '', '', '', '', '');
-//   }
+//   // model = new Bird('', '', '', '', '', '', '');
+//   //
+//   // submitted = false;
+//   //
+//   // addSubmit() {this.submitted = true;}
+//   //
+//   // newBird() {
+//   //   this.model = new Bird('', '', '', '', '', '', '');
+//   // }
 //
 //   // newBird() {
 //   //   this.value = new Bird();
@@ -42,9 +42,59 @@
 // }
 
 
+// import { Component, OnInit } from '@angular/core';
+// import {Bird} from '../bird';
+// //import {BirdService} from '../bird.service';
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css']
+// })
+//
+//
+// export class AddFormComponent implements OnInit {
+//
+//  //  addSubmit(name: string): void {
+//  //   name = name.trim();
+//  //   if (!name) { return; }
+//  //   this.birdService.addBird({ name } as Bird)
+//  //     .subscribe(bird => {
+//  //       this.birds.push(bird);
+//  //     });
+//  // }
+//
+//    class Bird {
+//      name = '';
+//      scientificName = '';
+//      image = '';
+//      location = '';
+//      status = '';
+//      description = '';
+//    }
+//
+//   const model = new Bird();
+//
+//   submitted = false;
+//
+//   addSubmit() {this.submitted = true;};
+//
+//   // newBird() {
+//   //   this.model = new Bird('', '', '', '', '', '', '');
+//   // }
+//
+//   // newBird() {
+//   //   this.value = new Bird();
+//   // }
+//
+// }
+
+
+
+
 import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
-//import {BirdService} from '../bird.service';
+import {BirdService} from '../bird.service';
 
 @Component({
   selector: 'app-add-form',
@@ -52,37 +102,46 @@ import {Bird} from '../bird';
   styleUrls: ['./add-form.component.css']
 })
 
-
 export class AddFormComponent implements OnInit {
 
- //  addSubmit(name: string): void {
- //   name = name.trim();
- //   if (!name) { return; }
- //   this.birdService.addBird({ name } as Bird)
- //     .subscribe(bird => {
- //       this.birds.push(bird);
- //     });
- // }
+  constructor(private birdService: BirdService) { }
 
-   class Bird {
-     name = '';
-     scientificName = '';
-     image = '';
-     location = '';
-     status = '';
-     description = '';
-   }
+  ngOnInit(): void {
 
-  const model = new Bird();
+  }
 
-  submitted = false;
+  // addSubmit(name: string): void {
+  //  name = name.trim();
+  //  if (!name) { return; }
+  //  this.birdService.addBird({ name } as Bird)
+  //    .subscribe(bird => {
+  //      this.birds.push(bird);
+  //    });
+  //  }
 
-  addSubmit() {this.submitted = true;};
 
+
+  // class Bird {
+  //   name = '';
+  //   scientificName = '';
+  //   image = '';
+  //   location = '';
+  //   status = '';
+  //   description = '';
+  // }
+  //
+  // const model = new Bird('test', 'test', 'test', 'test', 'test', 'test', 'test');
+  //
+  // let submitted = false;
+  //
+  // addSubmit() {
+  //   this.submitted = true;
+  // }
+  //
   // newBird() {
   //   this.model = new Bird('', '', '', '', '', '', '');
   // }
-
+  //
   // newBird() {
   //   this.value = new Bird();
   // }
