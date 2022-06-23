@@ -120,30 +120,48 @@ export class AddFormComponent implements OnInit {
   //  }
 
 
-
-  class Bird {
-    name = '';
-    scientificName = '';
-    image = '';
-    location = '';
-    status = '';
-    description = '';
-  };
-
-  const model = new Bird('test', 'test', 'test', 'test', 'test', 'test', 'test');
-
-  let submitted = false;
+  submitted = false;
 
   addSubmit() {
     this.submitted = true;
   }
 
-  newBird() {
-    this.model = new Bird('', '', '', '', '', '', '');
-  }
 
-  newBird() {
-    this.value = new Bird();
-  }
+  name: string = ''
+  scientificName: string = ''
+  image: string = ''
+  location: string = ''
+  status: string = ''
+  description: string = ''
+
+  const model = new Bird(
+    name,
+    scientificName,
+    image,
+    location,
+    status,
+    description
+  );
+
+
+  // name: string = ''
+  // scientificName: string = ''
+  // image: string = ''
+  // location: string = ''
+  // status: string = ''
+  // description: string = ''
+  //
+  //
+  // addSubmit(): void {
+  //
+  //   const newBird = {
+  //     name: this.name,
+  //     scientificName: this.scientificName,
+  //     image: this.image,
+  //     location: this.location,
+  //     status: this.status,
+  //     description: this.description
+  //   }
+  // }
 
 }
