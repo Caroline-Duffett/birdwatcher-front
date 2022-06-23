@@ -146,9 +146,9 @@ export class AddFormComponent implements OnInit {
 
    if (!name, !scientificName, !image, !location, !status, !description) { return; }
    this.birdService.addBird({ name, scientificName, image, location, status, description } as Bird)
-     .subscribe(bird => {
-       this.birds.push(bird);
-     });
+     // .subscribe(bird => {
+     //   this.birds.push(bird);
+     // });
    }
 
   //model = new Bird ('', '', '', '', '', '')
