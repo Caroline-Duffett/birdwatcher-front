@@ -12,7 +12,7 @@
 
 
 export interface Bird {
-  _id: Unknown;
+  _id: Any;
   name: String;
   scientificName: String;
   image: String;
@@ -20,5 +20,5 @@ export interface Bird {
   status: string;
   description: string;
   //stats: [Stats.schema];
-  user: Unknown;
+  user: Any;
 }
