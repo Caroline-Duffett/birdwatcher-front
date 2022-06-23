@@ -22,13 +22,36 @@ export class BirdService {
     private http: HttpClient,
   ) { }
 
-  /** GET brids from the server */
+  // GET brids (index) from the server
   getBirds(): Observable<Bird[]> {
     return this.http.get<Bird[]>(this.birdsUrl)
       .pipe(
         //tap(_ => this.log('fetched birds')),
         catchError(this.handleError<Bird[]>('getBirds', []))
       );
+  }
+
+  /// GET bird (show )by id. Will return `undefined` if id is not found. How the 404 error gets displayed
+  getBirdNo404<Data>(id: number): Observable<Bird> {
+    const url = `${this.birdsUrl}/?id=${id}`;
+    return this.http.get<Bird[]>(url)
+      .pipe(
+        map(birds => birds[0]), // returns a {0|1} element array
+        // tap(h => {
+        //   const outcome = h ? 'fetched' : 'did not find';
+        //   this.log(`${outcome} bird id=${id}`);
+        // }),
+        catchError(this.handleError<Bird>(`getBird id=${id}`))
+      );
+  }
+
+  // GET bird (show) by id. Will 404 if id not found
+  getBird(id: string): Observable<Bird> {
+    const url = `${this.birdsUrl}/${id}`;
+    return this.http.get<Bird>(url).pipe(
+      //tap(_ => this.log(`fetched bird id=${id}`)),
+      catchError(this.handleError<Bird>(`getBird id=${id}`))
+    );
   }
 
 
@@ -54,3 +77,18 @@ export class BirdService {
     }
 
 }
+
+
+//====================================================================================================================//
+//                                                      Grave Yard
+//====================================================================================================================//
+//-------------------------------------------------------------------------------------------- If id were a number ---//
+  // // GET bird (show) by id. Will 404 if id not found
+  // getBird(id: number): Observable<Bird> {
+  //   const url = `${this.birdsUrl}/${id}`;
+  //   return this.http.get<Bird>(url).pipe(
+  //     //tap(_ => this.log(`fetched bird id=${id}`)),
+  //     catchError(this.handleError<Bird>(`getBird id=${id}`))
+  //   );
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
