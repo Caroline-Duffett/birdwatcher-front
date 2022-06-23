@@ -134,13 +134,13 @@ export class AddFormComponent implements OnInit {
   status: string = ''
   description: string = ''
 
-  const model = new Bird(
-    name,
-    scientificName,
-    image,
-    location,
-    status,
-    description
+  model = new Bird(
+    this.name,
+    this.scientificName,
+    this.image,
+    this.location,
+    this.status,
+    this.description
   );
 
 
