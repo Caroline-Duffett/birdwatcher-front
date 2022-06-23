@@ -45,8 +45,17 @@ export class BirdService {
       );
   }
 
+  // // GET bird (show) by id. Will 404 if id not found
+  // getBird(id: number): Observable<Bird> {
+  //   const url = `${this.birdsUrl}/${id}`;
+  //   return this.http.get<Bird>(url).pipe(
+  //     //tap(_ => this.log(`fetched bird id=${id}`)),
+  //     catchError(this.handleError<Bird>(`getBird id=${id}`))
+  //   );
+  // }
+
   // GET bird (show) by id. Will 404 if id not found
-  getBird(id: number): Observable<Bird> {
+  getBird(id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/${id}`;
     return this.http.get<Bird>(url).pipe(
       //tap(_ => this.log(`fetched bird id=${id}`)),
