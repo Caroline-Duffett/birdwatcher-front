@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component,  OnInit} from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
 // import { FormsModule} from '@angular/forms';
@@ -10,11 +10,14 @@ import {BirdService} from '../bird.service';
   styleUrls: ['./add-form.component.css']
 })
 
-export class AddFormComponent {
+export class AddFormComponent implements OnInit {
   constructor(
     private birdService: BirdService,
   ) { }
 
+    ngOnInit(): void {
+
+    }
 
     name = ''
     scientificName = ''
@@ -35,10 +38,6 @@ export class AddFormComponent {
     description: this.description
   }
 
-  // addSubmit() {
-  //   this.model = new Bird('', '', '', '', '', '')
-  // }
-
 
     addSubmit(): void {
       const newBird = {
@@ -57,12 +56,22 @@ export class AddFormComponent {
       })
     }
 
-  // example(): Bird {
-  //   const birdExample = new Bird('', '', '', '', '', '')
-  //   return birdExample
-  // }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //--- Model Trys
