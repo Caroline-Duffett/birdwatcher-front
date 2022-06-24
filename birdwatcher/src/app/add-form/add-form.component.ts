@@ -36,7 +36,7 @@
 
 
 
-//--- More complete version of page load, no errors
+//--- Version that worked
 import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
