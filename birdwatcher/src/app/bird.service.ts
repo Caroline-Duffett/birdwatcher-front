@@ -9,18 +9,23 @@ import { catchError, map, tap } from 'rxjs/operators'; //module that lets us err
   providedIn: 'root'
 })
 
+
 export class BirdService {
 
+
   private birdsUrl = 'http://localhost:3000/birds' //our database? URL to web API
+
 
   //tells it that we are an app and to read/send json
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+
   constructor(
     private http: HttpClient,
   ) { }
+
 
   // GET brids (index) from the server
   getBirds(): Observable<Bird[]> {
@@ -31,19 +36,6 @@ export class BirdService {
       );
   }
 
-  // /// GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
-  // getBirdNo404<Data>(id: number): Observable<Bird> {
-  //   const url = `${this.birdsUrl}/?id=${id}`;
-  //   return this.http.get<Bird[]>(url)
-  //     .pipe(
-  //       map(birds => birds[0]), // returns a {0|1} element array
-  //       // tap(h => {
-  //       //   const outcome = h ? 'fetched' : 'did not find';
-  //       //   this.log(`${outcome} bird id=${id}`);
-  //       // }),
-  //       catchError(this.handleError<Bird>(`getBird id=${id}`))
-  //     );
-  // }
 
   /// GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
   getBirdNo404<Data>(_id: string): Observable<Bird> {
@@ -59,14 +51,6 @@ export class BirdService {
       );
   }
 
-  // // GET bird (show) by id. Will 404 if id not found
-  // getBird(id: number): Observable<Bird> {
-  //   const url = `${this.birdsUrl}/${id}`;
-  //   return this.http.get<Bird>(url).pipe(
-  //     //tap(_ => this.log(`fetched bird id=${id}`)),
-  //     catchError(this.handleError<Bird>(`getBird id=${id}`))
-  //   );
-  // }
 
   // GET bird (show) by id. Will 404 if id not found
   getBird(_id: string): Observable<Bird> {
@@ -85,14 +69,6 @@ export class BirdService {
     );
   }
 
-  // // //DELETE the bird from the server
-  // deleteBird(id: number): Observable<Bird> {
-  //   const url = `${this.birdsUrl}/${id}`;
-  //   return this.http.delete<Bird>(url, this.httpOptions).pipe(
-  //     //tap(_ => this.log(`deleted bird id=${id}`)),
-  //     catchError(this.handleError<Bird>('deleteBird'))
-  //   );
-  // }
 
   // //DELETE the bird from the server
   deleteBird(_id: string): Observable<Bird> {
@@ -315,5 +291,41 @@ export class BirdService {
 //       };
 //     }
 //
+// }
+//--------------------------------------------------------------------------------------------------------------------//
+
+
+//------------------------------------------------------------------------------------------------------ Old Stuff ---//
+// /// GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
+// getBirdNo404<Data>(id: number): Observable<Bird> {
+//   const url = `${this.birdsUrl}/?id=${id}`;
+//   return this.http.get<Bird[]>(url)
+//     .pipe(
+//       map(birds => birds[0]), // returns a {0|1} element array
+//       // tap(h => {
+//       //   const outcome = h ? 'fetched' : 'did not find';
+//       //   this.log(`${outcome} bird id=${id}`);
+//       // }),
+//       catchError(this.handleError<Bird>(`getBird id=${id}`))
+//     );
+// }
+
+
+// // GET bird (show) by id. Will 404 if id not found
+// getBird(id: number): Observable<Bird> {
+//   const url = `${this.birdsUrl}/${id}`;
+//   return this.http.get<Bird>(url).pipe(
+//     //tap(_ => this.log(`fetched bird id=${id}`)),
+//     catchError(this.handleError<Bird>(`getBird id=${id}`))
+//   );
+// }
+
+// // //DELETE the bird from the server
+// deleteBird(id: number): Observable<Bird> {
+//   const url = `${this.birdsUrl}/${id}`;
+//   return this.http.delete<Bird>(url, this.httpOptions).pipe(
+//     //tap(_ => this.log(`deleted bird id=${id}`)),
+//     catchError(this.handleError<Bird>('deleteBird'))
+//   );
 // }
 //--------------------------------------------------------------------------------------------------------------------//

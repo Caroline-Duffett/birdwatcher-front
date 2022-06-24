@@ -8,16 +8,7 @@ export interface Bird {
   description: string;
 }
 
-//
-// export interface Bird {
-//   _id: any;
-//   name: string;
-//   scientificName: string;
-//   image: string;
-//   location: string;
-//   status: string;
-//   description: string;
-// }
+
 
 
 //====================================================================================================================//
@@ -34,5 +25,18 @@ export interface Bird {
   //   description: string;
   //   //stats: [Stats.schema];
   //   //user: String;
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
+
+//----------------------------------------------------------------------------------------------- Different Model ---//
+  //
+  // export interface Bird {
+  //   _id: any;
+  //   name: string;
+  //   scientificName: string;
+  //   image: string;
+  //   location: string;
+  //   status: string;
+  //   description: string;
   // }
 //--------------------------------------------------------------------------------------------------------------------//
