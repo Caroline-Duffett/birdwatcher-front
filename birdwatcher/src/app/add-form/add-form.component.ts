@@ -62,17 +62,17 @@ export class AddFormComponent implements OnInit {
   status = 'test'
   description = 'test'
 
-  submit(): void {
+  submit(name: string, scientificName: string, image: string, location: string, status: string, description: string): void {
 
     const newBird = {
       _id: null,
       // user: unknown,
-      name: this.name,
-      scientificName: this.scientificName,
-      image: this.image,
-      location: this.location,
-      status: this.status,
-      description: this.description
+      name: name,
+      scientificName: scientificName,
+      image: image,
+      location: location,
+      status: status,
+      description: description
     }
 
     console.log("form submitted", newBird);
