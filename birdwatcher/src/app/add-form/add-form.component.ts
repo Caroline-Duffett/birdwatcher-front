@@ -1,33 +1,84 @@
-import { Component,  OnInit} from '@angular/core';
+// import { Component,  OnInit} from '@angular/core';
+// import {Bird} from '../bird';
+// import {BirdService} from '../bird.service';
+// import { FormsModule} from '@angular/forms';
+//
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css'],
+//   // exportAs: 'ngForm'
+// })
+//
+// export class AddFormComponent implements OnInit {
+//
+//   constructor(
+//     private birdService: BirdService,
+//   ) { }
+//
+//     ngOnInit(): void {
+//
+//     }
+//
+//
+//   submit(add: any) {
+//     console.log("form submitted", add);
+//
+//     this.birdService.addBird(add as Bird).subscribe(() => {
+//           this
+//     })
+//   }
+//
+// }
+
+
+
+
+
+//--- More complete version of page load, no errors
+import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
-import { FormsModule} from '@angular/forms';
-
 
 @Component({
   selector: 'app-add-form',
   templateUrl: './add-form.component.html',
-  styleUrls: ['./add-form.component.css'],
-  // exportAs: 'ngForm'
+  styleUrls: ['./add-form.component.css']
 })
 
 export class AddFormComponent implements OnInit {
 
-  constructor(
-    private birdService: BirdService,
-  ) { }
+  constructor(private birdService: BirdService) { }
 
-    ngOnInit(): void {
+  ngOnInit(): void {
 
+  }
+
+  name = ''
+  scientificName = ''
+  image = ''
+  location = ''
+  status = ''
+  description = ''
+
+  submit(): void {
+
+    const newBird = {
+      _id: null,
+      // user: unknown,
+      name: this.name,
+      scientificName: this.scientificName,
+      image: this.image,
+      location: this.location,
+      status: this.status,
+      description: this.description
     }
 
-
-  submit(add: any) {
-    console.log("form submitted", add);
-
-    this.birdService.addBird(add as Bird).subscribe(() => {
-          this
+    this.birdService.addBird(newBird as Bird).subscribe(() => {
+      this
     })
+
   }
 
 }
@@ -36,6 +87,75 @@ export class AddFormComponent implements OnInit {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Attempt with any still blank and leaves out _id
+// import { Component,  OnInit} from '@angular/core';
+// import {Bird} from '../bird';
+// import {BirdService} from '../bird.service';
+// import { FormsModule} from '@angular/forms';
+//
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css'],
+//   // exportAs: 'ngForm'
+// })
+//
+// export class AddFormComponent implements OnInit {
+//
+//   constructor(
+//     private birdService: BirdService,
+//   ) { }
+//
+//     ngOnInit(): void {
+//
+//     }
+//
+//   submit(add: any) {
+//     console.log("form submitted", add);
+//
+//     this.birdService.addBird(add as Bird).subscribe(() => {
+//           this
+//     })
+//   }
+//
+// }
 
 
 
