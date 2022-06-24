@@ -46,8 +46,8 @@ export class BirdService {
   // }
 
   /// GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
-  getBirdNo404<Data>(id: string): Observable<Bird> {
-    const url = `${this.birdsUrl}/?id=${id}`;
+  getBirdNo404<Data>(_id: string): Observable<Bird> {
+    const url = `${this.birdsUrl}/?id=${_id}`;
     return this.http.get<Bird[]>(url)
       .pipe(
         map(birds => birds[0]), // returns a {0|1} element array
@@ -55,7 +55,7 @@ export class BirdService {
         //   const outcome = h ? 'fetched' : 'did not find';
         //   this.log(`${outcome} bird id=${id}`);
         // }),
-        catchError(this.handleError<Bird>(`getBird id=${id}`))
+        catchError(this.handleError<Bird>(`getBird id=${_id}`))
       );
   }
 
@@ -69,11 +69,11 @@ export class BirdService {
   // }
 
   // GET bird (show) by id. Will 404 if id not found
-  getBird(id: string): Observable<Bird> {
-    const url = `${this.birdsUrl}/${id}`;
+  getBird(_id: string): Observable<Bird> {
+    const url = `${this.birdsUrl}/${_id}`;
     return this.http.get<Bird>(url).pipe(
       //tap(_ => this.log(`fetched bird id=${id}`)),
-      catchError(this.handleError<Bird>(`getBird id=${id}`))
+      catchError(this.handleError<Bird>(`getBird id=${_id}`))
     );
   }
 
@@ -95,8 +95,8 @@ export class BirdService {
   // }
 
   // //DELETE the bird from the server
-  deleteBird(id: string): Observable<Bird> {
-    const url = `${this.birdsUrl}/${id}`;
+  deleteBird(_id: string): Observable<Bird> {
+    const url = `${this.birdsUrl}/${_id}`;
     return this.http.delete<Bird>(url, this.httpOptions).pipe(
       //tap(_ => this.log(`deleted bird id=${id}`)),
       catchError(this.handleError<Bird>('deleteBird'))
