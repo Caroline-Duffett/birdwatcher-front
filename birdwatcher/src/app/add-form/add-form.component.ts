@@ -23,11 +23,23 @@ export class AddFormComponent implements OnInit {
   status = ''
   description = ''
 
+  //Does not work and every input is the same
+  model = {
+    name: '',
+    scientificName: '',
+    image: '',
+    location: '',
+    status: '',
+    description:''
+  }
+
+
+
   addSubmit(): void {
 
     const newBird = {
-      //_id: null,
-      _id: "",
+      _id: null,
+      //_id: "",
       // user: unknown,
       name: this.name,
       scientificName: this.scientificName,
@@ -44,6 +56,30 @@ export class AddFormComponent implements OnInit {
   }
 
 }
+
+
+//--- Model Trys
+//model = ('', '', '', '', '', '')
+
+
+//Did not work at all
+// model.name = ''
+// model.scientificName: ''
+// model.image:''
+// model.location: ''
+// model.status: ''
+// model.description: ''
+
+
+// //Does not work and every input is the same
+// model = {
+//   name: '',
+//   scientificName: '',
+//   image: '',
+//   location: '',
+//   status: '',
+//   description:''
+// }
 
 
 
