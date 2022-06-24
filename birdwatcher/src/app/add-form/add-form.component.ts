@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
+import { FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-add-form',
@@ -10,48 +13,54 @@ import {BirdService} from '../bird.service';
 
 export class AddFormComponent implements OnInit {
 
-  constructor(private birdService: BirdService) { }
+  birds = this.birdService.getBirds();
 
-  ngOnInit(): void {
-
-  }
-
-  name = ''
-  scientificName = ''
-  image = ''
-  location = ''
-  status = ''
-  description = ''
-
-  //Does not work and every input is the same
-  model = {
+  addFrom = this.formBuilder.group({
+    _id: null,
     name: '',
     scientificName: '',
     image: '',
     location: '',
     status: '',
-    description:''
+    description: '',
+  })
+
+  constructor(
+    private birdService: BirdService,
+    private formBuilder: FormBuilder
+  ) { }
+
+  ngOnInit(): void {
+
   }
-
-
 
   addSubmit(): void {
 
-    const newBird = {
-      _id: null,
-      //_id: "",
-      // user: unknown,
-      name: this.name,
-      scientificName: this.scientificName,
-      image: this.image,
-      location: this.location,
-      status: this.status,
-      description: this.description
-    }
+    // const newBird = {
+    //   _id: null,
+    //   //_id: "",
+    //   // user: unknown,
+    //   name: this.name,
+    //   scientificName: this.scientificName,
+    //   image: this.image,
+    //   location: this.location,
+    //   status: this.status,
+    //   description: this.description
+    // }
 
-    this.birdService.addBird(newBird as Bird).subscribe(() => {
-      this
-    })
+    // this.birdService.addBird(newBird as Bird).subscribe(() => {
+    //   this
+    // })
+
+    // addBird(this.addFrom.value as Bird).subscribe(() => {
+    //   this
+    // })
+
+    this.addFrom.value
+
+    // this.addFrom.value.addBird as Bird).subscribe(() => {
+    //   this
+    // })
 
   }
 
@@ -108,6 +117,63 @@ export class AddFormComponent implements OnInit {
 //
 //
 // }
+
+
+
+// //--- Can't change local variables
+// import { Component, OnInit } from '@angular/core';
+// import {Bird} from '../bird';
+// import {BirdService} from '../bird.service';
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css']
+// })
+//
+// export class AddFormComponent implements OnInit {
+//
+//   constructor(private birdService: BirdService) { }
+//
+//   ngOnInit(): void {
+//
+//   }
+//
+//   name = ''
+//   scientificName = ''
+//   image = ''
+//   location = ''
+//   status = ''
+//   description = ''
+//
+//
+//   addSubmit(): void {
+//
+//     const newBird = {
+//       _id: null,
+//       //_id: "",
+//       // user: unknown,
+//       name: this.name,
+//       scientificName: this.scientificName,
+//       image: this.image,
+//       location: this.location,
+//       status: this.status,
+//       description: this.description
+//     }
+//
+//     this.birdService.addBird(newBird as Bird).subscribe(() => {
+//       this
+//     })
+//
+//   }
+//
+// }
+
+
+
+
+
+
 
 
 
