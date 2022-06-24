@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser'; //exports app to brow
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here?, Lets us use forms
 import { HttpClientModule } from '@angular/common/http'; //Lets us connect to http links
 import { AppRoutingModule } from './app-routing.module'; //let us set up routes to different "pages". Single page app so it is not really changing but can set up different routes like you would if there were
+import {FormBuilder} from './app-routing.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { AddFormComponent } from './add-form/add-form.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormBuilder,
   ],
   providers: [],
   bootstrap: [AppComponent]
