@@ -1,0 +1,42 @@
+.birds-flexbox {
+  background-color: pink;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.bird-card {
+  background-color: white;
+  text-align: center;
+  margin: 7px;
+}
+
+.bird-card h3 {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+
+
+/* .plant-image-div img {
+  float: none;
+  width:  270px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.plant-image-div {
+  max-height: 66%;
+} */
