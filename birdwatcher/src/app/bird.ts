@@ -1,5 +1,5 @@
 export interface Bird {
-  _id: any;
+  _id: string;
   name: string;
   scientificName: string;
   image: string;

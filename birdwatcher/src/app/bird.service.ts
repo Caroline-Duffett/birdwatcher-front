@@ -31,8 +31,22 @@ export class BirdService {
       );
   }
 
+  // /// GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
+  // getBirdNo404<Data>(id: number): Observable<Bird> {
+  //   const url = `${this.birdsUrl}/?id=${id}`;
+  //   return this.http.get<Bird[]>(url)
+  //     .pipe(
+  //       map(birds => birds[0]), // returns a {0|1} element array
+  //       // tap(h => {
+  //       //   const outcome = h ? 'fetched' : 'did not find';
+  //       //   this.log(`${outcome} bird id=${id}`);
+  //       // }),
+  //       catchError(this.handleError<Bird>(`getBird id=${id}`))
+  //     );
+  // }
+
   /// GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
-  getBirdNo404<Data>(id: number): Observable<Bird> {
+  getBirdNo404<Data>(id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/?id=${id}`;
     return this.http.get<Bird[]>(url)
       .pipe(
@@ -45,8 +59,17 @@ export class BirdService {
       );
   }
 
+  // // GET bird (show) by id. Will 404 if id not found
+  // getBird(id: number): Observable<Bird> {
+  //   const url = `${this.birdsUrl}/${id}`;
+  //   return this.http.get<Bird>(url).pipe(
+  //     //tap(_ => this.log(`fetched bird id=${id}`)),
+  //     catchError(this.handleError<Bird>(`getBird id=${id}`))
+  //   );
+  // }
+
   // GET bird (show) by id. Will 404 if id not found
-  getBird(id: number): Observable<Bird> {
+  getBird(id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/${id}`;
     return this.http.get<Bird>(url).pipe(
       //tap(_ => this.log(`fetched bird id=${id}`)),
@@ -62,8 +85,17 @@ export class BirdService {
     );
   }
 
+  // // //DELETE the bird from the server
+  // deleteBird(id: number): Observable<Bird> {
+  //   const url = `${this.birdsUrl}/${id}`;
+  //   return this.http.delete<Bird>(url, this.httpOptions).pipe(
+  //     //tap(_ => this.log(`deleted bird id=${id}`)),
+  //     catchError(this.handleError<Bird>('deleteBird'))
+  //   );
+  // }
+
   // //DELETE the bird from the server
-  deleteBird(id: number): Observable<Bird> {
+  deleteBird(id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/${id}`;
     return this.http.delete<Bird>(url, this.httpOptions).pipe(
       //tap(_ => this.log(`deleted bird id=${id}`)),

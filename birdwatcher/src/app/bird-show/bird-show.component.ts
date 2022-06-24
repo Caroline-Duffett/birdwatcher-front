@@ -29,19 +29,19 @@ export class BirdShowComponent implements OnInit {
     this.getBird();
   }
 
-  //Gets the bird you clicked on, doing so by id
-  getBird(): void {
-     const id = parseInt(this.route.snapshot.paramMap.get('id')!);
-     this.birdService.getBird(id)
-       .subscribe(bird => this.bird = bird);
-  }
-
   // //Gets the bird you clicked on, doing so by id
   // getBird(): void {
-  //    const id = this.route.snapshot.paramMap.get('id')!;
+  //    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
   //    this.birdService.getBird(id)
   //      .subscribe(bird => this.bird = bird);
   // }
+
+  //Gets the bird you clicked on, doing so by id
+  getBird(): void {
+     const id = this.route.snapshot.paramMap.get('id')!;
+     this.birdService.getBird(id)
+       .subscribe(bird => this.bird = bird);
+  }
 
   //Back button
   backBtn(): void {
