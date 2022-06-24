@@ -16,6 +16,8 @@ export class AddFormComponent implements OnInit {
 
   }
 
+
+
   name: string = ''
   scientificName: string = ''
   image: string = ''
@@ -25,8 +27,10 @@ export class AddFormComponent implements OnInit {
 
   submit(name: string, scientificName: string, image: string, location: string, status: string, description: string): void {
 
+
+
     const newBird = {
-      id: 0,
+      id: 3,
       // user: unknown,
       name: name,
       scientificName: scientificName,
@@ -36,7 +40,7 @@ export class AddFormComponent implements OnInit {
       description: description
     }
 
-    console.log("form submitted", newBird);
+    //console.log("form submitted", newBird);
 
     this.birdService.addBird(newBird as Bird).subscribe(() => {
       this
