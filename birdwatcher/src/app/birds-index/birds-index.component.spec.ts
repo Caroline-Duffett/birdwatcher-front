@@ -1,5 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing'; //Makes this a component in angular
 import { BirdsIndexComponent } from './birds-index.component';
 
 describe('BirdsIndexComponent', () => {

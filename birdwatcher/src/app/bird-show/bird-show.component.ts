@@ -1,10 +1,10 @@
-import { Component, OnInit} from '@angular/core'; //makes this a component in angular
-import { Bird } from '../bird'; //calls in the bird model/schema we made
-import { ActivatedRoute } from '@angular/router'; //shows current snapshot of the route?
-import { Location } from '@angular/common'; //interacts with the browser URL
-import { BirdService } from '../bird.service'; //imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
+import { Component, OnInit} from '@angular/core'; //Makes this a component in angular
+import { Bird } from '../bird'; //Calls in the bird model/schema we made
+import { ActivatedRoute } from '@angular/router'; //Shows current snapshot of the route?
+import { Location } from '@angular/common'; //Interacts with the browser URL
+import { BirdService } from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
 
-// links the premade files that goes with this component
+//Links the premade files that goes with this component
 @Component({
   selector: 'app-bird-show',
   templateUrl: './bird-show.component.html',
@@ -14,7 +14,7 @@ import { BirdService } from '../bird.service'; //imports (injects?) the bird ser
 //The component
 export class BirdShowComponent implements OnInit {
 
-  //defines bird property and error handling if undefined
+  //Defines bird property and error handling if undefined
   bird: Bird | undefined;
 
   constructor(
@@ -41,7 +41,7 @@ export class BirdShowComponent implements OnInit {
     this.location.back()
   }
 
-  // Submits edits
+  //Submits edits
   editSubmit(): void {
     if (this.bird) {
       this.birdService.updateBird(this.bird)
@@ -49,8 +49,8 @@ export class BirdShowComponent implements OnInit {
     }
   }
 
+  //Deletes the bird and redirects you back to the index page
   delete(bird: Bird): void {
-    // this.birds = this.birds.filter(b => b !== bird);
     this.birdService.deleteBird(bird._id).subscribe();
     this.location.back()
   }
@@ -71,5 +71,14 @@ export class BirdShowComponent implements OnInit {
   //    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
   //    this.birdService.getBird(id)
   //      .subscribe(bird => this.bird = bird);
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
+
+
+//------------------------------------------------------------------------------- Delete if I ever need to filter ---//
+  // delete(bird: Bird): void {
+  //   // this.birds = this.birds.filter(b => b !== bird);
+  //   this.birdService.deleteBird(bird._id).subscribe();
+  //   this.location.back()
   // }
 //--------------------------------------------------------------------------------------------------------------------//
