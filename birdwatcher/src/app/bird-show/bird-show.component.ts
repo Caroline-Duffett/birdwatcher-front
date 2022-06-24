@@ -41,11 +41,7 @@ export class BirdShowComponent implements OnInit {
     this.location.back()
   }
 
-
-  // submitted = false;
-  //
-  // editSubmit() {this.submitted = true;}
-
+  // Submits edits
   editSubmit(): void {
     if (this.bird) {
       this.birdService.updateBird(this.bird)
@@ -53,9 +49,17 @@ export class BirdShowComponent implements OnInit {
     }
   }
 
-
-
+  delete(bird: Bird): void {
+    // this.birds = this.birds.filter(b => b !== bird);
+    this.birdService.deleteBird(bird._id).subscribe();
+    this.location.back()
+  }
 }
+
+
+
+
+
 
 
 //====================================================================================================================//

@@ -12,7 +12,7 @@
 
 
 export interface Bird {
-  _id: unknown;
+  _id: any;
   name: String;
   scientificName: String;
   image: String;
