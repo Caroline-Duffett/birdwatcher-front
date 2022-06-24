@@ -1,4 +1,3 @@
-// //--- Version that worked
 import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
@@ -47,35 +46,90 @@ export class AddFormComponent implements OnInit {
 
 }
 
+//====================================================================================================================//
+//                                                      Grave Yard
+//====================================================================================================================//
+//------------------------------------------------------------------------ If I need to reset (default component)  ---//
+  // import { Component, OnInit} from '@angular/core';
+  // // import {Bird} from '../bird';
+  // // import {BirdService} from '../bird.service';
+  // // import { FormsModule} from '@angular/forms';
+  //
+  //
+  // @Component({
+  //   selector: 'app-add-form',
+  //   templateUrl: './add-form.component.html',
+  //   styleUrls: ['./add-form.component.css'],
+  // })
+  //
+  // export class AddFormComponent implements OnInit {
+  //
+  //   constructor(
+  //
+  //   ) { }
+  //
+  //   ngOnInit(): void {
+  //
+  //   }
+  //
+  //
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
 
 
-// //RESET
-// import { Component, OnInit} from '@angular/core';
-// // import {Bird} from '../bird';
-// // import {BirdService} from '../bird.service';
-// // import { FormsModule} from '@angular/forms';
-//
-//
-// @Component({
-//   selector: 'app-add-form',
-//   templateUrl: './add-form.component.html',
-//   styleUrls: ['./add-form.component.css'],
-// })
-//
-// export class AddFormComponent implements OnInit {
-//
-//   constructor(
-//
-//   ) { }
-//
-//   ngOnInit(): void {
-//
-//   }
-//
-//
-// }
+//---------------------------------------------------------------------------------------- Version with mongo ._id ---//
+  // // //--- Version that worked
+  // import { Component, OnInit } from '@angular/core';
+  // import {Bird} from '../bird';
+  // import {BirdService} from '../bird.service';
+  //
+  // @Component({
+  //   selector: 'app-add-form',
+  //   templateUrl: './add-form.component.html',
+  //   styleUrls: ['./add-form.component.css']
+  // })
+  //
+  // export class AddFormComponent implements OnInit {
+  //
+  //   constructor(private birdService: BirdService) { }
+  //
+  //   ngOnInit(): void {
+  //
+  //   }
+  //
+  //   name: string = ''
+  //   scientificName: string = ''
+  //   image: string = ''
+  //   location: string = ''
+  //   status: string = ''
+  //   description: string = ''
+  //
+  //   submit(name: string, scientificName: string, image: string, location: string, status: string, description: string): void {
+  //
+  //     const newBird = {
+  //       _id: null,
+  //       // user: unknown,
+  //       name: name,
+  //       scientificName: scientificName,
+  //       image: image,
+  //       location: location,
+  //       status: status,
+  //       description: description
+  //     }
+  //
+  //     console.log("form submitted", newBird);
+  //
+  //     this.birdService.addBird(newBird as Bird).subscribe(() => {
+  //       this
+  //     })
+  //
+  //   }
+  //
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
 
 
+//--------------------------------------------------------------------------------------------------------- Chaos ---//
 // //--- Mess around version
 // import { Component, OnInit } from '@angular/core';
 // import {Bird} from '../bird';
@@ -125,37 +179,6 @@ export class AddFormComponent implements OnInit {
 //
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import { Component,  OnInit} from '@angular/core';
 // import {Bird} from '../bird';
 // import {BirdService} from '../bird.service';
@@ -189,12 +212,6 @@ export class AddFormComponent implements OnInit {
 //   }
 //
 // }
-
-
-
-
-
-
 
 // // Attempt with any still blank and leaves out _id
 // import { Component,  OnInit} from '@angular/core';
@@ -230,12 +247,6 @@ export class AddFormComponent implements OnInit {
 //
 // }
 
-
-
-
-
-
-
 // import { Component} from '@angular/core';
 // import {Bird} from '../bird';
 // import {BirdService} from '../bird.service';
@@ -256,19 +267,6 @@ export class AddFormComponent implements OnInit {
 //   }
 //
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Version with OnInit and constructor
 // import { Component,  OnInit} from '@angular/core';
@@ -301,21 +299,6 @@ export class AddFormComponent implements OnInit {
 // }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //--- Model Trys
 //model = ('', '', '', '', '', '')
 
@@ -339,11 +322,6 @@ export class AddFormComponent implements OnInit {
 //   description:''
 // }
 
-
-
-
-
-
 // //--- If neeed to reset here, is empty component
 // import { Component, OnInit } from '@angular/core';
 // import {Bird} from '../bird';
@@ -366,7 +344,6 @@ export class AddFormComponent implements OnInit {
 //
 //
 // }
-
 
 
 // //--- FormBuilder Attempt (does not work)
@@ -487,13 +464,6 @@ export class AddFormComponent implements OnInit {
 //   }
 //
 // }
-
-
-
-
-
-
-
 
 
 // //--- More complete version of page load, no errors
@@ -660,14 +630,6 @@ export class AddFormComponent implements OnInit {
 //    }
 //
 // }
-
-
-
-
-
-
-
-
 
 
 
@@ -940,13 +902,6 @@ export class AddFormComponent implements OnInit {
 //   }
 
 
-
-
-
-
-
-
-
   // addSubmit(name: string): void {
   //  name = name.trim();
   //  if (!name) { return; }
@@ -1037,3 +992,4 @@ export class AddFormComponent implements OnInit {
   // }
 
 //}
+//--------------------------------------------------------------------------------------------------------------------//
