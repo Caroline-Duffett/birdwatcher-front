@@ -16,14 +16,6 @@ export class AddFormComponent implements OnInit {
 
   }
 
-  // name: string = ''
-  // scientificName: string = ''
-  // image: string = ''
-  // location: string = ''
-  // status: string = ''
-  // description: string = ''
-
-
   name = ''
   scientificName = ''
   image = ''
@@ -49,8 +41,6 @@ export class AddFormComponent implements OnInit {
     })
 
   }
-
-
 
 }
 
@@ -81,6 +71,56 @@ export class AddFormComponent implements OnInit {
 //
 //
 // }
+
+
+
+// //--- More complete version of page load, no errors
+// import { Component, OnInit } from '@angular/core';
+// import {Bird} from '../bird';
+// import {BirdService} from '../bird.service';
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css']
+// })
+//
+// export class AddFormComponent implements OnInit {
+//
+//   constructor(private birdService: BirdService) { }
+//
+//   ngOnInit(): void {
+//
+//   }
+//
+//   name = ''
+//   scientificName = ''
+//   image = ''
+//   location = ''
+//   status = ''
+//   description = ''
+//
+//   addSubmit(): void {
+//
+//     const newBird = {
+//       _id: null,
+//       // user: unknown,
+//       name: this.name,
+//       scientificName: this.scientificName,
+//       image: this.image,
+//       location: this.location,
+//       status: this.status,
+//       description: this.description
+//     }
+//
+//     this.birdService.addBird(newBird as Bird).subscribe(() => {
+//       this
+//     })
+//
+//   }
+//
+// }
+
 
 
 // //--- Lets Page load does  not post, however no errors

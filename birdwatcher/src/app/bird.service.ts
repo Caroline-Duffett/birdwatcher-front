@@ -62,9 +62,17 @@ export class BirdService {
   //   );
   // }
 
-  //POST add a new bird to the server */
+  // //POST add a new bird to the server, (no errors but does not work)
+  // addBird(bird: Bird): Observable<Bird> {
+  //   return this.http.post<typeof bird>(this.birdsUrl, bird, this.httpOptions).pipe(
+  //     //tap((newBird: Bird) => this.log(`added bird with id=${newBird._id}`)),
+  //     catchError(this.handleError<Bird>('addBird'))
+  //   );
+  // }
+
+  //POST add a new bird to the server, (no errors)
   addBird(bird: Bird): Observable<Bird> {
-    return this.http.post<typeof bird>(this.birdsUrl, bird, this.httpOptions).pipe(
+    return this.http.post<Bird>(this.birdsUrl, bird, this.httpOptions).pipe(
       //tap((newBird: Bird) => this.log(`added bird with id=${newBird._id}`)),
       catchError(this.handleError<Bird>('addBird'))
     );
