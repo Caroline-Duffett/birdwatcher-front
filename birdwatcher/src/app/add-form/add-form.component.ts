@@ -25,16 +25,15 @@ export class AddFormComponent implements OnInit {
 
   submit(name: string, scientificName: string, image: string, location: string, status: string, description: string): void {
 
-    // //Makes a random number between 1 and 100,000,000
-    // let madeId: number = (Math.floor(Math.random()* 100000000000) + 1)
-    // //console.log(madeId);
+    //Makes a random number between 1 and 100,000,000
+    let madeId: number = (Math.floor(Math.random()* 100000000000) + 1)
+    //console.log(madeId);
 
-    const options: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const madeId: [];
-
-    for (let i = 0; i < 12; i++) {
-      madeId.push(options[Math.floor((Math.random()*36))])
-    }
+    // const options: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    // const madeId: [];
+    // for (let i = 0; i < 12; i++) {
+    //   madeId.push(options[Math.floor((Math.random()*36))])
+    // }
 
 
     const newBird = {
