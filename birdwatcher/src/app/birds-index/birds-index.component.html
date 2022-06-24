@@ -1,10 +1,13 @@
 <h2>Birds List</h2>
 
+<app-add-form></app-add-form>
+
 <div class="birds-flexbox">
   <div class="bird-card" *ngFor="let bird of birds">
     <a routerLink="/birds/{{bird._id}}">
       <img src="{{bird.image}}" alt="photo of {{bird.name}}">
       <h3>{{bird.name}}</h3>
+      <h3>_id: {{bird._id}}</h3>
     </a>
   </div>
 </div>

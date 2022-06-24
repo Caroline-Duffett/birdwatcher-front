@@ -1,0 +1,432 @@
+<div class="container">
+  <h1>Add Form</h1>
+    <form #add ngFrom (ngSubmit)="submit(name, scientificName, image, location, status, description)">
+
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" [(ngModel)]=name placeholder="Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="scientificName">Scientific Name: </label>
+        <input type="text" name="scientificName" class="form-control" [(ngModel)]=scientificName placeholder="Scientific Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image: </label>
+        <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <input type="text" name="location" class="form-control" [(ngModel)]=location placeholder="Location" required>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status: </label>
+        <input type="text" name="status" class="form-control" [(ngModel)]=status placeholder="Status" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <input type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+
+    </form>
+</div>
+
+
+
+
+
+<!-- //====================================================================================================================//
+//                                                      Grave Yard
+//====================================================================================================================// -->
+<!-- //------------------------------------------------------------------------------------------ version with ._id ---// -->
+<!-- This is the version that work -->
+<!-- <div class="container">
+  <h1>Add Form</h1>
+    <form #add ngFrom (ngSubmit)="submit(name, scientificName, image, location, status, description)">
+
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" [(ngModel)]=name placeholder="Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="scientificName">Scientific Name: </label>
+        <input type="text" name="scientificName" class="form-control" [(ngModel)]=scientificName placeholder="Scientific Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image: </label>
+        <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <input type="text" name="location" class="form-control" [(ngModel)]=location placeholder="Location" required>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status: </label>
+        <input type="text" name="status" class="form-control" [(ngModel)]=status placeholder="Status" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <input type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+
+    </form>
+</div> -->
+<!-- (click)="addSubmit(); addForm.reset()" -->
+<!-- //------------------------------------------------------------------------------------------ version with ._id ---// -->
+
+
+
+
+
+
+<!-- //--------------------------------------------------------------------------------------------------------- Chaos ---// -->
+<!-- Mess around version -->
+<!-- <div class="container">
+  <h1>Add Form</h1>
+    <form #add ngFrom (ngSubmit)="submit(name, scientificName, image, location, status, description)">
+
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" [(ngModel)]=name placeholder="Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="scientificName">Scientific Name: </label>
+        <input type="text" name="scientificName" class="form-control" [(ngModel)]=scientificName placeholder="Scientific Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image: </label>
+        <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <input type="text" name="location" class="form-control" [(ngModel)]=location placeholder="Location" required>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status: </label>
+        <input type="text" name="status" class="form-control" [(ngModel)]=status placeholder="Status" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <input type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+
+    </form>
+</div> -->
+
+<!-- (click)="addSubmit(); addForm.reset()" -->
+
+
+
+<!-- <div class="container">
+  <h1>Add Form</h1>
+    <form #add ngFrom (ngSubmit)="submit(add)">
+
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" ngModel placeholder="Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="scientificName">Scientific Name: </label>
+        <input type="text" name="scientificName" class="form-control" ngModel placeholder="Scientific Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image: </label>
+        <input type="url"  name="image" class="form-control" ngModel placeholder="URL" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <input type="text" name="location" class="form-control" ngModel placeholder="Location" required>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status: </label>
+        <input type="text" name="status" class="form-control" ngModel placeholder="Status" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <input type="text" name="description" class="form-control" ngModel placeholder="Description" required>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+
+    </form>
+</div>
+
+<!-- (click)="addSubmit(); addForm.reset()" -->
+
+
+
+<!-- <div class="container">
+  <h1>Add Form</h1>
+    <form #add ngFrom (ngSubmit)="submit(add)">
+
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" ngModel placeholder="Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="scientificName">Scientific Name: </label>
+        <input type="text" name="scientificName" class="form-control" ngModel placeholder="Scientific Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image: </label>
+        <input type="url"  name="image" class="form-control" ngModel placeholder="URL" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <input type="text" name="location" class="form-control" ngModel placeholder="Location" required>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status: </label>
+        <input type="text" name="status" class="form-control" ngModel placeholder="Status" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <input type="text" name="description" class="form-control" ngModel placeholder="Description" required>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+
+    </form>
+</div>
+
+<!-- (click)="addSubmit(); addForm.reset()" -->
+
+
+
+<!-- for reset if need -->
+<!-- <h1>Add Form</h1>
+
+<div>
+  <form #addForm="ngForm">
+
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input type="text" id="name" #name name="name" [(ngModel)]="model.name" placeholder="Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="scientificName">Scientific Name: </label>
+      <input type="text" id="scientificName" #scientificName name="model.scientificName" [(ngModel)]="model.scientificName" placeholder="Scientific Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image: </label>
+      <input type="url" id="image" #image name="image" [(ngModel)]="model.image" placeholder="URL" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location: </label>
+      <input type="text" id="location" #location name="location" [(ngModel)]="model.location" placeholder="Location" required>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status: </label>
+      <input type="text" id="status" #status name="status" [(ngModel)]="model.status" placeholder="Status" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description: </label>
+      <input type="text" id="description" #description name="description" [(ngModel)]="model.description" placeholder="Description" required>
+    </div>
+
+    <button type="button" (click)="addSubmit(); addForm.reset()">Submit</button>
+
+  </form>
+</div> -->
+
+
+<!-- <h1>Add Form</h1>
+
+<div>
+  <form #addForm>
+
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input type="text" id="name" #name name="name" [(ngModel)]="name" placeholder="Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="scientificName">Scientific Name: </label>
+      <input type="text" id="scientificName" #scientificName name="scientificName" [(ngModel)]="scientificName" placeholder="Scientific Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image: </label>
+      <input type="url" id="image" #image name="image" [(ngModel)]="image" placeholder="URL" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location: </label>
+      <input type="text" id="location" #location name="location" [(ngModel)]="location" placeholder="Location" required>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status: </label>
+      <input type="text" id="status" #status name="status" [(ngModel)]="status" placeholder="Status" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description: </label>
+      <input type="text" id="description" #description name="description" [(ngModel)]="description" placeholder="Description" required>
+    </div>
+
+    <button type="button" (click)="addSubmit(); addForm.reset()">Submit</button>
+
+  </form>
+</div> -->
+
+
+<!-- <h1>Add Form</h1>
+
+<div>
+  <form #addForm>
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input type="text" id="name" #name name="name" placeholder="Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="scientificName">Scientific Name: </label>
+      <input type="text" id="scientificName" #scientificName name="scientificName" placeholder="Scientific Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image: </label>
+      <input type="url" id="image" #image name="image" placeholder="URL" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location: </label>
+      <input type="text" id="location" #location name="location" placeholder="Location" required>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status: </label>
+      <input type="text" id="status" #status name="status" placeholder="Status" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description: </label>
+      <input type="text" id="description" #description name="description" placeholder="Description" required>
+    </div>
+
+    <button type="button" (click)="addSubmit(); addForm.reset()">Submit</button>
+
+  </form>
+</div> -->
+
+
+
+<!-- Add form with bad models -->
+<!-- <h1>Add Form</h1>
+<div>
+  <form #addForm>
+
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input type="text" id="name" #name name="name" [(ngModel)]="model.name" placeholder="Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="scientificName">Scientific Name: </label>
+      <input type="text" id="scientificName" #scientificName name="scientificName" [(ngModel)]="model.name" placeholder="Scientific Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image: </label>
+      <input type="url" id="image" #image name="image" [(ngModel)]="model.name" placeholder="URL" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location: </label>
+      <input type="text" id="location" #location name="location" [(ngModel)]="model.name" placeholder="Location" required>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status: </label>
+      <input type="text" id="status" #status name="status" [(ngModel)]="model.name" placeholder="Status" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description: </label>
+      <input type="text" id="description" #description name="description" [(ngModel)]="model.name" placeholder="Description" required>
+    </div>
+
+    <button type="button" (click)="addSubmit(); addForm.reset()">Submit</button>
+
+  </form>
+</div> -->
+
+
+
+<!-- FormBilder Attempt -->
+<!-- <h1>Add Form</h1>
+
+<div>
+  <form #addForm >
+
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input type="text" id="name" #name name="name" formControlName="name" placeholder="Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="scientificName">Scientific Name: </label>
+      <input type="text" id="scientificName" #scientificName name="scientificName" formControlName="scientificName" placeholder="Scientific Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image: </label>
+      <input type="url" id="image" #image name="image" formControlName="image" placeholder="URL" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location: </label>
+      <input type="text" id="location" #location name="location" formControlName="location" placeholder="Location" required>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status: </label>
+      <input type="text" id="status" #status name="status" formControlName="status" placeholder="Status" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description: </label>
+      <input type="text" id="description" #description name="description" formControlName="description" placeholder="Description" required>
+    </div>
+
+    <button type="button" (click)="addSubmit(); addForm.reset()">Submit</button>
+
+  </form>
+</div> -->
+<!-- //--------------------------------------------------------------------------------------------------------- Chaos ---// -->

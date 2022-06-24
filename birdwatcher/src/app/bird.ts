@@ -1,11 +1,42 @@
 export interface Bird {
-  _id: String;
-  name: String;
-  scientificName: String;
-  image: String;
-  location: String;
+  _id: string;
+  name: string;
+  scientificName: string;
+  image: string;
+  location: string;
   status: string;
   description: string;
-  //stats: [Stats.schema];
-  user: String;
 }
+
+
+
+
+//====================================================================================================================//
+//                                                      Grave Yard
+//====================================================================================================================//
+//------------------------------------------------------------------------------------------ Original model/schema ---//
+  // export interface Bird {
+  //   _id: String;
+  //   name: String;
+  //   scientificName: String;
+  //   image: String;
+  //   location: String;
+  //   status: string;
+  //   description: string;
+  //   //stats: [Stats.schema];
+  //   //user: String;
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
+
+//----------------------------------------------------------------------------------------------- Different Model ---//
+  //
+  // export interface Bird {
+  //   _id: any;
+  //   name: string;
+  //   scientificName: string;
+  //   image: string;
+  //   location: string;
+  //   status: string;
+  //   description: string;
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
