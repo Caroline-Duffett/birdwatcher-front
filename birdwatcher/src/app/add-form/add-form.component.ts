@@ -57,7 +57,7 @@ export class AddFormComponent implements OnInit {
 
   name = 'test'
   scientificName = 'test'
-  image = 'test'
+  image = 'https://www.birds.cornell.edu/home/wp-content/uploads/2018/10/BirdAcademy-480x360.jpg'
   location = 'test'
   status = 'test'
   description = 'test'
