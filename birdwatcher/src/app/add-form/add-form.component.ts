@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import {Bird} from '../bird';
-// import {BirdService} from '../bird.service';
+import {BirdService} from '../bird.service';
 // import { FormsModule} from '@angular/forms';
 
 
@@ -11,21 +11,56 @@ import {Bird} from '../bird';
 })
 
 export class AddFormComponent {
-  // constructor(
-  //   private birdService: BirdService,
-  // ) { }
+  constructor(
+    private birdService: BirdService,
+  ) { }
 
 
-  model = new Brid('', '', '', '', '', '')
+    name = ''
+    scientificName = ''
+    image = ''
+    location = ''
+    status = ''
+    description = ''
 
-  addSubmit() {
-    this.model = new Bird('', '', '', '', '', '')
+  model = {
+    _id: null,
+    //_id: "",
+    // user: unknown,
+    name: this.name,
+    scientificName: this.scientificName,
+    image: this.image,
+    location: this.location,
+    status: this.status,
+    description: this.description
   }
 
-  example(): Bird {
-    const birdExample = new Bird('', '', '', '', '', '')
-    return birdExample
-  }
+  // addSubmit() {
+  //   this.model = new Bird('', '', '', '', '', '')
+  // }
+
+
+    addSubmit(): void {
+      const newBird = {
+        _id: null,
+        //_id: "",
+        // user: unknown,
+        name: this.name,
+        scientificName: this.scientificName,
+        image: this.image,
+        location: this.location,
+        status: this.status,
+        description: this.description
+      }
+      this.birdService.addBird(newBird as Bird).subscribe(() => {
+        this
+      })
+    }
+
+  // example(): Bird {
+  //   const birdExample = new Bird('', '', '', '', '', '')
+  //   return birdExample
+  // }
 
 }
 
