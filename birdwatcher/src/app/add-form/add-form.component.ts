@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
-import { FormBuilder } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 
 
 @Component({
@@ -13,21 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export class AddFormComponent implements OnInit {
 
-  birds = this.birdService.getBirds();
-
-  addFrom = this.formBuilder.group({
-    _id: null,
-    name: '',
-    scientificName: '',
-    image: '',
-    location: '',
-    status: '',
-    description: '',
-  })
 
   constructor(
     private birdService: BirdService,
-    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -35,32 +22,6 @@ export class AddFormComponent implements OnInit {
   }
 
   addSubmit(): void {
-
-    // const newBird = {
-    //   _id: null,
-    //   //_id: "",
-    //   // user: unknown,
-    //   name: this.name,
-    //   scientificName: this.scientificName,
-    //   image: this.image,
-    //   location: this.location,
-    //   status: this.status,
-    //   description: this.description
-    // }
-
-    // this.birdService.addBird(newBird as Bird).subscribe(() => {
-    //   this
-    // })
-
-    // addBird(this.addFrom.value as Bird).subscribe(() => {
-    //   this
-    // })
-
-    this.addFrom.value
-
-    // this.addFrom.value.addBird as Bird).subscribe(() => {
-    //   this
-    // })
 
   }
 
@@ -118,6 +79,76 @@ export class AddFormComponent implements OnInit {
 //
 // }
 
+
+
+// //--- FormBuilder Attempt (does not work)
+// import { Component, OnInit } from '@angular/core';
+// import {Bird} from '../bird';
+// import {BirdService} from '../bird.service';
+// import { FormBuilder } from '@angular/forms';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css']
+// })
+//
+// export class AddFormComponent implements OnInit {
+//
+//   birds = this.birdService.getBirds();
+//
+//   addFrom = this.formBuilder.group({
+//     _id: null,
+//     name: '',
+//     scientificName: '',
+//     image: '',
+//     location: '',
+//     status: '',
+//     description: '',
+//   })
+//
+//   constructor(
+//     private birdService: BirdService,
+//     private formBuilder: FormBuilder
+//   ) { }
+//
+//   ngOnInit(): void {
+//
+//   }
+//
+//   addSubmit(): void {
+//
+//     // const newBird = {
+//     //   _id: null,
+//     //   //_id: "",
+//     //   // user: unknown,
+//     //   name: this.name,
+//     //   scientificName: this.scientificName,
+//     //   image: this.image,
+//     //   location: this.location,
+//     //   status: this.status,
+//     //   description: this.description
+//     // }
+//
+//     // this.birdService.addBird(newBird as Bird).subscribe(() => {
+//     //   this
+//     // })
+//
+//     // addBird(this.addFrom.value as Bird).subscribe(() => {
+//     //   this
+//     // })
+//
+//     this.addFrom.value
+//
+//     // this.addFrom.value.addBird as Bird).subscribe(() => {
+//     //   this
+//     // })
+//
+//   }
+//
+// }
 
 
 // //--- Can't change local variables
