@@ -31,7 +31,8 @@ export class AddFormComponent implements OnInit {
 
 
     const newBird = {
-      id: madeId,
+      _id: madeId,
+      // id: madeId,
       // user: unknown,
       name: name,
       scientificName: scientificName,

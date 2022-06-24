@@ -1,5 +1,16 @@
+// export interface Bird {
+//   id: number;
+//   name: string;
+//   scientificName: string;
+//   image: string;
+//   location: string;
+//   status: string;
+//   description: string;
+// }
+
+
 export interface Bird {
-  id: number;
+  _id: any;
   name: string;
   scientificName: string;
   image: string;
@@ -7,9 +18,6 @@ export interface Bird {
   status: string;
   description: string;
 }
-
-
-
 
 
 //====================================================================================================================//
