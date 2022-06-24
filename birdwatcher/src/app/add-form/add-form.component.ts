@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component,  OnInit} from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
 import { FormsModule} from '@angular/forms';
@@ -11,13 +11,27 @@ import { FormsModule} from '@angular/forms';
   // exportAs: 'ngForm'
 })
 
-export class AddFormComponent {
+export class AddFormComponent implements OnInit {
+
+  constructor(
+    private birdService: BirdService,
+  ) { }
+
+    ngOnInit(): void {
+
+    }
+
 
   submit(add: any) {
     console.log("form submitted", add);
+
+    this.birdService.addBird(add as Bird).subscribe(() => {
+          this
+    })
   }
 
 }
+
 
 
 
