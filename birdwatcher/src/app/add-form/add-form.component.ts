@@ -23,6 +23,47 @@ export class AddFormComponent {
 
 
 
+
+
+
+
+
+
+// import { Component} from '@angular/core';
+// import {Bird} from '../bird';
+// import {BirdService} from '../bird.service';
+// import { FormsModule} from '@angular/forms';
+//
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css'],
+//   // exportAs: 'ngForm'
+// })
+//
+// export class AddFormComponent {
+//
+//   submit(add: any) {
+//     console.log("form submitted", add);
+//   }
+//
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Version with OnInit and constructor
 // import { Component,  OnInit} from '@angular/core';
 // import {Bird} from '../bird';
 // import {BirdService} from '../bird.service';
