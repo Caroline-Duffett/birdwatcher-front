@@ -1,4 +1,4 @@
-import { Component,  OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
 import { FormsModule} from '@angular/forms';
@@ -11,21 +11,46 @@ import { FormsModule} from '@angular/forms';
   // exportAs: 'ngForm'
 })
 
-export class AddFormComponent implements OnInit {
+export class AddFormComponent {
 
-  constructor(
-    private birdService: BirdService,
-  ) { }
-
-    ngOnInit(): void {
-
-    }
-
-  submit(add) {
+  submit(add: any) {
     console.log("form submitted", add);
   }
 
 }
+
+
+
+
+
+// import { Component,  OnInit} from '@angular/core';
+// import {Bird} from '../bird';
+// import {BirdService} from '../bird.service';
+// import { FormsModule} from '@angular/forms';
+//
+//
+// @Component({
+//   selector: 'app-add-form',
+//   templateUrl: './add-form.component.html',
+//   styleUrls: ['./add-form.component.css'],
+//   // exportAs: 'ngForm'
+// })
+//
+// export class AddFormComponent implements OnInit
+//
+//   constructor(
+//     private birdService: BirdService,
+//   ) { }
+//
+//     ngOnInit(): void {
+//
+//     }
+//
+//   submit(add) {
+//     console.log("form submitted", add);
+//   }
+//
+// }
 
 
 
