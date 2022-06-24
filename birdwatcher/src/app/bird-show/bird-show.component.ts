@@ -56,17 +56,17 @@ export class BirdShowComponent implements OnInit {
     }
   }
 
-  //Deletes the bird and redirects you back to the index page
-  delete(bird: Bird): void {
-    this.birdService.deleteBird(bird.id).subscribe();
-    this.location.back()
-  }
-  //
   // //Deletes the bird and redirects you back to the index page
   // delete(bird: Bird): void {
-  //   this.birdService.deleteBird(bird._id).subscribe();
+  //   this.birdService.deleteBird(bird.id).subscribe();
   //   this.location.back()
   // }
+
+  //Deletes the bird and redirects you back to the index page
+  delete(bird: Bird): void {
+    this.birdService.deleteBird(bird._id).subscribe();
+    this.location.back()
+  }
 }
 
 

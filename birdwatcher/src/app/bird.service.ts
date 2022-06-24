@@ -74,7 +74,7 @@ export class BirdService {
 
   //PUT update the bird on the server
   updateBird(bird: Bird): Observable<any> {
-    const id = bird.id;
+    const id = bird._id;
     const url = `${this.birdsUrl}/${id}`;
     return this.http.put(url, bird, this.httpOptions).pipe(
       //tap(_ => this.log(`updated bird id=${bird.id}`)),
