@@ -46,29 +46,13 @@ export class BirdService {
   }
 
   // GET bird (show) by id. Will 404 if id not found
-  getBird(id: string): Observable<Bird> {
+  getBird(id: number): Observable<Bird> {
     const url = `${this.birdsUrl}/${id}`;
     return this.http.get<Bird>(url).pipe(
       //tap(_ => this.log(`fetched bird id=${id}`)),
       catchError(this.handleError<Bird>(`getBird id=${id}`))
     );
   }
-
-  // //POST add a new bird to the server */
-  // addBird(bird: Bird): Observable<Bird> {
-  //   return this.http.post<bird>(this.birdsUrl, bird, this.httpOptions).pipe(
-  //     //tap((newBird: Bird) => this.log(`added bird with id=${newBird._id}`)),
-  //     catchError(this.handleError<Bird>('addBird'))
-  //   );
-  // }
-
-  // //POST add a new bird to the server, (no errors but does not work)
-  // addBird(bird: Bird): Observable<Bird> {
-  //   return this.http.post<typeof bird>(this.birdsUrl, bird, this.httpOptions).pipe(
-  //     //tap((newBird: Bird) => this.log(`added bird with id=${newBird._id}`)),
-  //     catchError(this.handleError<Bird>('addBird'))
-  //   );
-  // }
 
   //POST add a new bird to the server, (no errors)
   addBird(bird: Bird): Observable<Bird> {
@@ -78,18 +62,8 @@ export class BirdService {
     );
   }
 
-
-  // //POST add a new bird to the server */
-  // addBird(bird: Bird): Observable<Bird> {
-  //   return this.http.post(this.birdsUrl, bird, this.httpOptions).pipe(
-  //     //tap((newBird: Bird) => this.log(`added bird with id=${newBird._id}`)),
-  //     catchError(this.handleError<Bird>('addBird'))
-  //   );
-  // }
-
-
   // //DELETE the bird from the server
-  deleteBird(id: string): Observable<Bird> {
+  deleteBird(id: number): Observable<Bird> {
     const url = `${this.birdsUrl}/${id}`;
     return this.http.delete<Bird>(url, this.httpOptions).pipe(
       //tap(_ => this.log(`deleted bird id=${id}`)),
@@ -98,20 +72,9 @@ export class BirdService {
   }
 
 
-  // // GET bird (show) by id. Will 404 if id not found
-  // getBird(id: string): Observable<Bird> {
-  //   const url = `${this.birdsUrl}/${id}`;
-  //   return this.http.get<Bird>(url).pipe(
-  //     //tap(_ => this.log(`fetched bird id=${id}`)),
-  //     catchError(this.handleError<Bird>(`getBird id=${id}`))
-  //   );
-  // }
-
-
-
   //PUT update the bird on the server
   updateBird(bird: Bird): Observable<any> {
-    const id = bird._id;
+    const id = bird.id;
     const url = `${this.birdsUrl}/${id}`;
     return this.http.put(url, bird, this.httpOptions).pipe(
       //tap(_ => this.log(`updated bird id=${bird.id}`)),
@@ -142,6 +105,12 @@ export class BirdService {
     }
 
 }
+
+
+
+
+
+
 
 
 //====================================================================================================================//

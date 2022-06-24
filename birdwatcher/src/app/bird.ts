@@ -1,9 +1,9 @@
 export interface Bird {
-  _id: any;
-  name: String;
-  scientificName: String;
-  image: String;
-  location: String;
+  id: number;
+  name: string;
+  scientificName: string;
+  image: string;
+  location: string;
   status: string;
   description: string;
 }
