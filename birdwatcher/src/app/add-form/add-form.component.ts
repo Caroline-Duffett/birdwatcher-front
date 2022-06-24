@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import {Bird} from '../bird';
-import {BirdService} from '../bird.service';
-import { FormsModule} from '@angular/forms';
+// import {BirdService} from '../bird.service';
+// import { FormsModule} from '@angular/forms';
 
 
 @Component({
@@ -10,19 +10,21 @@ import { FormsModule} from '@angular/forms';
   styleUrls: ['./add-form.component.css']
 })
 
-export class AddFormComponent implements OnInit {
+export class AddFormComponent {
+  // constructor(
+  //   private birdService: BirdService,
+  // ) { }
 
 
-  constructor(
-    private birdService: BirdService,
-  ) { }
+  model = new Brid('', '', '', '', '', '')
 
-  ngOnInit(): void {
-
+  addSubmit() {
+    this.model = new Bird('', '', '', '', '', '')
   }
 
-  addSubmit(): void {
-
+  example(): Bird {
+    const birdExample = new Bird('', '', '', '', '', '')
+    return birdExample
   }
 
 }
