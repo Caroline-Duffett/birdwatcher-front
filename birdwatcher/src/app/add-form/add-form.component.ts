@@ -31,7 +31,7 @@ export class AddFormComponent implements OnInit {
 
 
     const newBird = {
-      _id: madeId,
+      id: madeId,
       // id: madeId,
       // user: unknown,
       name: name,
@@ -47,6 +47,7 @@ export class AddFormComponent implements OnInit {
     this.birdService.addBird(newBird as Bird).subscribe(() => {
       this
     })
+    window.location.reload()
 
   }
 

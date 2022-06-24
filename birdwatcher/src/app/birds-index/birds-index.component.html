@@ -4,12 +4,12 @@
 
 <div class="birds-flexbox">
   <div class="bird-card" *ngFor="let bird of birds">
-    <!-- <a routerLink="/birds/{{bird.id}}"> -->
-    <a routerLink="/birds/{{bird._id}}">
+    <a routerLink="/birds/{{bird.id}}">
+    <!-- <a routerLink="/birds/{{bird._id}}"> -->
       <img src="{{bird.image}}" alt="photo of {{bird.name}}">
       <h3>{{bird.name}}</h3>
-      <!-- <h3>id: {{bird.id}}</h3> -->
-        <h3>_id: {{bird._id}}</h3>
+      <h3>id: {{bird.id}}</h3>
+        <!-- <h3>_id: {{bird._id}}</h3> -->
     </a>
   </div>
 </div>

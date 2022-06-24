@@ -30,18 +30,18 @@ export class BirdShowComponent implements OnInit {
   }
 
   //Gets the bird you clicked on, doing so by id
-  // getBird(): void {
-  //    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
-  //    this.birdService.getBird(id)
-  //      .subscribe(bird => this.bird = bird);
-  // }
-
-  //Gets the bird you clicked on, doing so by id
   getBird(): void {
-     const id = this.route.snapshot.paramMap.get('id')!;
+     const id = parseInt(this.route.snapshot.paramMap.get('id')!);
      this.birdService.getBird(id)
        .subscribe(bird => this.bird = bird);
   }
+
+  // //Gets the bird you clicked on, doing so by id
+  // getBird(): void {
+  //    const id = this.route.snapshot.paramMap.get('id')!;
+  //    this.birdService.getBird(id)
+  //      .subscribe(bird => this.bird = bird);
+  // }
 
   //Back button
   backBtn(): void {
@@ -56,17 +56,17 @@ export class BirdShowComponent implements OnInit {
     }
   }
 
-  // //Deletes the bird and redirects you back to the index page
-  // delete(bird: Bird): void {
-  //   this.birdService.deleteBird(bird.id).subscribe();
-  //   this.location.back()
-  // }
-
   //Deletes the bird and redirects you back to the index page
   delete(bird: Bird): void {
-    this.birdService.deleteBird(bird._id).subscribe();
+    this.birdService.deleteBird(bird.id).subscribe();
     this.location.back()
   }
+  //
+  // //Deletes the bird and redirects you back to the index page
+  // delete(bird: Bird): void {
+  //   this.birdService.deleteBird(bird._id).subscribe();
+  //   this.location.back()
+  // }
 }
 
 
