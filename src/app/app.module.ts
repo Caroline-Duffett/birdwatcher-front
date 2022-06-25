@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { BirdsIndexComponent } from './birds-index/birds-index.component';
 import { BirdShowComponent } from './bird-show/bird-show.component';
 import { AddFormComponent } from './add-form/add-form.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AddFormComponent } from './add-form/add-form.component';
     BirdsIndexComponent,
     BirdShowComponent,
     AddFormComponent,
+    WelcomePageComponent,
   ],
   imports: [
     BrowserModule,
