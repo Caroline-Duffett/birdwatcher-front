@@ -37,7 +37,7 @@ export class AddFormComponent implements OnInit {
     this.birdService.addBird(newBird as Bird).subscribe(() => {
       this
     })
-    window.location.reload()
+    //window.location.reload() //This breaks heroku
 
   }
 
