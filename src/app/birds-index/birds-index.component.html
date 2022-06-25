@@ -1,6 +1,8 @@
 <h2>Birds List</h2>
 
-<app-add-form></app-add-form>
+<a routerLink="/add-bird">
+  <button>Add a Bird +</button>
+</a>
 
 <div class="birds-flexbox">
   <div class="bird-card" *ngFor="let bird of birds">
