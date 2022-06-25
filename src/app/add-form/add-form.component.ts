@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
+import { ActivatedRoute } from '@angular/router'; //Shows current snapshot of the route?
+import { Location } from '@angular/common'; //Interacts with the browser URL
 
 @Component({
   selector: 'app-add-form',
@@ -10,7 +12,11 @@ import {BirdService} from '../bird.service';
 
 export class AddFormComponent implements OnInit {
 
-  constructor(private birdService: BirdService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private birdService: BirdService,
+    private locationAngular: Location
+  ) { }
 
   ngOnInit(): void {
 
@@ -37,7 +43,8 @@ export class AddFormComponent implements OnInit {
     this.birdService.addBird(newBird as Bird).subscribe(() => {
       this
     })
-    //window.location.reload() //This breaks heroku
+
+    this.locationAngular.back()
 
   }
 
