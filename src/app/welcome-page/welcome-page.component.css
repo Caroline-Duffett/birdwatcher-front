@@ -1,0 +1,21 @@
+/* body {
+  background-color: #e1e1e18c;
+} */
+
+html {
+  background-color: #e1e1e18c;
+}
+
+.image-carousel {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #e1e1e18c;
+}
+
+.view-birds-btn {
+  text-align: center;
+}
+
+.sn {
+  font-style: italic;
+}
