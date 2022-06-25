@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
-import { ActivatedRoute } from '@angular/router'; //Shows current snapshot of the route?
-import { Location } from '@angular/common'; //Interacts with the browser URL
+import { ActivatedRoute, Router } from '@angular/router'; //Shows current snapshot of the route?
+// import { Location } from '@angular/common'; //Interacts with the browser URL
 
 @Component({
   selector: 'app-add-form',
@@ -13,9 +13,10 @@ import { Location } from '@angular/common'; //Interacts with the browser URL
 export class AddFormComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
     private birdService: BirdService,
-    private locationAngular: Location
+    private route: ActivatedRoute,
+    // private locationAngular: Location
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -44,8 +45,8 @@ export class AddFormComponent implements OnInit {
       this
     })
 
-    this.locationAngular.back()
-
+    //this.locationAngular.back()
+    this.router.navigate(['/birds']);
   }
 
 }
