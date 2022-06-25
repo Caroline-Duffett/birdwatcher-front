@@ -6,7 +6,7 @@ import {BirdShowComponent} from './bird-show/bird-show.component' //Imports out 
 
 //Where we set the routes we want
 const routes: Routes = [
-  { path: '/', redirectTo:'/bird', pathMatch: 'full'}
+  { path: '/', redirectTo:'/birds', pathMatch: 'full'}
   { path: 'birds/:id', component: BirdShowComponent},
   { path: 'birds', component: BirdsIndexComponent},
 ];
