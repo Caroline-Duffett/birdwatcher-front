@@ -1,32 +1,38 @@
-.birds-flexbox {
+/* .birds-flexbox {
   background-color: pink;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 75%;
   margin: 0 auto;
-}
+} */
 
-.bird-card {
-  /* background-color: white; */
-  /* background-color: pink; */
+/* .bird-card {
+  width: 300px;
+  background: blue;
   text-align: center;
-  margin: 7px;
 }
 
 .bird-card h3 {
   color: black;
-}
-
-a {
-  text-decoration: none;
-}
+} */
 
 /* img {
   width: 250px;
   height: 250px;
   object-fit: cover;
 } */
+
+
+a {
+  text-decoration: none;
+}
+
+.bird-name {
+  text-align: center;
+  color: white;
+  padding: 3px;
+}
 
 img {
   width: 300px;
