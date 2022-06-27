@@ -36,6 +36,11 @@ export class AddFormComponent implements OnInit {
     .subscribe(birds => this.birds = birds);
   }
 
+  //Back button
+  backBtn(): void {
+    this.locationAngular.back() //really just location (had to rename because I made an input field called location)
+  }
+
 
   submit(name: string, scientificName: string, image: string, location: string, status: string, description: string): void {
     const newBird = {
