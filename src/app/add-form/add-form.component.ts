@@ -107,7 +107,7 @@ export class AddFormComponent implements OnInit {
 
   name: string = ''
   scientificName: string = ''
-  image: string = ''
+  image: URL = 'https://i.imgur.com/EXotp4G.png'
   location: string = ''
   status: string = ''
   description: string = ''
