@@ -1,7 +1,3 @@
-.bird-page {
-  text-align: center;
-}
-
 .btn-flexbox {
   background-color: red;
   display: flex;
@@ -49,4 +45,14 @@
 .facts h4 {
   margin: 5px 5px;
   padding: 0;
+}
+
+/* white background */
+/* .modal {
+  background-color: white;
+} */
+
+/* very dark background */
+.modal {
+  background-color: rgba(0, 0, 0, 0.91);
 }

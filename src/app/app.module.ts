@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { BirdsIndexComponent } from './birds-index/birds-index.component';
 import { BirdShowComponent } from './bird-show/bird-show.component';
 import { AddFormComponent } from './add-form/add-form.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AddFormComponent } from './add-form/add-form.component';
     BirdsIndexComponent,
     BirdShowComponent,
     AddFormComponent,
+    WelcomePageComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

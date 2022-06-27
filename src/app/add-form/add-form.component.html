@@ -1,38 +1,45 @@
-<div class="container">
-  <h1>Add Form</h1>
+<div class="container mt-3 border border-secondary rounded w-50">
+  <h1 class="mt-2">Add A Bird</h1>
     <form #add ngFrom (ngSubmit)="submit(name, scientificName, image, location, status, description)">
 
       <div class="form-group">
         <label for="name">Name: </label>
         <input type="text" name="name" class="form-control" [(ngModel)]=name placeholder="Name" required>
       </div>
+      <br/>
 
       <div class="form-group">
         <label for="scientificName">Scientific Name: </label>
         <input type="text" name="scientificName" class="form-control" [(ngModel)]=scientificName placeholder="Scientific Name" required>
       </div>
+      <br/>
 
       <div class="form-group">
         <label for="image">Image: </label>
         <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
       </div>
+      <br/>
 
       <div class="form-group">
         <label for="location">Location: </label>
         <input type="text" name="location" class="form-control" [(ngModel)]=location placeholder="Location" required>
       </div>
+      <br/>
 
       <div class="form-group">
         <label for="status">Status: </label>
         <input type="text" name="status" class="form-control" [(ngModel)]=status placeholder="Status" required>
       </div>
+      <br/>
 
       <div class="form-group">
         <label for="description">Description: </label>
-        <input type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required>
+        <textarea type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required></textarea>
       </div>
+      <br/>
 
-      <button class="btn" type="submit">Submit</button>
-
+      <div class="sumbit-btn text-center mb-2">
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
     </form>
 </div>
