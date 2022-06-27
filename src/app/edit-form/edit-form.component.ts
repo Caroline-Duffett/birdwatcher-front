@@ -10,6 +10,7 @@ import { BirdService } from '../bird.service'; //Imports (injects?) the bird ser
   styleUrls: ['./edit-form.component.css']
 })
 export class EditFormComponent implements OnInit {
+
   bird: Bird | undefined;
 
   constructor(
@@ -24,10 +25,10 @@ export class EditFormComponent implements OnInit {
 
   //Gets the bird you clicked on, doing so by id
   getBird(): void {
-     const id = this.route.snapshot.paramMap.get('id')!;
-     this.birdService.getBird(id)
-       .subscribe(bird => this.bird = bird);
-    console.log("The bird is " + this.bird);
+    const id = this.route.snapshot.paramMap.get('id')!;
+    this.birdService.getBird(id)
+      .subscribe(bird => this.bird = bird);
+    console.log("The bird is edit: " + this.bird);
   }
 
   // //Back button
