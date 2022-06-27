@@ -1,3 +1,8 @@
+<div class="btn-flexbox">
+  <button class="back-btn" type="button" (click)="backBtn()">Back</button>
+</div>
+
+
 <div class="container mt-3 border border-secondary rounded w-50">
   <h1 class="mt-2">Add A Bird</h1>
     <form #add ngFrom (ngSubmit)="submit(name, scientificName, image, location, status, description)">

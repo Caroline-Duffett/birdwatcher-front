@@ -55,7 +55,7 @@ export class BirdShowComponent implements OnInit {
     }
   }
 
-  //If modal gets closed/cancelled
+  //If modal gets closed/cancelled resets text
   close(): void {
     this.getBird()
   }

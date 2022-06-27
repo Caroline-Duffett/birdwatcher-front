@@ -48,11 +48,11 @@
 }
 
 /* white background */
-/* .modal {
+.modal {
   background-color: white;
-} */
+}
 
 /* very dark background */
-.modal {
+/* .modal {
   background-color: rgba(0, 0, 0, 0.91);
-}
+} */
