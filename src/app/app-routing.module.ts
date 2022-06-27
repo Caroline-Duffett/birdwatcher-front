@@ -8,7 +8,7 @@ import {AddFormComponent} from "./add-form/add-form.component"; //Imports the ad
 
 //Where we set the routes we want
 const routes: Routes = [
-  { path: '', redirectTo:'/welcome', pathMatch: 'full'}, //not sure if I need this since it looks like it should redirect with what is already there
+  { path: '', redirectTo:'/welcome', pathMatch: 'full'},
   { path: 'birds/:id', component: BirdShowComponent},
   { path: 'birds', component: BirdsIndexComponent},
   { path: 'welcome', component: WelcomePageComponent },
