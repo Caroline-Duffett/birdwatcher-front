@@ -15,6 +15,7 @@ import { AddFormComponent } from './add-form/add-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { SearchComponentComponent } from './search-component/search-component.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
     WelcomePageComponent,
     NavbarComponent,
     SearchPageComponent,
+    SearchComponentComponent,
   ],
   imports: [
     BrowserModule,
