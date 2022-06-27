@@ -27,8 +27,12 @@ export class AddFormComponent implements OnInit {
   name: string = ''
   scientificName: string = ''
   image: string = ''
-  location: string = ''
-  status: string = ''
+  food: string = ''
+  nesting: string = ''
+  behavior: string = ''
+  habitat: string = ''
+  conservationStatus: string = ''
+  region: string = ''
   description: string = ''
 
 
@@ -47,8 +51,12 @@ export class AddFormComponent implements OnInit {
   acceptedName = true;
   acceptedScientificName = true;
   acceptedImage = true;
-  acceptedLocation = true;
-  acceptedStatus = true;
+  acceptedFood = true;
+  acceptedNesting = true;
+  acceptedBehavior = true;
+  acceptedHabitat = true;
+  acceptedConservationStatus = true;
+  acceptedRegion = true;
   acceptedDescription = true;
 
 
@@ -57,8 +65,12 @@ export class AddFormComponent implements OnInit {
       name: add.form.value.name,
       scientificName: add.form.value.scientificName,
       image: add.form.value.image,
-      location: add.form.value.location,
-      status: add.form.value.status,
+      food: add.form.value.food,
+      nesting: add.form.value.nesting,
+      behavior: add.form.value.behavior,
+      habitat: add.form.value.habitat,
+      conservationStatus: add.form.value.status,
+      region: add.form.value.region,
       description: add.form.value.description
     }
 
@@ -81,16 +93,41 @@ export class AddFormComponent implements OnInit {
       this.acceptedImage = true;
     }
 
-    if (add.form.controls.location.status === "INVALID") {
-      this.acceptedLocation = false;
+    if (add.form.controls.food.status === "INVALID") {
+      this.acceptedFood = false;
     } else {
-      this.acceptedLocation = true;
+      this.acceptedFood = true;
     }
 
-    if (add.form.controls.status.status === "INVALID") {
-      this.acceptedStatus = false;
+    if (add.form.controls.nesting.status === "INVALID") {
+      this.acceptedNesting = false;
     } else {
-      this.acceptedStatus = true;
+      this.acceptedNesting = true;
+    }
+
+    if (add.form.controls.behavior.status === "INVALID") {
+      this.acceptedBehavior = false;
+    } else {
+      this.acceptedBehavior = true;
+    }
+
+    if (add.form.controls.habitat.status === "INVALID") {
+      this.acceptedHabitat = false;
+    } else {
+      this.acceptedHabitat = true;
+    }
+
+
+    if (add.form.controls.conservationStatus.status === "INVALID") {
+      this.acceptedConservationStatus = false;
+    } else {
+      this.acceptedConservationStatus = true;
+    }
+
+    if (add.form.controls.region.status === "INVALID") {
+      this.acceptedRegion = false;
+    } else {
+      this.acceptedRegion = true;
     }
 
     if (add.form.controls.description.status === "INVALID") {
@@ -99,7 +136,7 @@ export class AddFormComponent implements OnInit {
       this.acceptedDescription = true;
     }
 
-    if (add.form.controls.description.status !== "INVALID" && add.form.controls.status.status !== "INVALID" && add.form.controls.location.status !== "INVALID" && add.form.controls.image.status !== "INVALID" && add.form.controls.scientificName.status !== "INVALID" && add.form.controls.name.status !== "INVALID") {
+    if (add.form.controls.description.status !== "INVALID" && add.form.controls.region.status !== "INVALID" && add.form.controls.conservationStatus.status !== "INVALID" && add.form.controls.habitat.status !== "INVALID" && add.form.controls.behavior.status !== "INVALID" && add.form.controls.nesting.status !== "INVALID" && add.form.controls.food.status !== "INVALID" && add.form.controls.image.status !== "INVALID" && add.form.controls.scientificName.status !== "INVALID" && add.form.controls.name.status !== "INVALID") {
       this.birdService.addBird(newBird as Bird).subscribe(() => {
         this
       })

@@ -35,18 +35,54 @@
       <br/>
 
       <div class="form-group">
-        <label for="location">Location: </label>
-        <input type="text" name="location" class="form-control" [(ngModel)]=location placeholder="Location" required>
-        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedLocation">
+        <label for="food">Food: </label>
+        <input type="text" name="food" class="form-control" [(ngModel)]=food placeholder="Food" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedFood">
           Field is required
         </div>
       </div>
       <br/>
 
       <div class="form-group">
-        <label for="status">Status: </label>
-        <input type="text" name="status" class="form-control" [(ngModel)]=status placeholder="Status" required>
-        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedStatus">
+        <label for="nesting">Nesting: </label>
+        <input type="text" name="nesting" class="form-control" [(ngModel)]=nesting placeholder="Nesting" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedNesting">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="behavior">Behavior: </label>
+        <input type="text" name="behavior" class="form-control" [(ngModel)]=behavior placeholder="Behavior" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedBehavior">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="habitat">Habitat: </label>
+        <input type="text" name="habitat" class="form-control" [(ngModel)]=habitat placeholder="Habitat" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedHabitat">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="conservationStatus">Conservation Status: </label>
+        <input type="text" name="conservationStatus" class="form-control" [(ngModel)]=conservationStatus placeholder="Conservation Status" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedConservationStatus">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="region">Region: </label>
+        <input type="text" name="region" class="form-control" [(ngModel)]=region placeholder="Region" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedRegion">
           Field is required
         </div>
       </div>
