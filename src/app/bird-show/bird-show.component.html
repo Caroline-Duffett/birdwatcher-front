@@ -3,7 +3,9 @@
   <div class="btn-flexbox">
       <button class="back-btn" type="button" (click)="backBtn()">Back</button>
       <div class="bird-btns">
-        <button class="edit-btn" type="button">Edit</button>
+        <a routerLink="/birds/{{bird._id}}/edit">
+          <button class="edit-btn" type="button">Edit</button>
+        </a>
         <button class="delete-btn" type="button" class="delete" title="delete" (click)="delete(bird)">Delete</button>
       </div>
   </div>
@@ -45,7 +47,7 @@
 
         <div class="modal-body">
           <div class="container mt-3 border border-secondary rounded w-100">
-              <form #add ngFrom (ngSubmit)="editSubmit()">
+              <form #edit ngFrom (ngSubmit)="editSubmit()">
 
                 <div class="form-group">
                   <label for="name">Name: </label>

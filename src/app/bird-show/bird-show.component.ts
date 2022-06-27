@@ -53,6 +53,19 @@ export class BirdShowComponent implements OnInit {
     }
   }
 
+  // editSubmit() {
+  //   if (this.myFormName.valid) {
+  //     console.log("Submitted!");
+  //     this.myFormName.reset();
+  //   }
+  // }
+
+
+  // (click)="reset()"
+  // reset(): void {
+  //   this.name.resetForm()
+  // }
+
 
   //Deletes the bird and redirects you back to the index page
   delete(bird: Bird): void {
