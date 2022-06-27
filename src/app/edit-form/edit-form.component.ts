@@ -49,8 +49,6 @@ export class EditFormComponent implements OnInit {
     // const id = this.route.snapshot.paramMap.get('id')!;
     // console.log(this.birdService.getBird(id));
 
-
-
     const id = this.route.snapshot.paramMap.get('id')!;
     //console.log("this id is: " + this.route.snapshot.paramMap.get('id')!);
     this.birdService.getBird(id).subscribe(bird => this.bird = bird);
