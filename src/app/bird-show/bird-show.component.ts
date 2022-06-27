@@ -19,6 +19,7 @@ export class BirdShowComponent implements OnInit {
 
   //Defines bird property and error handling if undefined
   bird: Bird | undefined;
+  birds: Bird[] = [] //sets birds property
 
   constructor(
     private route: ActivatedRoute,
@@ -67,11 +68,20 @@ export class BirdShowComponent implements OnInit {
   //   this.name.resetForm()
   // }
 
+  //Gets the birds from the bird service (where the birds are being called in from database). Need to here to grab the data again after it was deleted. This function gets called in the delete function.
+  getBirds(): void {
+    this.birdService.getBirds()
+    .subscribe(birds => this.birds = birds);
+    //this.location.reload()
+    //  window.location.reload() //Infinite loop of refreshes
+  }
 
   //Deletes the bird and redirects you back to the index page
   delete(bird: Bird): void {
     this.birdService.deleteBird(bird._id).subscribe();
     this.location.back()
+    //window.location.reload() //Does not fix what we need
+    this.getBirds()
   }
 }
 

@@ -12,6 +12,8 @@ import {BirdService} from '../bird.service';
 
 export class AddFormComponent implements OnInit {
 
+  birds: Bird[] = [] //sets birds property
+
   constructor(
     private birdService: BirdService,
     //private route: ActivatedRoute,
@@ -30,8 +32,17 @@ export class AddFormComponent implements OnInit {
   status: string = ''
   description: string = ''
 
-  submit(name: string, scientificName: string, image: string, location: string, status: string, description: string): void {
 
+  //Gets the birds from the bird service (where the birds are being called in from database). Need to here to grab the data again after it was added. This function gets called in the submit function.
+  getBirds(): void {
+    this.birdService.getBirds()
+    .subscribe(birds => this.birds = birds);
+    //this.location.reload()
+    //  window.location.reload() //Infinite loop of refreshes
+  }
+
+
+  submit(name: string, scientificName: string, image: string, location: string, status: string, description: string): void {
     const newBird = {
       name: name,
       scientificName: scientificName,
@@ -47,6 +58,8 @@ export class AddFormComponent implements OnInit {
 
     this.locationAngular.back()
     // this.router.navigate(['/birds']);
+
+    this.getBirds()
   }
 
 }
