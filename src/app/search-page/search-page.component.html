@@ -1,1 +1,15 @@
-<p>search-page works!</p>
+<h1>Search Page</h1>
+
+<div id="search-div">
+  <label for="search">Bird Search</label>
+  <input #searchBox id="search" (input)="search(searchBox.value)"/>
+
+  <ul class="result">
+    <div *ngFor="let bird of birds$ | async" >
+      <a routerLink="/birds/{{bird._id}}">
+        <img src="{{bird.image}}" alt="photo of {{bird.name}}">
+        <h4 class="bird-name">{{bird.name}}</h4>
+      </a>
+    </div>
+  </ul>
+</div>
