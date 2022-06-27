@@ -123,43 +123,6 @@ export class AddFormComponent implements OnInit {
 //====================================================================================================================//
 //                                                      Grave Yard
 //====================================================================================================================//
-//-------------------------------------------------------------------------------- First attempt at error logging ---//
-  // if (HttpErrorResponse.error.lengthComputable === false) {
-  //   console.log("field is required");
-  // }
-
-
-  // submit(addForm: any): void {
-  //   // const newBird = {
-  //   //   name: name,
-  //   //   scientificName: scientificName,
-  //   //   image: image,
-  //   //   location: location,
-  //   //   status: status,
-  //   //   description: description
-  //   // }
-  //
-  //   console.log("form submitted", addForm);
-  //
-  //
-  //   this.birdService.addBird(addForm as Bird).subscribe(() => {
-  //     this
-  //   })
-  //
-  //   // if (HttpErrorResponse.error.lengthComputable === false) {
-  //   //   console.log("field is required");
-  //   // }
-  //
-  //   //console.log(add);
-  //
-  //
-  //   //this.locationAngular.back()
-  //
-  //   //this.getBirds()
-  // }
-//--------------------------------------------------------------------------------------------------------------------//
-
-
 //-------------------------------------------------------------------------- Original Before Error handling added ---//
   // import { Component, OnInit } from '@angular/core';
   // import {Bird} from '../bird';
