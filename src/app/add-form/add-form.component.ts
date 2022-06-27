@@ -69,7 +69,7 @@ export class AddFormComponent implements OnInit {
       nesting: add.form.value.nesting,
       behavior: add.form.value.behavior,
       habitat: add.form.value.habitat,
-      conservationStatus: add.form.value.status,
+      conservationStatus: add.form.value.conservationStatus,
       region: add.form.value.region,
       description: add.form.value.description
     }
