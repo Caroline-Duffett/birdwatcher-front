@@ -12,7 +12,7 @@ import {BirdService} from '../bird.service';
 
 export class AddFormComponent implements OnInit {
 
-  birds: Bird[] = [] //sets birds property
+  birds: Bird[] = [] //sets birds property (need this here to get the birds again after this has been added)
 
   constructor(
     private birdService: BirdService,

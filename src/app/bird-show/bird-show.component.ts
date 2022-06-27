@@ -19,7 +19,7 @@ export class BirdShowComponent implements OnInit {
 
   //Defines bird property and error handling if undefined
   bird: Bird | undefined;
-  birds: Bird[] = [] //sets birds property
+  birds: Bird[] = [] //sets birds property (need this here to get the birds again after delete)
 
   constructor(
     private route: ActivatedRoute,
@@ -53,6 +53,11 @@ export class BirdShowComponent implements OnInit {
       this.birdService.updateBird(this.bird)
       .subscribe(() => this);
     }
+  }
+
+  //If modal gets closed/cancelled
+  close(): void {
+    this.getBird()
   }
 
   // editSubmit() {
