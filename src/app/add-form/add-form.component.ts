@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Bird} from '../bird';
 import {BirdService} from '../bird.service';
-// import { ActivatedRoute, Router } from '@angular/router'; //Shows current snapshot of the route?
- import { Location } from '@angular/common'; //Interacts with the browser URL
+import { Location } from '@angular/common'; //Interacts with the browser URL
 
 @Component({
   selector: 'app-add-form',
@@ -16,9 +15,7 @@ export class AddFormComponent implements OnInit {
 
   constructor(
     private birdService: BirdService,
-    //private route: ActivatedRoute,
     private locationAngular: Location
-    //private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -37,8 +34,6 @@ export class AddFormComponent implements OnInit {
   getBirds(): void {
     this.birdService.getBirds()
     .subscribe(birds => this.birds = birds);
-    //this.location.reload()
-    //  window.location.reload() //Infinite loop of refreshes
   }
 
 
@@ -57,7 +52,6 @@ export class AddFormComponent implements OnInit {
     })
 
     this.locationAngular.back()
-    // this.router.navigate(['/birds']);
 
     this.getBirds()
   }
