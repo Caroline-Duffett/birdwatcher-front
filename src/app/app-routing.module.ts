@@ -3,9 +3,7 @@ import {RouterModule, Routes} from '@angular/router'; //imports the RouterModule
 import {BirdsIndexComponent} from './birds-index/birds-index.component'; //Imports out Birds index because we want to give it a route
 import {BirdShowComponent} from './bird-show/bird-show.component'; //Imports out Bird show because we want to give it a route
 import {WelcomePageComponent} from './welcome-page/welcome-page.component'; //Imports the welcome page component
-import {AddFormComponent} from "./add-form/add-form.component";
-import {EditFormComponent} from "./edit-form/edit-form.component";
-//import {EditFormComponent} from "./edit-form/edit-form-component";
+import {AddFormComponent} from "./add-form/add-form.component"; //Imports the add from component
 
 
 //Where we set the routes we want
@@ -15,7 +13,6 @@ const routes: Routes = [
   { path: 'birds', component: BirdsIndexComponent},
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'add-bird', component: AddFormComponent},
-  { path: 'birds/:id/edit', component: EditFormComponent}
 ];
 
 

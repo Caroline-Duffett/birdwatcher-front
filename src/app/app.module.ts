@@ -13,7 +13,6 @@ import { BirdShowComponent } from './bird-show/bird-show.component';
 import { AddFormComponent } from './add-form/add-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { EditFormComponent } from './edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     AddFormComponent,
     WelcomePageComponent,
     NavbarComponent,
-    EditFormComponent,
   ],
   imports: [
     BrowserModule,
