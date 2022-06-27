@@ -3,7 +3,11 @@ export interface Bird {
   name: string;
   scientificName: string;
   image: string;
-  location: string;
-  status: string;
+  food: string;
+  nesting: string;
+  behavior: string;
+  habitat: string;
+  conservationStatus: string;
+  region: string;
   description: string;
 }
