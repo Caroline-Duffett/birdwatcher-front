@@ -1,4 +1,4 @@
-<div class="btn-flexbox">
+<!-- <div class="btn-flexbox">
   <button class="back-btn" type="button" (click)="backBtn()">Back</button>
 </div>
 
@@ -47,4 +47,132 @@
         <button class="btn btn-success" type="submit">Submit</button>
       </div>
     </form>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-flexbox">
+  <button class="back-btn" type="button" (click)="backBtn()">Back</button>
 </div>
+
+
+<div class="container mt-3 border border-secondary rounded w-50">
+  <h1 class="mt-2">Add A Bird</h1>
+    <form #add="ngForm" (ngSubmit)="submit(add)">
+
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" [(ngModel)]=name placeholder="Name" required>
+
+
+        <!-- <div class="alert alert-danger" role="alert" *ngIf = "name.touched && name.invalid">
+          Something went wrong
+        </div> -->
+
+
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="scientificName">Scientific Name: </label>
+        <input type="text" name="scientificName" class="form-control" [(ngModel)]=scientificName placeholder="Scientific Name" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="image">Image: </label>
+        <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <input type="text" name="location" class="form-control" [(ngModel)]=location placeholder="Location" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="status">Status: </label>
+        <input type="text" name="status" class="form-control" [(ngModel)]=status placeholder="Status" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <textarea type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required></textarea>
+      </div>
+      <br/>
+
+      <div class="sumbit-btn text-center mb-2">
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- <div class="btn-flexbox">
+  <button class="back-btn" type="button" (click)="backBtn()">Back</button>
+</div>
+
+
+<div class="container mt-3 border border-secondary rounded w-50">
+  <h1 class="mt-2">Add A Bird</h1>
+    <form #add="ngForm" (ngSubmit)="submit(name, scientificName, image, location, status, description)">
+
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" [(ngModel)]=name placeholder="Name" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="scientificName">Scientific Name: </label>
+        <input type="text" name="scientificName" class="form-control" [(ngModel)]=scientificName placeholder="Scientific Name" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="image">Image: </label>
+        <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <input type="text" name="location" class="form-control" [(ngModel)]=location placeholder="Location" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="status">Status: </label>
+        <input type="text" name="status" class="form-control" [(ngModel)]=status placeholder="Status" required>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <textarea type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required></textarea>
+      </div>
+      <br/>
+
+      <div class="sumbit-btn text-center mb-2">
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
+    </form>
+</div> -->
