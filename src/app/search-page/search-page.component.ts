@@ -56,6 +56,50 @@
 // }
 
 
+// import { Component, OnInit } from '@angular/core';
+// import { Bird } from '../bird';
+// import { BirdService } from '../bird.service';
+// import { ActivatedRoute } from '@angular/router';
+//
+// @Component({
+//   selector: 'app-search-page',
+//   templateUrl: './search-page.component.html',
+//   styleUrls: ['./search-page.component.css']
+// })
+//
+// export class SearchPageComponent implements OnInit {
+//
+//   birds: Bird[] = [] //sets birds property
+//
+//   constructor(
+//     private birdService: BirdService, //defines and injects the bird service we made
+//     private route: ActivatedRoute
+//   ) { }
+//
+//
+//   ngOnInit(): void {
+//     this.getBirds();
+//
+//     this.route.params.subscribe(params => {
+//       if (params.searchTerm) {
+//         this.birds = this.birdService.getAll().filter(bird => bird.name.toLowerCase().includes(params.searchTerm.toLowerCase()));
+//       } else {
+//         this.birds = this.birdService.getAll();
+//       }
+//     })
+//   }
+//
+//
+//   //Gets the birds from the bird service (where the birds are being called in from database)
+//   getBirds(): void {
+//     this.birdService.getBirds()
+//     .subscribe(birds => this.birds = birds);
+//   }
+//
+// }
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { Bird } from '../bird';
 import { BirdService } from '../bird.service';
@@ -79,14 +123,6 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBirds();
-
-    this.route.params.subscribe(params => {
-      if (params.searchTerm) {
-        this.birds = this.birdService.getAll().filter(bird => bird.name.toLowerCase().includes(params.searchTerm.toLowerCase()));
-      } else {
-        this.birds = this.birdService.getAll();
-      }
-    })
   }
 
 

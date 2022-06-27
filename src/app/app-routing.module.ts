@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'birds/:id', component: BirdShowComponent },
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'add-bird', component: AddFormComponent },
-  { path: 'search/:searchTerm', component: SearchPageComponent },
+  { path: 'search', component: SearchPageComponent },
 ];
 
 
