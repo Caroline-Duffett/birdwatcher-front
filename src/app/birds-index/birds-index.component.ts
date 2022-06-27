@@ -29,8 +29,6 @@ export class BirdsIndexComponent implements OnInit {
   getBirds(): void {
     this.birdService.getBirds()
     .subscribe(birds => this.birds = birds);
-    //this.location.reload()
-    //  window.location.reload() //Infinite loop of refreshes
   }
 
 }
