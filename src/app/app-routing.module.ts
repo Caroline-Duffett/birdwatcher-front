@@ -9,12 +9,12 @@ import {SearchPageComponent} from "./search-page/search-page.component" //Import
 
 //Where we set the routes we want
 const routes: Routes = [
-  { path: '', redirectTo:'/welcome', pathMatch: 'full'},
-  { path: 'birds', component: BirdsIndexComponent},
-  { path: 'birds/:id', component: BirdShowComponent},
+  { path: '', redirectTo:'/welcome', pathMatch: 'full' },
+  { path: 'birds', component: BirdsIndexComponent },
+  { path: 'birds/:id', component: BirdShowComponent },
   { path: 'welcome', component: WelcomePageComponent },
-  { path: 'add-bird', component: AddFormComponent},
-  { path: 'search', component: SearchPageComponent}
+  { path: 'add-bird', component: AddFormComponent },
+  { path: 'search/:searchTerm', component: SearchPageComponent },
 ];
 
 
