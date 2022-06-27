@@ -203,41 +203,54 @@
       <div class="form-group">
         <label for="name">Name: </label>
         <input type="text" name="name" class="form-control" [(ngModel)]=name placeholder="Name" required>
-        <div id="name-alert" class="alert alert-danger" role="alert">
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedName">
           Field is required
         </div>
-
-
       </div>
       <br/>
 
       <div class="form-group">
         <label for="scientificName">Scientific Name: </label>
         <input type="text" name="scientificName" class="form-control" [(ngModel)]=scientificName placeholder="Scientific Name" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedScientificName">
+          Field is required
+        </div>
       </div>
       <br/>
 
       <div class="form-group">
         <label for="image">Image: </label>
         <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedImage">
+          Field is required
+        </div>
       </div>
       <br/>
 
       <div class="form-group">
         <label for="location">Location: </label>
         <input type="text" name="location" class="form-control" [(ngModel)]=location placeholder="Location" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedLocation">
+          Field is required
+        </div>
       </div>
       <br/>
 
       <div class="form-group">
         <label for="status">Status: </label>
         <input type="text" name="status" class="form-control" [(ngModel)]=status placeholder="Status" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedStatus">
+          Field is required
+        </div>
       </div>
       <br/>
 
       <div class="form-group">
         <label for="description">Description: </label>
         <textarea type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required></textarea>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedDescription">
+          Field is required
+        </div>
       </div>
       <br/>
 
