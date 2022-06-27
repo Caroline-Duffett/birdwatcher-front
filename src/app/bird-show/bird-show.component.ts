@@ -60,19 +60,6 @@ export class BirdShowComponent implements OnInit {
     this.getBird()
   }
 
-  // editSubmit() {
-  //   if (this.myFormName.valid) {
-  //     console.log("Submitted!");
-  //     this.myFormName.reset();
-  //   }
-  // }
-
-
-  // (click)="reset()"
-  // reset(): void {
-  //   this.name.resetForm()
-  // }
-
   //Gets the birds from the bird service (where the birds are being called in from database). Need to here to grab the data again after it was deleted. This function gets called in the delete function.
   getBirds(): void {
     this.birdService.getBirds()
