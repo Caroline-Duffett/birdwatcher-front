@@ -1,10 +1,7 @@
 <div class="bird-page" *ngIf="bird">
 
   <div class="btn-flexbox">
-      <button class="back-btn" type="button" (click)="backBtn()">Back</button>
-      <div class="bird-btns">
-        <button class="delete-btn" type="button" class="delete" title="delete" (click)="delete(bird)">Delete</button>
-      </div>
+    <button class="back-btn" type="button" (click)="backBtn()">Back</button>
   </div>
 
   <div class="bird-info">
@@ -24,10 +21,14 @@
     </div>
   </div>
 
-  <!-- Edit button opens modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal">
-    Edit
-  </button>
+  <div class="bird-btns">
+    <!-- Edit button opens modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal">
+      Edit
+    </button>
+    <button class="delete-btn" type="button" class="delete" title="delete" (click)="delete(bird)">Delete</button>
+  </div>
+
 
   <!-- Edit Form Modal -->
   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" aria-hidden="true" (click)="close()">
