@@ -2,14 +2,14 @@
 
 <div id="search-component">
   <label for="search-box">Bird Search</label>
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Name"/>
 
 
   <div class="d-flex flex-wrap justify-content-evenly text-white">
 
     <div class="search-result">
 
-      <div class="flex-item m-2 justify-content-center bg-secondary" *ngFor="let bird of birds | async">
+      <div class="flex-item m-2 justify-content-center bg-secondary" *ngFor="let bird of birds$ | async">
         <a routerLink="/birds/{{bird._id}}">
           <img src="{{bird.image}}" alt="photo of {{bird.name}}">
           <h4 class="bird-name">{{bird.name}}</h4>

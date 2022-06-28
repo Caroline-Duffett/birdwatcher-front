@@ -31,10 +31,12 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 export class SearchComponentComponent implements OnInit {
 
-  birds!: Observable<Bird[]>; //sets birds property
+  birds$!: Observable<Bird[]>; //Lets page load but does not filter right, also not how the tutorial was
+  //birds$!: Observable<Bird>; //sets birds property (Example but does not work)
 
-  private searchTerms = new Subject<string>();
-
+  private searchTerms = new Subject<string>(); //OG
+  //private searchTerms = new Subject<string>(1); //Did not work
+  //private searchTerms = new ReplaySubject<string>(1); //Did not work
 
 
   constructor(
@@ -46,11 +48,12 @@ export class SearchComponentComponent implements OnInit {
     this.searchTerms.next(term);
   }
 
+
   ngOnInit(): void {
-    this.birds = this.searchTerms.pipe(
-     debounceTime(350), // wait 350ms after each keystroke before considering the term
-     distinctUntilChanged(),  // ignore new term if same as previous term
-     switchMap((term: string) => this.birdService.searchBirds(term)), // switch to new search observable each time the term changes
+    this.birds$ = this.searchTerms.pipe(
+      debounceTime(350), // wait 350ms after each keystroke before considering the term
+      distinctUntilChanged(),  // ignore new term if same as previous term
+      switchMap((term: string) => this.birdService.searchBirds(term)), // switch to new search observable each time the term changes
    );
   }
 
