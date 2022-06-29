@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-login-modal',
-  templateUrl: './login-modal.component.html',
-  styleUrls: ['./login-modal.component.css']
+  selector: 'app-your-birds-nav',
+  templateUrl: './your-birds-nav.component.html',
+  styleUrls: ['./your-birds-nav.component.css']
 })
-export class LoginModalComponent implements OnInit {
+export class YourBirdsNavComponent implements OnInit {
 
   constructor() { }
 
@@ -29,5 +29,6 @@ export class LoginModalComponent implements OnInit {
     this.login = true;
     this.create = false;
   }
+
 
 }
