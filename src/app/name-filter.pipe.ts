@@ -8,7 +8,7 @@ import {Bird} from './bird';
 
 
 
-export class BirdFilterPipe implements PipeTransform {
+export class BirdNameFilterPipe implements PipeTransform {
   transform(birds: Bird[], searchText: string): Bird[] {
     if (!birds || !searchText) {
       return [];
