@@ -1,12 +1,31 @@
 <h1>Search Component Component</h1>
 
+<button type="button" name="button" (click)="debugging()">Debug</button>
 
-
-
-
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="search-bird-name">
+      <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search by name">
+      <h1>{{searchText}}</h1>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Scientific Name</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bird of birds | filter:searchText">
+          <td>{{bird.name}}</td>
+          <td>{{bird.scientificName}}</td>
+          <td><img src="{{bird.image}}" alt="photo of a {{bird.name}}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
 
