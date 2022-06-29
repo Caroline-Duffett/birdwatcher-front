@@ -27,3 +27,17 @@ img {
 .search-bird {
   text-align: center;
 }
+
+
+h1 {
+  margin-top: 2rem;
+}
+
+.search-btns {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+button {
+  margin: 0px 20px;
+}
