@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser'; //exports app to brow
 import { HttpClientModule } from '@angular/common/http'; //Lets us connect to http links
 import { AppRoutingModule } from './app-routing.module'; //let us set up routes to different "pages". Single page app so it is not really changing but can set up different routes like you would if there were
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here?, Lets us use forms
-import { Ng2SearchPipeModule  } from "ng2-search-filter";
 import { BirdFilterPipe } from './filter.pipe';
 
 
@@ -33,7 +32,6 @@ import { SearchComponentComponent } from './search-component/search-component.co
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
