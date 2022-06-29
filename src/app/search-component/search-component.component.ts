@@ -13,7 +13,8 @@ import {BirdService} from '../bird.service'; //Imports (injects?) the bird servi
 export class SearchComponentComponent implements OnInit {
 
   birds: Bird[] = []//index way
-  searchText: string = ''
+  searchTextName: string = ''
+  searchTextRegion: string = ''
 
   constructor(
     private birdService: BirdService //defines and injects the bird service we made
@@ -24,10 +25,6 @@ export class SearchComponentComponent implements OnInit {
     this.getBirds();
   }
 
-
-  debugging() {
-    console.log(this.searchText); //can register search text
-  }
 
   //Gets the birds from the bird service (where the birds are being called in from database)
   getBirds(): void {

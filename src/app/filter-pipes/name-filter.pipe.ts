@@ -5,17 +5,14 @@ import {Bird} from '../bird';
   name: 'nameFilter'
 })
 
-
-
-
 export class BirdNameFilterPipe implements PipeTransform {
-  transform(birds: Bird[], searchText: string): Bird[] {
-    if (!birds || !searchText) {
+  transform(birds: Bird[], searchTextName: string): Bird[] {
+    if (!birds || !searchTextName) {
       return [];
     }
 
     return birds.filter(bird =>
-      bird.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 || bird.scientificName.toLowerCase().indexOf(searchText.toLowerCase()) !== -1)
+      bird.name.toLowerCase().indexOf(searchTextName.toLowerCase()) !== -1 || bird.scientificName.toLowerCase().indexOf(searchTextName.toLowerCase()) !== -1)
   }
 
 }
