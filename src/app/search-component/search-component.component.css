@@ -1,0 +1,29 @@
+a {
+  text-decoration: none;
+}
+
+.bird-name {
+  text-align: center;
+  color: white;
+  padding: 3px;
+}
+
+img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+}
+
+#bird-card {
+  width: 300px;
+}
+
+.title {
+  text-align: center;
+}
+
+
+/* search */
+.search-bird {
+  text-align: center;
+}

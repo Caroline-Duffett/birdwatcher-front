@@ -5,6 +5,122 @@
 
 <div class="container mt-3 border border-secondary rounded w-50">
   <h1 class="mt-2">Add A Bird</h1>
+    <form #add="ngForm" (ngSubmit)="submit(add)">
+
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" name="name" class="form-control" [(ngModel)]=name placeholder="Name" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedName">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="scientificName">Scientific Name: </label>
+        <input type="text" name="scientificName" class="form-control" [(ngModel)]=scientificName placeholder="Scientific Name" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedScientificName">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="image">Image: </label>
+        <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedImage">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="food">Food: </label>
+        <input type="text" name="food" class="form-control" [(ngModel)]=food placeholder="Food" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedFood">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="nesting">Nesting: </label>
+        <input type="text" name="nesting" class="form-control" [(ngModel)]=nesting placeholder="Nesting" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedNesting">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="behavior">Behavior: </label>
+        <input type="text" name="behavior" class="form-control" [(ngModel)]=behavior placeholder="Behavior" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedBehavior">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="habitat">Habitat: </label>
+        <input type="text" name="habitat" class="form-control" [(ngModel)]=habitat placeholder="Habitat" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedHabitat">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="conservationStatus">Conservation Status: </label>
+        <input type="text" name="conservationStatus" class="form-control" [(ngModel)]=conservationStatus placeholder="Conservation Status" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedConservationStatus">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="region">Region: </label>
+        <input type="text" name="region" class="form-control" [(ngModel)]=region placeholder="Region" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedRegion">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <textarea type="text" name="description" class="form-control" [(ngModel)]=description placeholder="Description" required></textarea>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedDescription">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="sumbit-btn text-center mb-2">
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!------------------------- Original Form Before Error Handling  -------------------->
+<!-- <div class="btn-flexbox">
+  <button class="back-btn" type="button" (click)="backBtn()">Back</button>
+</div>
+
+
+<div class="container mt-3 border border-secondary rounded w-50">
+  <h1 class="mt-2">Add A Bird</h1>
     <form #add ngFrom (ngSubmit)="submit(name, scientificName, image, location, status, description)">
 
       <div class="form-group">
@@ -47,4 +163,4 @@
         <button class="btn btn-success" type="submit">Submit</button>
       </div>
     </form>
-</div>
+</div> -->

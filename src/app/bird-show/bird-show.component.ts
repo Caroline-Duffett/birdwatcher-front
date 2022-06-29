@@ -39,7 +39,6 @@ export class BirdShowComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.birdService.getBird(id)
       .subscribe(bird => this.bird = bird);
-    console.log("The bird is show: " + this.bird);
   }
 
   //Back button
@@ -76,6 +75,10 @@ export class BirdShowComponent implements OnInit {
     this.getBirds()
   }
 }
+
+
+
+
 
 
 
