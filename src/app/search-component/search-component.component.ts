@@ -16,52 +16,6 @@
 
 
 
-// import { Component, OnInit } from '@angular/core';
-// import { Observable, Subject } from 'rxjs';
-// import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-// import {Bird} from '../bird'; //Calls in the bird model/schema we made
-// import {BirdService} from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
-//
-//
-// @Component({
-//   selector: 'app-search-component',
-//   templateUrl: './search-component.component.html',
-//   styleUrls: ['./search-component.component.css']
-// })
-//
-// export class SearchComponentComponent implements OnInit {
-//
-//   birds$!: Observable<Bird[]>; //Lets page load but does not filter right
-//   //birds$!: Observable<Bird>; //sets birds property (does not work)
-//
-//   private searchTerms = new Subject<string>(); //OG
-//   //private searchTerms = new Subject<string>(1); //Did not work
-//   //private searchTerms = new ReplaySubject<string>(1); //Did not work
-//
-//
-//   constructor(
-//     private birdService: BirdService //defines and injects the bird service we made
-//   ) { }
-//
-//   // Push a search term into the observable stream.
-//   search(term: string): void {
-//     let terms = this.searchTerms.next(term);
-//   }
-//
-//
-//   ngOnInit(): void {
-//     this.birds$ = this.searchTerms.pipe(
-//       debounceTime(450), // wait 250ms after each keystroke before considering the term
-//       distinctUntilChanged(),  // ignore new term if same as previous term
-//       switchMap((term: string) => this.birdService.searchBirds(term)), // switch to new search observable each time the term changes
-//    );
-//   }
-// }
-
-
-
-
-
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
@@ -91,18 +45,11 @@ export class SearchComponentComponent implements OnInit {
 
   // Push a search term into the observable stream.
   search(term: string): void {
-    this.searchTerms.next(term);
-    //console.log(this.searchTerms.next(term)) //undefined
-    //console.log(this.searchTerms.Subject) //can't access
-    //console.log(term) //Logs what is in the textbox
-    //console.log(this.searchTerms.observers.length); // logs length, always 1
-    //console.log(this.searchTerms.observers[0].next); //not helpufl
+    let terms = this.searchTerms.next(term);
   }
 
 
-
   ngOnInit(): void {
-    // console.log(this.birds$); //undefined
     this.birds$ = this.searchTerms.pipe(
       debounceTime(450), // wait 250ms after each keystroke before considering the term
       distinctUntilChanged(),  // ignore new term if same as previous term
@@ -110,6 +57,12 @@ export class SearchComponentComponent implements OnInit {
    );
   }
 }
+
+
+
+
+
+
 
 
 
@@ -219,5 +172,57 @@ export class SearchComponentComponent implements OnInit {
   //   }
   //
   //
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
+
+
+//--------------------------------------------------------------------------------- Tour of Heroes Tutorial Search ---//
+  // import { Component, OnInit } from '@angular/core';
+  // import { Observable, Subject } from 'rxjs';
+  // import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+  // import {Bird} from '../bird'; //Calls in the bird model/schema we made
+  // import {BirdService} from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
+  //
+  //
+  // @Component({
+  //   selector: 'app-search-component',
+  //   templateUrl: './search-component.component.html',
+  //   styleUrls: ['./search-component.component.css']
+  // })
+  //
+  // export class SearchComponentComponent implements OnInit {
+  //
+  //   birds$!: Observable<Bird[]>; //Lets page load but does not filter right
+  //   //birds$!: Observable<Bird>; //sets birds property (does not work)
+  //
+  //   private searchTerms = new Subject<string>(); //OG
+  //   //private searchTerms = new Subject<string>(1); //Did not work
+  //   //private searchTerms = new ReplaySubject<string>(1); //Did not work
+  //
+  //
+  //   constructor(
+  //     private birdService: BirdService //defines and injects the bird service we made
+  //   ) { }
+  //
+  //   // Push a search term into the observable stream.
+  //   search(term: string): void {
+  //     this.searchTerms.next(term);
+  //     //console.log(this.searchTerms.next(term)) //undefined
+  //     //console.log(this.searchTerms.Subject) //can't access
+  //     //console.log(term) //Logs what is in the textbox
+  //     //console.log(this.searchTerms.observers.length); // logs length, always 1
+  //     //console.log(this.searchTerms.observers[0].next); //not helpufl
+  //   }
+  //
+  //
+  //
+  //   ngOnInit(): void {
+  //     // console.log(this.birds$); //undefined
+  //     this.birds$ = this.searchTerms.pipe(
+  //       debounceTime(450), // wait 250ms after each keystroke before considering the term
+  //       distinctUntilChanged(),  // ignore new term if same as previous term
+  //       switchMap((term: string) => this.birdService.searchBirds(term)), // switch to new search observable each time the term changes
+  //    );
+  //   }
   // }
 //--------------------------------------------------------------------------------------------------------------------//
