@@ -13,7 +13,12 @@ import {BirdService} from '../bird.service'; //Imports (injects?) the bird servi
 export class SearchComponentComponent implements OnInit {
 
   birds: Bird[] = []//index way
-  searchText: string = ''
+  searchTextName: string = ''
+  searchTextRegion: string = ''
+  searchTextDescription: string = ''
+
+  searchByName = true;
+  searchByLocation = false;
 
   constructor(
     private birdService: BirdService //defines and injects the bird service we made
@@ -25,16 +30,28 @@ export class SearchComponentComponent implements OnInit {
   }
 
 
-  debugging() {
-    console.log(this.searchText); //can register search text
-  }
-
   //Gets the birds from the bird service (where the birds are being called in from database)
   getBirds(): void {
     this.birdService.getBirds()
     .subscribe(birds => this.birds = birds);
   }
+
+
+  nameSearch() {
+    this.searchByName = true;
+    this.searchByLocation = false;
+  }
+
+
+  locationSearch() {
+    this.searchByName = false;
+    this.searchByLocation = true;
+  }
+
+
 }
+
+
 
 
 
@@ -287,6 +304,43 @@ export class SearchComponentComponent implements OnInit {
   //   constructor() { }
   //
   //   ngOnInit(): void {
+  //   }
+  //
+  // }
+//--------------------------------------------------------------------------------------------------------------------//
+
+
+//----------------------------------------------------------------------------------------- with ng search package ---//
+  // import { Component, OnInit } from '@angular/core';
+  // import { Observable, Subject } from 'rxjs';
+  // import {Bird} from '../bird'; //Calls in the bird model/schema we made
+  // import {BirdService} from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
+  //
+  //
+  // @Component({
+  //   selector: 'app-search-component',
+  //   templateUrl: './search-component.component.html',
+  //   styleUrls: ['./search-component.component.css']
+  // })
+  //
+  // export class SearchComponentComponent implements OnInit {
+  //
+  //   birds: Bird[] = []//index way
+  //   searchText: string = ''
+  //
+  //   constructor(
+  //     private birdService: BirdService //defines and injects the bird service we made
+  //   ) { }
+  //
+  //
+  //   ngOnInit(): void {
+  //     this.getBirds();
+  //   }
+  //
+  //   //Gets the birds from the bird service (where the birds are being called in from database)
+  //   getBirds(): void {
+  //     this.birdService.getBirds()
+  //     .subscribe(birds => this.birds = birds);
   //   }
   //
   // }
