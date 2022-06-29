@@ -15,7 +15,8 @@
 // }
 
 
-
+//tutorial: https://www.youtube.com/watch?v=vZ91vDD7FGY
+//package: https://www.npmjs.com/package/ng2-search-filter
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 //import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
@@ -65,7 +66,6 @@ export class SearchComponentComponent implements OnInit {
   debugging() {
     //console.log('button works');
     console.log(this.searchText); //can register search text
-
   }
 
 
