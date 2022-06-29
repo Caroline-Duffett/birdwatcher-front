@@ -15,7 +15,7 @@ export class BirdFilterPipe implements PipeTransform {
     }
 
     return birds.filter(bird =>
-      bird.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1)
+      bird.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 || bird.scientificName.toLowerCase().indexOf(searchText.toLowerCase()) !== -1)
   }
 
 }
