@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here?, Lets u
 //Filter Pipes
 import { BirdNameFilterPipe } from './filter-pipes/name-filter.pipe';
 import { BirdRegionFilterPipe } from './filter-pipes/region-filter.pipe';
-import { BirdDescriptionFilterPipe } from './filter-pipes/description-filter.pipe';
 
 
 
@@ -33,8 +32,7 @@ import { SearchComponentComponent } from './search-component/search-component.co
     NavbarComponent,
     SearchComponentComponent,
     BirdNameFilterPipe,
-    BirdRegionFilterPipe,
-    BirdDescriptionFilterPipe
+    BirdRegionFilterPipe
   ],
   imports: [
     BrowserModule,
