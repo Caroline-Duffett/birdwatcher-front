@@ -1,5 +1,5 @@
 import { PipeTransform, Pipe } from '@angular/core';
-import {Bird} from './bird';
+import {Bird} from '../bird';
 
 @Pipe({
   name: 'nameFilter'
