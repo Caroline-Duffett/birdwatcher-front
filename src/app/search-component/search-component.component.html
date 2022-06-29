@@ -35,6 +35,22 @@
     </div>
 
 
+    <div class="description-search">
+      <div class="search-bird">
+        <input type="text" name="search" [(ngModel)]="searchTextDescription" placeholder="Search by description">
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-evenly text-white" *ngIf="searchTextDescription !== ''">
+        <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | descriptionFilter:searchTextDescription">
+          <a routerLink="/birds/{{bird._id}}">
+            <img src="{{bird.image}}" alt="photo of {{bird.name}}">
+            <h4 class="bird-name">{{bird.name}}</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </div>
 
