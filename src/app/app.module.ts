@@ -21,6 +21,7 @@ import { AddFormComponent } from './add-form/add-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponentComponent } from './search-component/search-component.component';
+import { LoginModalComponent } from './login-modal/login-modal.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SearchComponentComponent } from './search-component/search-component.co
     NavbarComponent,
     SearchComponentComponent,
     BirdNameFilterPipe,
-    BirdRegionFilterPipe
+    BirdRegionFilterPipe,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,
