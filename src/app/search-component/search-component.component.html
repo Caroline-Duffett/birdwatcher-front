@@ -8,7 +8,26 @@
       <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search by name">
       <h1>{{searchText}}</h1>
     </div>
-    <table class="table table-striped">
+
+    <div class="d-flex flex-wrap justify-content-evenly text-white">
+      <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | filter:searchText">
+        <a routerLink="/birds/{{bird._id}}">
+          <img src="{{bird.image}}" alt="photo of {{bird.name}}">
+          <h4 class="bird-name">{{bird.name}}</h4>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- <div *ngFor="let bird of birds">
+      <p>Bird: {{bird}}</p>
+      <p>{{bird.name}}</p>
+      <p>{{bird.scientificName}}</p>
+      <p><img src="{{bird.image}}" alt="photo of a {{bird.name}}"></p>
+    </div> -->
+
+
+    <!-- <table class="table table-striped">
       <thead>
         <tr>
           <th>Name</th>
@@ -18,14 +37,17 @@
       </thead>
       <tbody>
         <tr *ngFor="let bird of birds | filter:searchText">
+          <p>Bird: {{bird}}</p>
           <td>{{bird.name}}</td>
           <td>{{bird.scientificName}}</td>
           <td><img src="{{bird.image}}" alt="photo of a {{bird.name}}"></td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
   </div>
 </div>
+
+
 
 
 

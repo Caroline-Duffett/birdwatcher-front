@@ -33,7 +33,9 @@ import {BirdService} from '../bird.service'; //Imports (injects?) the bird servi
 
 export class SearchComponentComponent implements OnInit {
 
-  birds!: Observable<Bird[]>; //Lets page load but does not filter right
+  birds: Bird[] = []//index way
+
+  //birds!: Observable<Bird[]>; //Lets page load but does not filter right
   //birds$!: Observable<Bird>; //sets birds property (does not work)
 
   searchText: string = ''
@@ -54,6 +56,7 @@ export class SearchComponentComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getBirds();
    //  this.birds$ = this.searchTerms.pipe(
    //    debounceTime(450), // wait 250ms after each keystroke before considering the term
    //    distinctUntilChanged(),  // ignore new term if same as previous term
@@ -68,6 +71,11 @@ export class SearchComponentComponent implements OnInit {
     console.log(this.searchText); //can register search text
   }
 
+  //Gets the birds from the bird service (where the birds are being called in from database)
+  getBirds(): void {
+    this.birdService.getBirds()
+    .subscribe(birds => this.birds = birds);
+  }
 
 
 }
