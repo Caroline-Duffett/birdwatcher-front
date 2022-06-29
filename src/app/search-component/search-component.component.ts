@@ -17,6 +17,9 @@ export class SearchComponentComponent implements OnInit {
   searchTextRegion: string = ''
   searchTextDescription: string = ''
 
+  searchByName = true;
+  searchByLocation = false;
+
   constructor(
     private birdService: BirdService //defines and injects the bird service we made
   ) { }
@@ -32,6 +35,20 @@ export class SearchComponentComponent implements OnInit {
     this.birdService.getBirds()
     .subscribe(birds => this.birds = birds);
   }
+
+
+  nameSearch() {
+    this.searchByName = true;
+    this.searchByLocation = false;
+  }
+
+
+  locationSearch() {
+    this.searchByName = false;
+    this.searchByLocation = true;
+  }
+
+
 }
 
 

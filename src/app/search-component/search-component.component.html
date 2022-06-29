@@ -1,4 +1,4 @@
-<h1 class="title">Search</h1>
+<!-- <h1 class="title">Search</h1>
 
 <div class="container">
   <div class="row">
@@ -36,9 +36,62 @@
 
 
   </div>
+</div> -->
+
+
+
+
+
+
+
+
+<h1 class="title">Search</h1>
+
+
+<div class="container">
+
+  <div class="search-btns">
+    <button type="button" name="button" (click)="nameSearch()">Search by Name</button>
+    <button type="button" name="button" (click)="locationSearch()">Search by Location</button>
+  </div>
+
+
+  <div class="row">
+
+    <div class="name-search" *ngIf="searchByName">
+      <div class="search-bird">
+        <input type="text" name="search" [(ngModel)]="searchTextName" placeholder="Search by name">
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-evenly text-white" *ngIf="searchTextName !== ''">
+        <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | nameFilter:searchTextName">
+          <a routerLink="/birds/{{bird._id}}">
+            <img src="{{bird.image}}" alt="photo of {{bird.name}}">
+            <h4 class="bird-name">{{bird.name}}</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="region-search" *ngIf="searchByLocation">
+      <div class="search-bird">
+        <input type="text" name="search" [(ngModel)]="searchTextRegion" placeholder="Search by location">
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-evenly text-white" *ngIf="searchTextRegion !== ''">
+        <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | regionFilter:searchTextRegion">
+          <a routerLink="/birds/{{bird._id}}">
+            <img src="{{bird.image}}" alt="photo of {{bird.name}}">
+            <h4 class="bird-name">{{bird.name}}</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </div>
-
-
 
 
 
