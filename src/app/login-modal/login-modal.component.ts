@@ -196,9 +196,14 @@ import {FormsModule} from '@angular/forms';
   styleUrls: ['./login-modal.component.css']
 })
 export class LoginModalComponent implements OnInit {
-  createUserData:any = {}
+  //createUserData:any = {}
   loginUserData:any = {}
 
+  createUserData: any = {
+    username: '',
+    password: '',
+    admin: false
+  }
 
   // username: string = ''
   // password: string = ''
