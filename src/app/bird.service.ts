@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'; //generated when made, allows us to inject/import to other components?
-import {Bird} from './bird';  //calls in the bird model/schema we made
+import { Bird } from './bird';  //calls in the bird model/schema we made
 import { HttpClient, HttpHeaders } from '@angular/common/http'; //connects to our database. Angular built in version of axios?
 import { Observable, of } from 'rxjs'; //researh this more
 import { catchError, map, tap } from 'rxjs/operators'; //module that lets us error handle
@@ -13,6 +13,7 @@ import { catchError, map, tap } from 'rxjs/operators'; //module that lets us err
 export class BirdService {
 
 
+  //URLs
   //private birdsUrl = 'http://localhost:3000/birds' //Local database
   private birdsUrl = 'https://bird-watcher-back.herokuapp.com/birds' //Heroku database
 
