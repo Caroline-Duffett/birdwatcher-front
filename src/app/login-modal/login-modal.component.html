@@ -40,34 +40,33 @@
 
 
         <div *ngIf="createShow" class="create-form">
+
           <!-- <form #addUser="ngForm" (ngSubmit)="submit(addUser)"> -->
-          <!-- <form #create="ngForm" class="createUserFrom" (ngSubmit)="createUser(create)"> -->
-          <form #addUser="ngForm" (ngSubmit)="createUser(addUser)">
-            <!-- <div class="col">
+          <form #create="ngForm" class="createUserFrom" (ngSubmit)="createUser()">
+          <!-- <form #addUser="ngForm" (ngSubmit)="createUser(addUser)"> -->
+
+
+            <div class="col">
               <input type="text" class="form-control" placeholder="username" [(ngModel)]="createUserData.username" name="username">
             </div>
-            <br/> -->
-            <div class="col">
+            <br/>
+            <!-- <div class="col">
               <input type="text" class="form-control" placeholder="username" [(ngModel)]="username" name="username">
             </div>
-            <br/>
+            <br/> -->
 
-            <!-- <div class="col">
+            <div class="col">
               <input type="password" class="form-control" placeholder="password" [(ngModel)]="createUserData.password" name="password">
             </div>
-            <br/> -->
-            <div class="col">
+            <br/>
+            <!-- <div class="col">
               <input type="password" class="form-control" placeholder="password" [(ngModel)]="password" name="password">
             </div>
-            <br/>
+            <br/> -->
 
             <!-- <div class="col">
               <input type="password" class="form-control" placeholder="confirm password">
             </div> -->
-
-
-            <button *ngIf="createShow" type="submit" class="btn btn-primary">Create Account</button>
-
 
           </form>
         </div>
@@ -77,7 +76,7 @@
         <button *ngIf="loginShow" type="button" class="btn btn-primary" (click)="loginUser()">Login</button>
 
 
-        <!-- <button *ngIf="createShow" type="button" class="btn btn-primary" (click)="createUser()">Create Account</button> -->
+        <button *ngIf="createShow" type="button" class="btn btn-primary" (click)="createUser()">Create Account</button>
         <!-- <button *ngIf="createShow" type="submit" class="btn btn-primary">Create Account</button> -->
         <!-- <button *ngIf="createShow" type="submit" class="btn btn-primary">Create Account</button> -->
 

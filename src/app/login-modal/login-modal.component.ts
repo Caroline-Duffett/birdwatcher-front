@@ -8,14 +8,14 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login-modal.component.css']
 })
 export class LoginModalComponent implements OnInit {
-  // createUserData:any = {}
+  createUserData:any = {}
   loginUserData:any = {}
 
 
-  username: string = ''
-  password: string = ''
-  admin: boolean = false
-  usersBirds: Array<object> = []
+  // username: string = ''
+  // password: string = ''
+  // admin: boolean = false
+  // usersBirds: Array<object> = []
 
 
   constructor(
@@ -26,7 +26,7 @@ export class LoginModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //31
+  // //31
   // createUser() {
   //   this.auth.createUser(this.createUser).subscribe(res =>
   //     //console.log(res);
@@ -37,28 +37,9 @@ export class LoginModalComponent implements OnInit {
   // }
 
   //34
-  // createUser() {
-  //   console.log(this.createUserData);
-  //   this.auth.createUser(this.createUserData).subscribe(
-  //     res => {
-  //       //console.log(res);
-  //       localStorage.setItem('token', res.token)
-  //       //this.router.navigate(['/special'])
-  //     },
-  //       //err => console.log(err);
-  //   )
-  // }
-
-  createUser(addUser: any): void {
-    const newUser = {
-      username: addUser.form.value.name,
-      password: addUser.form.value.password,
-      admin: addUser.admin,
-      usersBirds: addUser.usersBirds
-    }
-
-    console.log(newUser);
-    this.auth.createUser(newUser).subscribe(
+  createUser() {
+    console.log(this.createUserData);
+    this.auth.createUser(this.createUserData).subscribe(
       res => {
         //console.log(res);
         localStorage.setItem('token', res.token)
@@ -67,6 +48,25 @@ export class LoginModalComponent implements OnInit {
         //err => console.log(err);
     )
   }
+  //
+  // createUser(addUser: any): void {
+  //   const newUser = {
+  //     username: addUser.form.value.name,
+  //     password: addUser.form.value.password,
+  //     admin: addUser.admin,
+  //     usersBirds: addUser.usersBirds
+  //   }
+  //
+  //   console.log(newUser);
+  //   this.auth.createUser(newUser).subscribe(
+  //     res => {
+  //       //console.log(res);
+  //       localStorage.setItem('token', res.token)
+  //       //this.router.navigate(['/special'])
+  //     },
+  //       //err => console.log(err);
+  //   )
+  // }
 
 
 
