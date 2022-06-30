@@ -29,10 +29,17 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  //verison without USER
+  //verison without USER and working with admin but not unique
   createUser(user: any) {
     return this.http.post<any>(this.createURL, user)
   }
+
+  //add way
+  // createUser(user: User): Observable<User> {
+  //   return this.http.post<User>(this.createURL, user, this.httpOptions).pipe(catchError(this.handleError<User>('createUser')))
+  // }
+
+
 
   //Not working
   // createUser(user: User): Observable<User> {
