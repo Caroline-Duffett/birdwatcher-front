@@ -85,7 +85,7 @@
 
 
 
-// salt error (have server set to app.use(express.json()))
+// salt error (have server set to app.use(express.json))
 //----------------------------------------------------------------------------- Admin but does not post---//
 // import { Component, OnInit } from '@angular/core';
 // import { AuthService } from '../auth.service';

@@ -17,7 +17,8 @@ export class AuthService {
 
   //URLs
   private createURL = 'http://localhost:3000/createaccount';
-  private loginURL = 'http://localhost:3000/login';
+  // private loginURL = 'http://localhost:3000/login';
+  private loginURL = 'http://localhost:3000/sessions';
 
   //tells it that we are an app and to read/send json
   httpOptions = {
@@ -57,10 +58,32 @@ export class AuthService {
   // loginUser(user: any) {
   //   return this.http.post<any>(this.loginURL, user)
   // }
+
+  //PUT
+  // loginUser(user: any) {
+  //   return this.http.put<any>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+  // }
+  //
+  // //POST
+  // loginUser(user: any) {
+  //   return this.http.post<any>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+  // }
+
   //not working
-  loginUser(user: any) {
-    return this.http.put<any>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
-  }
+    // loginUser(user: any) {
+    //   console.log(user);
+    //   return this.http.post<any>(this.loginURL, user).pipe(catchError(this.handleError<any>('loginUser')))
+    // }
+
+    // loginUser(user: User) {
+    //   return this.http.post<User>(this.loginURL, user).pipe(catchError(this.handleError<any>('loginUser')))
+    // }
+
+    loginUser(user: User): Observable<User>{
+      return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+    }
+
+
 
 
   // router.get('/createaccount', (req, res) => {
@@ -75,7 +98,6 @@ export class AuthService {
   loggedIn() {
     //return !!localStorage.getItem('token')
     console.log('logged in!');
-
   }
 
 

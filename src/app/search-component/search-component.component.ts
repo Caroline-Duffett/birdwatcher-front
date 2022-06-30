@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import {Bird} from '../bird'; //Calls in the bird model/schema we made
 import {BirdService} from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class SearchComponentComponent implements OnInit {
   searchByLocation = false;
 
   constructor(
-    private birdService: BirdService //defines and injects the bird service we made
+    private birdService: BirdService, //defines and injects the bird service we made
+    private authService: AuthService
   ) { }
 
 
@@ -47,6 +49,7 @@ export class SearchComponentComponent implements OnInit {
     this.searchByName = false;
     this.searchByLocation = true;
   }
+
 
 
 }
