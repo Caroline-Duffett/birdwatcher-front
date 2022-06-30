@@ -3,17 +3,11 @@
   <a class="nav-link" style="color: #e1e1e18c;" data-toggle="modal" data-target="#loginModal" (click)="close()">Login</a>
 </div>
 
-<!-- data-backdrop="static" -->
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-  Launch demo modal
-</button> -->
-
 <!-- Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
+
       <div class="modal-header">
         <h5 *ngIf="loginShow" class="modal-title" id="exampleModalLongTitle">Login</h5>
         <h5 *ngIf="createShow" class="modal-title" id="exampleModalLongTitle">Create Account</h5>
@@ -21,11 +15,10 @@
           <span aria-hidden="true">Close</span>
         </button>
       </div>
+
+
       <div class="modal-body">
-
-
         <div *ngIf="loginShow" class="login-form">
-          <!-- <form #login="ngForm" (ngSubmit)="submit(login)"> -->
           <form class="loginForm">
             <div class="form-group row">
               <div class="col">
@@ -37,55 +30,28 @@
             </div>
           </form>
         </div>
-
-
         <div *ngIf="createShow" class="create-form">
-
-          <!-- <form #addUser="ngForm" (ngSubmit)="submit(addUser)"> -->
           <form #create="ngForm" class="createUserFrom" (ngSubmit)="createUser()">
-          <!-- <form #addUser="ngForm" (ngSubmit)="createUser(addUser)"> -->
-
-
             <div class="col">
               <input type="text" class="form-control" placeholder="username" [(ngModel)]="createUserData.username" name="username">
             </div>
             <br/>
-            <!-- <div class="col">
-              <input type="text" class="form-control" placeholder="username" [(ngModel)]="username" name="username">
-            </div>
-            <br/> -->
-
             <div class="col">
               <input type="password" class="form-control" placeholder="password" [(ngModel)]="createUserData.password" name="password">
             </div>
             <br/>
-            <!-- <div class="col">
-              <input type="password" class="form-control" placeholder="password" [(ngModel)]="password" name="password">
-            </div>
-            <br/> -->
-
-            <!-- <div class="col">
-              <input type="password" class="form-control" placeholder="confirm password">
-            </div> -->
-
           </form>
         </div>
-
       </div>
+
+
       <div class="modal-footer">
         <button *ngIf="loginShow" type="button" class="btn btn-primary" (click)="loginUser()">Login</button>
-
-
         <button *ngIf="createShow" type="button" class="btn btn-primary" (click)="createUser()">Create Account</button>
-        <!-- <button *ngIf="createShow" type="submit" class="btn btn-primary">Create Account</button> -->
-        <!-- <button *ngIf="createShow" type="submit" class="btn btn-primary">Create Account</button> -->
-
-
       </div>
+
       <a *ngIf="loginShow" class="create-account" type="button" name="button" (click)="loginToggle()">Need an account?</a>
       <a *ngIf="createShow" class="create-account" type="button" name="button" (click)="createToggle()">Login</a>
     </div>
   </div>
 </div>
-
-<!-- <button type="button" name="button"></button> -->

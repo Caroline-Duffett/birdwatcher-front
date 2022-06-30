@@ -26,17 +26,7 @@ export class LoginModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // //31
-  // createUser() {
-  //   this.auth.createUser(this.createUser).subscribe(res =>
-  //     //console.log(res);
-  //     localStorage.setItem('token', res.token)
-  //     //this.router.navigate(['/special'])
-  //   ),
-  //   //err => console.log(err);
-  // }
-
-  //34
+  //31
   createUser() {
     console.log(this.createUserData);
     this.auth.createUser(this.createUserData).subscribe(
@@ -48,26 +38,6 @@ export class LoginModalComponent implements OnInit {
         //err => console.log(err);
     )
   }
-  //
-  // createUser(addUser: any): void {
-  //   const newUser = {
-  //     username: addUser.form.value.name,
-  //     password: addUser.form.value.password,
-  //     admin: addUser.admin,
-  //     usersBirds: addUser.usersBirds
-  //   }
-  //
-  //   console.log(newUser);
-  //   this.auth.createUser(newUser).subscribe(
-  //     res => {
-  //       //console.log(res);
-  //       localStorage.setItem('token', res.token)
-  //       //this.router.navigate(['/special'])
-  //     },
-  //       //err => console.log(err);
-  //   )
-  // }
-
 
 
   //34
