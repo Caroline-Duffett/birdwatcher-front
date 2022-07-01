@@ -15,6 +15,7 @@ export class AuthService {
   private createURL = 'http://localhost:3000/createaccount';
   // private loginURL = 'http://localhost:3000/login';
   private loginURL = 'http://localhost:3000/sessions';
+  //private newURL = 'http://localhost:3000/new';
 
 
   //tells it that we are an app and to read/send json
@@ -28,52 +29,104 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  //verison without USER and working with admin but not unique
+  // // Create Account: verison without USER and working with admin but not unique
+  // createUser(user: any) {
+  //   return this.http.post<any>(this.createURL, user)
+  // }
+  //
+  // // Login (starts session)
+  // loginUser(user: User): Observable<User>{
+  //   // console.log('loginUser function');
+  //   // console.log(user);
+  //   return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+  // }
+  //
+  // //get user in session
+  // getUser(): Observable<User> {
+  //   return this.http.get<User>(this.loginURL).pipe(
+  //     catchError(this.handleError<User>('getUser'))
+  //   );
+  // }
+  //
+  // //logout
+  //   logOut() {
+  //     console.log('loggedout')
+  //     return this.http.delete(this.loginURL, )
+  //   }
+
+
+
+
+
+
+
+  // Create Account: verison without USER and working with admin but not unique
   createUser(user: any) {
     return this.http.post<any>(this.createURL, user)
   }
 
-
-
+  // Login (starts session)
   loginUser(user: User): Observable<User>{
-    console.log('loginUser function');
-    console.log(user);
+    // console.log('loginUser function');
+    // console.log(user);
     return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
   }
 
+  //get user in session
+  getUser(): Observable<User> {
+    return this.http.get<User>(this.loginURL).pipe(
+      catchError(this.handleError<User>('getUser'))
+    );
+  }
+
+  //logout
+    logOut() {
+      console.log('loggedout')
+      return this.http.delete(this.loginURL, )
+    }
 
 
-  loggedIn() {
-    //return !!localStorage.getItem('token')
-    console.log('logged in!');
+
+
+
+
+
+
+    //--- Error handling
+    // If http fails
+    // Lets app continue
+    /*
+     * @param operation - name of the operation that failed
+     * @param result - optional value to return as the observable result
+     */
+      private handleError<T>(operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+
+          // TODO: send the error to remote logging infrastructure
+          console.error(error); // log to console instead
+
+          // TODO: better job of transforming error for user consumption
+          //this.log(`${operation} failed: ${error.message}`);
+
+          // Let the app keep running by returning an empty result.
+          return of(result as T);
+        };
+      }
+
   }
 
 
 
 
-  //--- Error handling
-  // If http fails
-  // Lets app continue
-  /*
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-    private handleError<T>(operation = 'operation', result?: T) {
-      return (error: any): Observable<T> => {
-
-        // TODO: send the error to remote logging infrastructure
-        console.error(error); // log to console instead
-
-        // TODO: better job of transforming error for user consumption
-        //this.log(`${operation} failed: ${error.message}`);
-
-        // Let the app keep running by returning an empty result.
-        return of(result as T);
-      };
-    }
 
 
-}
+
+
+
+
+
+
+
 
 
 
@@ -223,3 +276,22 @@ export class AuthService {
   //     }
   //   ),
   // };
+
+  // // gets the logged in user
+  // loggedIn(user: User): Observable<User>{
+  //   //return !!localStorage.getItem('token')
+  //
+  //   return this.http.get<User>(this.loginURL, user).pipe(catchError(this.handleError<any>('loginUser')))
+  //
+  //   console.log('logged in!');
+  // }
+
+
+  // // gets the logged in user
+  // loggedIn() {
+  //   console.log('logged in!');
+  //   //return !!localStorage.getItem('token')
+  //
+  //   // return this.http.get(this.loginURL, req.sessions.currentUser).pipe(catchError(this.handleError<any>('loginUser')))
+  //   console.log(this.http.get(this.newURL));
+  //   return this.http.get(this.newURL)

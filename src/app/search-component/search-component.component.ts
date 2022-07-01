@@ -23,7 +23,7 @@ export class SearchComponentComponent implements OnInit {
 
   constructor(
     private birdService: BirdService, //defines and injects the bird service we made
-    private authService: AuthService
+    private authService: AuthService //define and injects the auth service
   ) { }
 
 
@@ -39,16 +39,20 @@ export class SearchComponentComponent implements OnInit {
   }
 
 
+  //Search bar toggles
   nameSearch() {
     this.searchByName = true;
     this.searchByLocation = false;
   }
 
-
   locationSearch() {
     this.searchByName = false;
     this.searchByLocation = true;
   }
+
+  // getUser() {
+  //   this.authService.loggedIn()
+  // }
 
 
 
