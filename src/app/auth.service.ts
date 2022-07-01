@@ -25,7 +25,7 @@ export class AuthService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     //withCredentials: true //can't use this with cors
     //withCredentials?: true //does not like this version
-    withCredentials: true, //need this to let client recieve cookies but cors gets very mad
+    withCredentials: true, //with new backend settings this works! 
     // observe: 'response' as 'response'
   };
 
