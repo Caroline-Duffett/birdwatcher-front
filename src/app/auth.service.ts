@@ -67,23 +67,42 @@ export class AuthService {
 
   // Login (starts session)
   loginUser(user: User): Observable<User>{
-    // console.log('loginUser function');
-    // console.log(user);
     return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
   }
 
   //get user in session
   getUser(): Observable<User> {
-    return this.http.get<User>(this.loginURL).pipe(
+    return this.http.get<User>(this.loginURL, this.httpOptions).pipe(
       catchError(this.handleError<User>('getUser'))
     );
   }
 
-  //logout
-    logOut() {
-      console.log('loggedout')
-      return this.http.delete(this.loginURL, )
-    }
+  // //logout
+  //   logOut() {
+  //     console.log('auth loggedout')
+  //     return this.http.delete<User>(this.loginURL, this.httpOptions).pipe(
+  //       catchError(this.handleError<User>('logOut'))
+  //     )
+  //   }
+
+  // //logout
+  //   logOut() {
+  //     //console.log('auth loggedout')
+  //     //console.log(this.http.delete(this.loginURL, this.httpOptions));
+  //     //console.log(this.http.delete(this.loginURL, this.httpOptions));
+  //     return this.http.delete(this.loginURL, this.httpOptions).pipe(
+  //       catchError(this.handleError('logOut'))
+  //     )
+  //   }
+
+    //logout
+      logOut() {
+        //console.log('auth loggedout')
+        //console.log(this.http.delete(this.loginURL, this.httpOptions));
+        //console.log(this.http.delete(this.loginURL, this.httpOptions));
+        return this.http.delete(this.loginURL).pipe(catchError(this.handleError('logOut')))
+      }
+
 
 
 
