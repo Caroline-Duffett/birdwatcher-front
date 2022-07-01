@@ -24,12 +24,21 @@ export class AuthService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     //withCredentials: true //can't use this with cors
+    //withCredentials?: true //does not like this version
+    withCredentials: true, //need this to let client recieve cookies but cors gets very mad
+    // observe: 'response' as 'response'
   };
 
-  // //withCredentials
-  // httpParams = {
-  //   withCredentials: true
-  // }
+  // //tells it that we are an app and to read/send json
+  // httpOptions = {
+  //   headers: new HttpHeaders(
+  //     {
+  //       'Content-Type': 'application/json',
+  //       //'Authorization': 'Basic username:password')  //brokwn
+  //     }
+  //   ),
+  // };
+
 
 
   constructor(
@@ -96,6 +105,13 @@ export class AuthService {
     //   console.log('loginUser function');
     //   console.log(user);
     //   return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+    // }
+
+    // loginUser(user: User): Observable<User>{
+    //   console.log('loginUser function');
+    //   console.log(user);
+    //   return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+    //
     // }
 
     loginUser(user: User): Observable<User>{
