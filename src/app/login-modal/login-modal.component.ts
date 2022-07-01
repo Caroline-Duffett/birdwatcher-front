@@ -437,18 +437,28 @@ export class LoginModalComponent implements OnInit {
   }
 
 
-  //34
-  loginUser() {
-    console.log(this.loginUserData);
-    this.auth.loginUser(this.loginUserData).subscribe(
-      // res => {
-      //   //console.log(res);
-      //   localStorage.setItem('token', res.token)
-      //   //this.router.navigate(['/special'])
-      // },
-      //   //err => console.log(err);
-    )
-  }
+  //WORKING (kinda)
+    // //34
+    // loginUser() {
+    //   console.log(this.loginUserData);
+    //   this.auth.loginUser(this.loginUserData).subscribe(
+    //     // res => {
+    //     //   //console.log(res);
+    //     //   localStorage.setItem('token', res.token)
+    //     //   //this.router.navigate(['/special'])
+    //     // },
+    //     //   //err => console.log(err);
+    //   )
+    // }
+
+
+
+
+    //34
+    loginUser() {
+      console.log(this.loginUserData);
+      this.auth.loginUser(this.loginUserData).subscribe()
+    }
 
 
 

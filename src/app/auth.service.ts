@@ -22,8 +22,14 @@ export class AuthService {
 
   //tells it that we are an app and to read/send json
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    //withCredentials: true //can't use this with cors
   };
+
+  // //withCredentials
+  // httpParams = {
+  //   withCredentials: true
+  // }
 
 
   constructor(
@@ -79,9 +85,40 @@ export class AuthService {
     //   return this.http.post<User>(this.loginURL, user).pipe(catchError(this.handleError<any>('loginUser')))
     // }
 
+  //WORKING KINDA
+    // loginUser(user: User): Observable<User>{
+    //   return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+    //   //console.log(document.cookie);
+    // }
+
+
+    // loginUser(user: User): Observable<User>{
+    //   console.log('loginUser function');
+    //   console.log(user);
+    //   return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+    // }
+
     loginUser(user: User): Observable<User>{
+      console.log('loginUser function');
+      console.log(user);
       return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
     }
+
+    // withCredentials: true //(This NEEDS to go somewhere to get cookies on frontend I think)
+
+
+
+    // loginUser(user: User): Observable<User>{
+    //   return this.http.post<User>(this.loginURL, user).pipe(catchError(this.handleError<any>('loginUser')))
+    //   //console.log(document.cookie);
+    // }
+
+    //Does not work
+  // loginUser(user: User): Observable<User>{
+  //   return this.http.post<User>(this.loginURL, user, this.httpOptions, {
+  //     withCreidentials: true
+  //   }).pipe(catchError(this.handleError<any>('loginUser')))
+  // }
 
 
 
@@ -95,10 +132,37 @@ export class AuthService {
 
 
 
+  // loggedIn() {
+  //   //return !!localStorage.getItem('token')
+  //   console.log('logged in!');
+  // }
+
   loggedIn() {
     //return !!localStorage.getItem('token')
     console.log('logged in!');
   }
+
+
+  // getLoggedInUser() {
+  //   this.http.get(this.loginURL)
+  //   // this.http.get(environment.loginURL).subscribe((res: any) => {
+  //   //   this.user.next(res.user);
+  //   // }, (err) => {
+  //   //   this.toastr.error('something went wrong')
+  //   // })
+  //   // console.log('logged in!');
+  // }
+
+  // getLoggedInUser() {
+  //   this.http.get(this.loginURL)
+  //   // this.http.get(environment.loginURL).subscribe((res: any) => {
+  //   //   this.user.next(res.user);
+  //   // }, (err) => {
+  //   //   this.toastr.error('something went wrong')
+  //   // })
+  //   // console.log('logged in!');
+  // }
+
 
 
   //--- Error handling
