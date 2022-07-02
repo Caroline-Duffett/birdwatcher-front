@@ -92,6 +92,20 @@ img {
   font-weight: lighter;
 }
 
+.back-btn {
+  border-radius: 15px;
+  padding: 5px 20px;
+}
+
+.bird-info {
+  background-color: lightgrey;
+}
+
+.bird-facts {
+  /* background-color: pink; */
+}
+
+
 
 /*------------------------------------ MODAL ------------------------------------*/
 /* white background */

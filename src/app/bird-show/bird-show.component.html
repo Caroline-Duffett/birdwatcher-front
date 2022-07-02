@@ -128,21 +128,25 @@
 </div> -->
 
 <div class="bird-page" *ngIf="bird">
-  <div class="container">
-    <div class="row bg-success">
+  <div class="container bird-info">
+    <div class="row">
       <div class="col-12">
-        <div class="d-flex align-items-baseline">
-          <h2 class="name">{{bird.name}}</h2>
-          <h5 class='s-name'>{{bird.scientificName}}</h5>
+        <div class="d-flex justify-content-between">
+          <div class="d-flex align-items-baseline">
+            <h2 class="name">{{bird.name}}</h2>
+            <h5 class='s-name'>{{bird.scientificName}}</h5>
+          </div>
+          <button class="back-btn" type="button" (click)="backBtn()">Back</button>
         </div>
       </div>
     </div>
-    <div class="row align-items-center bg-warning">
-      <div class="col-lg-8">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-md-12">
         <img src="{{bird.imageShow}}" alt="image of {{bird.name}}">
+        <h5 class="mt-3">{{bird.description}}</h5>
       </div>
-      <div class="col-lg-4">
-        <h5 class='mb-5'><b>Diet:</b> {{bird.food}}</h5>
+      <div class="bird-facts col-lg-4 col-md-12">
+        <h5 class='mb-5 mt-5'><b>Diet:</b> {{bird.food}}</h5>
         <h5 class='mb-5'><b>Nesting:</b> {{bird.nesting}}</h5>
         <h5 class='mb-5'><b>Behavior:</b>  {{bird.behavior}}</h5>
         <h5 class='mb-5'><b>Habitat:</b>  {{bird.habitat}}</h5>
@@ -150,12 +154,12 @@
         <h5 class='mb-5'><b>Region:</b>  {{bird.region}}</h5>
       </div>
     </div>
-    <div class="row bg-success">
-      <div class="col-12">
+    <!-- <div class="row bg-success">
+      <div class="col-12 order-2">
         <h5 class="mt-3">{{bird.description}}</h5>
       </div>
-    </div>
-    <button class="back-btn" type="button" (click)="backBtn()">Back</button>
+    </div> -->
+    <!-- <button class="back-btn" type="button" (click)="backBtn()">Back</button> -->
   </div>
 
 
