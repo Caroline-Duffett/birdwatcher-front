@@ -29,7 +29,7 @@
 
   <div class="bird-btns text-center">
     <div class="btn-flex d-flex justify-content-between mx-auto mt-5 mb-3">
-      <a class="delete" title="edit" data-toggle="modal" data-target="#editModal" data-backdrop="static" data-keyboard="false">Edit</a>
+      <a class="edit" title="edit" data-toggle="modal" data-target="#editModal" data-backdrop="static" data-keyboard="false">Edit</a>
       <a class="delete" title="delete" (click)="delete(bird)">Delete</a>
     </div>
   </div>
@@ -43,9 +43,12 @@
 
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
             <span aria-hidden="true">X</span>
-          </button>
+          </button> -->
+          <a class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">X</span>
+          </a>
         </div>
 
         <div class="modal-body">
