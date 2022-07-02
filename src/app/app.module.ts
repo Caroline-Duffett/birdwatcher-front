@@ -38,7 +38,7 @@ import { YourBirdsNavComponent } from './your-birds-nav/your-birds-nav.component
     BirdRegionFilterPipe,
     LoginModalComponent,
     YourBirdsPageComponent,
-    YourBirdsNavComponent
+    YourBirdsNavComponent,
   ],
   imports: [
     BrowserModule,

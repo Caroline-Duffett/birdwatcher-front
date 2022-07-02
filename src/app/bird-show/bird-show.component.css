@@ -29,10 +29,17 @@ img {
   background-color: lightgrey;
 }
 
+.yes-no {
+  text-align: center;
+}
 
 
 /*------------------------------------ Edit MODAL ------------------------------------*/
-.modal {
+/* .modal {
+  background-color: white;
+} */
+
+#editModal {
   background-color: white;
 }
 
