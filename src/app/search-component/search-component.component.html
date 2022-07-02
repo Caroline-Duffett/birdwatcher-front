@@ -7,8 +7,8 @@
         <input type="text" name="search" [(ngModel)]="searchTextName" placeholder="Search by name">
       </div>
       <div class="search-btns">
-        <button class="btn btn-outline-info active" type="button" name="button" (click)="nameSearch()">Search by Name</button>
-        <button class="btn btn-outline-info" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary active" type="button" name="button" (click)="nameSearch()">Search by Name</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="locationSearch()">Search by Location</button>
       </div>
       <div class="d-flex flex-wrap justify-content-evenly text-white mt-5" *ngIf="searchTextName !== ''" >
         <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | nameFilter:searchTextName">
@@ -26,8 +26,8 @@
         <input type="text" name="search" [(ngModel)]="searchTextRegion" placeholder="Search by location">
       </div>
       <div class="search-btns">
-        <button class="btn btn-outline-info" type="button" name="button" (click)="nameSearch()">Search by Name</button>
-        <button class="btn btn-outline-info active" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="nameSearch()">Search by Name</button>
+        <button class="btn btn-outline-primary active" type="button" name="button" (click)="locationSearch()">Search by Location</button>
       </div>
       <div class="d-flex flex-wrap justify-content-evenly text-white mt-5" *ngIf="searchTextRegion !== ''">
         <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | regionFilter:searchTextRegion">
