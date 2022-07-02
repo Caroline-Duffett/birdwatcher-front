@@ -105,6 +105,12 @@ img {
   /* background-color: pink; */
 }
 
+/* @media (max-width: 720px) {
+  .bird-facts {
+    background-color: pink;
+  }
+} */
+
 
 
 /*------------------------------------ MODAL ------------------------------------*/
