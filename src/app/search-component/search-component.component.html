@@ -9,6 +9,7 @@
       <div class="search-btns">
         <button class="btn btn-outline-primary active" type="button" name="button" (click)="nameSearch()">Search by Name</button>
         <button class="btn btn-outline-primary" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="descriptionSearch()">Search by Description</button>
       </div>
       <div class="d-flex flex-wrap justify-content-evenly text-white mt-5" *ngIf="searchTextName !== ''" >
         <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | nameFilter:searchTextName">
@@ -28,9 +29,32 @@
       <div class="search-btns">
         <button class="btn btn-outline-primary" type="button" name="button" (click)="nameSearch()">Search by Name</button>
         <button class="btn btn-outline-primary active" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="descriptionSearch()">Search by Description</button>
       </div>
       <div class="d-flex flex-wrap justify-content-evenly text-white mt-5" *ngIf="searchTextRegion !== ''">
         <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | regionFilter:searchTextRegion">
+          <a routerLink="/birds/{{bird._id}}">
+            <img src="{{bird.imageIndex}}" alt="photo of {{bird.name}}">
+            <h4 class="bird-name">{{bird.name}}</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="description-search" *ngIf="searchByDescription">
+      <div class="search-bird">
+        <input type="text" name="search" [(ngModel)]="searchTextDescription" placeholder="Describe bird">
+      </div>
+      <div class="search-btns">
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="nameSearch()">Search by Name</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary active" type="button" name="button" (click)="descriptionSearch()">Search by Description</button>
+      </div>
+      <div class="d-flex flex-wrap justify-content-evenly text-white mt-5" *ngIf="searchTextDescription !== ''">
+        <div class="flex-item m-2 justify-content-center bg-secondary" *ngFor="let bird of birds | descriptionFilter:searchTextDescription">
           <a routerLink="/birds/{{bird._id}}">
             <img src="{{bird.imageIndex}}" alt="photo of {{bird.name}}">
             <h4 class="bird-name">{{bird.name}}</h4>
