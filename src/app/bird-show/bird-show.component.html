@@ -1,132 +1,3 @@
-<!-- <div class="bird-page" *ngIf="bird">
-
-  <div class="btn-flexbox">
-    <button class="back-btn" type="button" (click)="backBtn()">Back</button>
-  </div>
-
-  <div class="bird-info">
-    <div class="bird-card">
-      <div class="img">
-        <img src="{{bird.image}}" alt="image of {{bird.name}}">
-      </div>
-      <div class="name">
-        <h2>{{bird.name}}</h2>
-        <h3 class='s-name'>{{bird.scientificName}}</h3>
-      </div>
-      <div class="facts">
-        <h4>Food: {{bird.food}}</h4>
-        <h4>Nesting: {{bird.nesting}}</h4>
-        <h4>Behavior: {{bird.behavior}}</h4>
-        <h4>Habitat: {{bird.habitat}}</h4>
-        <h4>Conservation Status: {{bird.conservationStatus}}</h4>
-        <h4>Region: {{bird.region}}</h4>
-        <h4>Description: {{bird.description}}</h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="bird-btns"> -->
-    <!-- Edit button opens modal -->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-backdrop="static" data-keyboard="false">
-      Edit
-    </button>
-    <button class="delete-btn" type="button" class="delete" title="delete" (click)="delete(bird)">Delete</button>
-  </div> -->
-
-
-  <!-- Edit Form Modal -->
-  <!-- <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-
-      <div class="modal-content w-70">
-
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
-            <span aria-hidden="true">X</span>
-          </button>
-        </div>
-
-        <div class="modal-body">
-          <div class="container mt-3 border border-secondary rounded w-100">
-              <form #edit ngFrom (ngSubmit)="editSubmit()">
-
-                <div class="form-group">
-                  <label for="name">Name: </label>
-                  <input type="text" name="name" class="form-control" [(ngModel)]=bird.name placeholder="Name" required>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="scientificName">Scientific Name: </label>
-                  <input type="text" name="scientificName" class="form-control" [(ngModel)]=bird.scientificName placeholder="Scientific Name" required>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="image">Image: </label>
-                  <input type="url"  name="image" class="form-control" [(ngModel)]=bird.image placeholder="URL" required>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="food">Food: </label>
-                  <input type="text"  name="food" class="form-control" [(ngModel)]=bird.food placeholder="Food" required>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="nesting">Nesting: </label>
-                  <input type="text" name="nesting" class="form-control" [(ngModel)]=bird.nesting placeholder="Nesting" required>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="behavior">Behavior: </label>
-                  <input type="text" name="behavior" class="form-control" [(ngModel)]=bird.behavior placeholder="Behavior" required>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="habitat">Habitat: </label>
-                  <input type="text" name="habitat" class="form-control" [(ngModel)]=bird.habitat placeholder="Habitat" required>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="conservationStatus">Conservation Status: </label>
-                  <input type="text" name="conservationStatus" class="form-control" [(ngModel)]=bird.conservationStatus placeholder="Conservation Status" required>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="region">Region: </label>
-                  <textarea type="text" name="region" class="form-control" [(ngModel)]=bird.region placeholder="Region" required></textarea>
-                </div>
-                <br/>
-
-                <div class="form-group">
-                  <label for="description">Description: </label>
-                  <textarea type="text" name="description" class="form-control" [(ngModel)]=bird.description placeholder="Description" required></textarea>
-                </div>
-                <br/>
-
-                <div class="sumbit-btn text-center mb-2">
-                  <button class="btn btn-success" type="submit" data-dismiss="modal">Submit</button>
-                </div>
-              </form>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div> -->
-
 <div class="bird-page" *ngIf="bird">
   <div class="container bird-info">
     <div class="row">
@@ -154,44 +25,7 @@
         <h5 class='mb-5'><b>Region:</b>  {{bird.region}}</h5>
       </div>
     </div>
-    <!-- <div class="row bg-success">
-      <div class="col-12 order-2">
-        <h5 class="mt-3">{{bird.description}}</h5>
-      </div>
-    </div> -->
-    <!-- <button class="back-btn" type="button" (click)="backBtn()">Back</button> -->
   </div>
-
-
-
-
-<!-- <div class="bird-page" *ngIf="bird"> -->
-
-  <!-- <div class="btn-flexbox">
-    <button class="back-btn" type="button" (click)="backBtn()">Back</button>
-  </div> -->
-
-  <!-- <div class="bird-info">
-    <div class="bird-card">
-      <div class="img">
-        <img src="{{bird.imageShow}}" alt="image of {{bird.name}}">
-      </div>
-      <div class="name">
-        <h2>{{bird.name}}</h2>
-        <h3 class='s-name'>{{bird.scientificName}}</h3>
-      </div>
-      <div class="facts">
-        <h4>Diet: {{bird.food}}</h4>
-        <h4>Nesting: {{bird.nesting}}</h4>
-        <h4>Behavior: {{bird.behavior}}</h4>
-        <h4>Habitat: {{bird.habitat}}</h4>
-        <h4>Conservation Status: {{bird.conservationStatus}}</h4>
-        <h4>Region: {{bird.region}}</h4>
-        <h4>Description: {{bird.description}}</h4>
-      </div>
-    </div>
-  </div> -->
-
 
   <div class="bird-btns text-center">
     <div class="btn-flex d-flex justify-content-between mx-auto mt-5 mb-3">
@@ -199,7 +33,6 @@
       <a class="delete" title="delete" (click)="delete(bird)">Delete</a>
     </div>
   </div>
-
 
 
   <!-- Edit Form Modal -->
