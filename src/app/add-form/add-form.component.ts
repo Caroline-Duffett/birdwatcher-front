@@ -145,7 +145,7 @@ export class AddFormComponent implements OnInit {
       this.acceptedDescription = true;
     }
 
-    if (add.form.controls.description.status !== "INVALID" && add.form.controls.region.status !== "INVALID" && add.form.controls.conservationStatus.status !== "INVALID" && add.form.controls.habitat.status !== "INVALID" && add.form.controls.behavior.status !== "INVALID" && add.form.controls.nesting.status !== "INVALID" && add.form.controls.food.status !== "INVALID" && add.form.controls.image.status !== "INVALID" && add.form.controls.scientificName.status !== "INVALID" && add.form.controls.name.status !== "INVALID") {
+    if (add.form.controls.description.status !== "INVALID" && add.form.controls.region.status !== "INVALID" && add.form.controls.conservationStatus.status !== "INVALID" && add.form.controls.habitat.status !== "INVALID" && add.form.controls.behavior.status !== "INVALID" && add.form.controls.nesting.status !== "INVALID" && add.form.controls.food.status !== "INVALID" && add.form.controls.imageShow.status !== "INVALID" && add.form.controls.imageIndex.status !== "INVALID" && add.form.controls.scientificName.status !== "INVALID" && add.form.controls.name.status !== "INVALID") {
       this.birdService.addBird(newBird as Bird).subscribe(() => {
         this
       })

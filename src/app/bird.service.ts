@@ -13,8 +13,8 @@ import { catchError, map, tap } from 'rxjs/operators'; //module that lets us err
 export class BirdService {
 
 
-  //private birdsUrl = 'http://localhost:3000/birds' //Local database
-  private birdsUrl = 'https://bird-watcher-back.herokuapp.com/birds' //Heroku database
+  private birdsUrl = 'http://localhost:3000/birds' //Local database
+  //private birdsUrl = 'https://bird-watcher-back.herokuapp.com/birds' //Heroku database
 
 
   //tells it that we are an app and to read/send json
