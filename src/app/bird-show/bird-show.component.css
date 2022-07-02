@@ -1,4 +1,4 @@
-.btn-flexbox {
+/* .btn-flexbox {
   background-color: red;
   display: flex;
   justify-content: space-between;
@@ -45,8 +45,55 @@
 .facts h4 {
   margin: 5px 5px;
   padding: 0;
+} */
+
+/* .bird-btns {
+} */
+
+/* .btns-div {
+  background-color: pink;
+  width: 20px;
+  text-align: center;
+} */
+
+/* .delete {
+  margin-right: 5rem;
+} */
+
+/* .bird-btns {
+  text-align: center;
+} */
+
+
+
+
+.name {
+  margin-right: 15px;
 }
 
+.s-name {
+  font-style: italic;
+}
+
+
+.btn-flex {
+  width: 100px;
+}
+
+img {
+  width: 100%;
+}
+
+.fact-type {
+  font-weight: bolder;
+  margin-left: 4px
+}
+.fact-info {
+  font-weight: lighter;
+}
+
+
+/*------------------------------------ MODAL ------------------------------------*/
 /* white background */
 .modal {
   background-color: white;
@@ -65,3 +112,4 @@
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+/*-------------------------------------------------------------------------------*/

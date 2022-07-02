@@ -26,7 +26,8 @@ export class AddFormComponent implements OnInit {
 
   name: string = ''
   scientificName: string = ''
-  image: string = ''
+  imageIndex: string = ''
+  imageShow: string = ''
   food: string = ''
   nesting: string = ''
   behavior: string = ''
@@ -50,7 +51,8 @@ export class AddFormComponent implements OnInit {
 
   acceptedName = true;
   acceptedScientificName = true;
-  acceptedImage = true;
+  acceptedImageIndex = true;
+  acceptedImageShow = true;
   acceptedFood = true;
   acceptedNesting = true;
   acceptedBehavior = true;
@@ -64,7 +66,8 @@ export class AddFormComponent implements OnInit {
     const newBird = {
       name: add.form.value.name,
       scientificName: add.form.value.scientificName,
-      image: add.form.value.image,
+      imageIndex: add.form.value.imageIndex,
+      imageShow: add.form.value.imageShow,
       food: add.form.value.food,
       nesting: add.form.value.nesting,
       behavior: add.form.value.behavior,
@@ -87,10 +90,16 @@ export class AddFormComponent implements OnInit {
       this.acceptedScientificName = true;
     }
 
-    if (add.form.controls.image.status === "INVALID") {
-      this.acceptedImage = false;
+    if (add.form.controls.imageIndex.status === "INVALID") {
+      this.acceptedImageIndex = false;
     } else {
-      this.acceptedImage = true;
+      this.acceptedImageIndex = true;
+    }
+
+    if (add.form.controls.imageShow.status === "INVALID") {
+      this.acceptedImageShow = false;
+    } else {
+      this.acceptedImageShow = true;
     }
 
     if (add.form.controls.food.status === "INVALID") {

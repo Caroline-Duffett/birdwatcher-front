@@ -4,7 +4,7 @@
   <div class="d-flex flex-wrap justify-content-center text-white">
     <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds">
       <a routerLink="/birds/{{bird._id}}">
-        <img src="{{bird.image}}" alt="photo of {{bird.name}}">
+        <img src="{{bird.imageIndex}}" alt="photo of {{bird.name}}">
         <h4 class="bird-name">{{bird.name}}</h4>
       </a>
     </div>
