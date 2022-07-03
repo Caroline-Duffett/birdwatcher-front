@@ -10,12 +10,13 @@
           </div>
           <button class="back-btn" type="button" (click)="backBtn()">Back</button>
         </div>
+        <hr>
       </div>
     </div>
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-12">
         <img src="{{bird.imageShow}}" alt="image of {{bird.name}}">
-        <h5 class="mt-3">{{bird.description}}</h5>
+        <h5 class="mb-3 description">{{bird.description}}</h5>
       </div>
       <div class="bird-facts col-lg-4 col-md-12">
         <h5 class='mb-5 mt-5'><b>Diet:</b> {{bird.food}}</h5>
@@ -27,6 +28,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- Buttons that open modals -->
   <div class="bird-btns text-center">
