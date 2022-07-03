@@ -16,7 +16,8 @@ export class LoginModalComponent implements OnInit {
     password: '',
     admin: false
   }
-  currentUser:any = {}
+  currentUser: any = {}
+
 
   constructor(
     private auth: AuthService,
@@ -36,7 +37,11 @@ export class LoginModalComponent implements OnInit {
   getUser(): void {
     this.auth.getUser()
     .subscribe(user => this.currentUser = user)
+
+    this.currentUser = this.currentUser.currentUser
     console.log(this.currentUser);
+
+
   }
 
   //Login user
