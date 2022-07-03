@@ -54,6 +54,9 @@ export class BirdShowComponent implements OnInit {
       this.birdService.updateBird(this.bird)
       .subscribe(() => this);
     }
+
+  //  document.getElementById('#editModal').display('none');
+
   }
 
   //If modal gets closed/cancelled resets text
