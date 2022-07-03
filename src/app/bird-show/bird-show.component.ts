@@ -55,8 +55,6 @@ export class BirdShowComponent implements OnInit {
       .subscribe(() => this);
     }
 
-  //  document.getElementById('#editModal').display('none');
-
   }
 
   //If modal gets closed/cancelled resets text
@@ -68,8 +66,6 @@ export class BirdShowComponent implements OnInit {
   getBirds(): void {
     this.birdService.getBirds()
     .subscribe(birds => this.birds = birds);
-    //this.location.reload()
-    //  window.location.reload() //Infinite loop of refreshes
   }
 
   //Deletes the bird and redirects you back to the index page
