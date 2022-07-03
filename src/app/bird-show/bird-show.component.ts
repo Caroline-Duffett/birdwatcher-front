@@ -48,6 +48,8 @@ export class BirdShowComponent implements OnInit {
 
   //Submits edits
   editSubmit(): void {
+    console.log('edit show');
+
     if (this.bird) {
       this.birdService.updateBird(this.bird)
       .subscribe(() => this);
