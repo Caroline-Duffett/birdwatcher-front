@@ -2,7 +2,8 @@ export interface Bird {
   _id: string;
   name: string;
   scientificName: string;
-  image: string;
+  imageIndex: string;
+  imageShow: string;
   food: string;
   nesting: string;
   behavior: string;

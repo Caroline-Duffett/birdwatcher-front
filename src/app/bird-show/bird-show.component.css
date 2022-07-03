@@ -1,62 +1,47 @@
-.btn-flexbox {
-  background-color: red;
-  display: flex;
-  justify-content: space-between;
-}
-
-.bird-info {
-  background-color: yellow;
-}
-
-.bird-card {
-  background-color: lightblue;
-  width: 600px;
-  margin: 0 auto;
-}
-
-.img-carousel {
-  background-color: green;
-}
-
 .name {
-  background-color: pink;
-  margin: 0;
-  padding: 0;
-}
-
-.name h2 {
-  margin: 0;
-  margin-top: 3px;
-  padding: 0;
+  margin-right: 15px;
 }
 
 .s-name {
   font-style: italic;
-  margin: 0;
-  padding: 0;
 }
 
-.facts {
-  background-color: orange;
-  text-align: left;
-  margin-left: 5px;
+
+.btn-flex {
+  width: 100px;
 }
 
-.facts h4 {
-  margin: 5px 5px;
-  padding: 0;
+img {
+  width: 100%;
 }
 
-/* white background */
-.modal {
-  background-color: white;
+.fact-type {
+  font-weight: bolder;
+  margin-left: 4px
 }
 
-/* very dark background */
+.back-btn {
+  border-radius: 15px;
+  padding: 5px 20px;
+}
+
+.bird-info {
+  background-color: lightgrey;
+}
+
+.yes-no {
+  text-align: center;
+}
+
+
+/*------------------------------------ Edit MODAL ------------------------------------*/
 /* .modal {
-  background-color: rgba(0, 0, 0, 0.91);
+  background-color: white;
 } */
 
+#editModal {
+  background-color: white;
+}
 
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
@@ -65,3 +50,18 @@
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
+.edit, .delete {
+  text-decoration: none;
+}
+
+.close {
+  color: black;
+  text-decoration: none;
+}
+
+.close:hover, .edit:hover, .delete:hover {
+  font-size: 20px;
+  cursor: pointer;
+}
+/*-------------------------------------------------------------------------------*/

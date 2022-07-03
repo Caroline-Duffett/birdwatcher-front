@@ -26,9 +26,18 @@
       <br/>
 
       <div class="form-group">
-        <label for="image">Image: </label>
-        <input type="url"  name="image" class="form-control" [(ngModel)]=image placeholder="URL" required>
-        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedImage">
+        <label for="imageIndex">Image for Index Page: </label>
+        <input type="url"  name="imageIndex" class="form-control" [(ngModel)]=imageIndex placeholder="URL" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedImageIndex">
+          Field is required
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="imageShow">Image for Show page: </label>
+        <input type="url"  name="imageShow" class="form-control" [(ngModel)]=imageShow placeholder="URL" required>
+        <div id="name-alert" class="alert alert-danger" role="alert" [hidden]="acceptedImageShow">
           Field is required
         </div>
       </div>

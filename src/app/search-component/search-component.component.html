@@ -1,71 +1,20 @@
-<!-- <h1 class="title">Search</h1>
-
-<div class="container">
-  <div class="row">
-
-    <div class="name-search">
-      <div class="search-bird">
-        <input type="text" name="search" [(ngModel)]="searchTextName" placeholder="Search by name">
-      </div>
-
-      <div class="d-flex flex-wrap justify-content-evenly text-white" *ngIf="searchTextName !== ''">
-        <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | nameFilter:searchTextName">
-          <a routerLink="/birds/{{bird._id}}">
-            <img src="{{bird.image}}" alt="photo of {{bird.name}}">
-            <h4 class="bird-name">{{bird.name}}</h4>
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="region-search">
-      <div class="search-bird">
-        <input type="text" name="search" [(ngModel)]="searchTextRegion" placeholder="Search by location">
-      </div>
-
-      <div class="d-flex flex-wrap justify-content-evenly text-white" *ngIf="searchTextRegion !== ''">
-        <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | regionFilter:searchTextRegion">
-          <a routerLink="/birds/{{bird._id}}">
-            <img src="{{bird.image}}" alt="photo of {{bird.name}}">
-            <h4 class="bird-name">{{bird.name}}</h4>
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</div> -->
-
-
-
-
-
-
-
-
 <h1 class="title">Search</h1>
 
-
 <div class="container">
-
   <div class="row">
-
     <div class="name-search" *ngIf="searchByName">
       <div class="search-bird">
         <input type="text" name="search" [(ngModel)]="searchTextName" placeholder="Search by name">
       </div>
-
       <div class="search-btns">
-        <button class="btn btn-outline-info active" type="button" name="button" (click)="nameSearch()">Search by Name</button>
-        <button class="btn btn-outline-info" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary active" type="button" name="button" (click)="nameSearch()">Search by Name</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="descriptionSearch()">Search by Description</button>
       </div>
-
       <div class="d-flex flex-wrap justify-content-evenly text-white mt-5" *ngIf="searchTextName !== ''" >
         <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | nameFilter:searchTextName">
           <a routerLink="/birds/{{bird._id}}">
-            <img src="{{bird.image}}" alt="photo of {{bird.name}}">
+            <img src="{{bird.imageIndex}}" alt="photo of {{bird.name}}">
             <h4 class="bird-name">{{bird.name}}</h4>
           </a>
         </div>
@@ -77,16 +26,37 @@
       <div class="search-bird">
         <input type="text" name="search" [(ngModel)]="searchTextRegion" placeholder="Search by location">
       </div>
-
       <div class="search-btns">
-        <button class="btn btn-outline-info" type="button" name="button" (click)="nameSearch()">Search by Name</button>
-        <button class="btn btn-outline-info active" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="nameSearch()">Search by Name</button>
+        <button class="btn btn-outline-primary active" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="descriptionSearch()">Search by Description</button>
       </div>
-
       <div class="d-flex flex-wrap justify-content-evenly text-white mt-5" *ngIf="searchTextRegion !== ''">
         <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | regionFilter:searchTextRegion">
           <a routerLink="/birds/{{bird._id}}">
-            <img src="{{bird.image}}" alt="photo of {{bird.name}}">
+            <img src="{{bird.imageIndex}}" alt="photo of {{bird.name}}">
+            <h4 class="bird-name">{{bird.name}}</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="description-search" *ngIf="searchByDescription">
+      <div class="search-bird">
+        <input type="text" name="search" [(ngModel)]="searchTextDescription" placeholder="Describe bird">
+      </div>
+      <div class="search-btns">
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="nameSearch()">Search by Name</button>
+        <button class="btn btn-outline-primary" type="button" name="button" (click)="locationSearch()">Search by Location</button>
+        <button class="btn btn-outline-primary active" type="button" name="button" (click)="descriptionSearch()">Search by Description</button>
+      </div>
+      <div class="d-flex flex-wrap justify-content-evenly text-white mt-5" *ngIf="searchTextDescription !== ''">
+        <div class="flex-item m-2 justify-content-center bg-secondary" *ngFor="let bird of birds | descriptionFilter:searchTextDescription">
+          <a routerLink="/birds/{{bird._id}}">
+            <img src="{{bird.imageIndex}}" alt="photo of {{bird.name}}">
             <h4 class="bird-name">{{bird.name}}</h4>
           </a>
         </div>
@@ -96,155 +66,3 @@
 
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-<!------------------------------------ Graveyard ------------------------------------>
-
-<!-- 1 -->
-<!-- <div class="seach-bar-div">
-  <span>Search:</span>
-  <input type="text" [(ngModel)]="searchTerm" (input)="onSearchTermChanged()">
-</div> -->
-<!-- 1 -->
-
-
-
-<!-- 2 -->
-<!-- <div class="seach-bar-div">
-  <span>Search:</span>
-  <input type="text" [(ngModel)]="searchTerm" (input)="onSearchTermChanged()">
-</div> -->
-<!-- 2 -->
-
-
-
-
-<!-- 3 (Backend) -->
-<!-- <input type="text" name="searchBox" class="searchBox" (keyup)="sendData($event)">
-<section class="search-results">
-
-</section> -->
-<!-- 3 -->
-
-
-<!-- Heroes -->
-<!-- <div id="search-component">
-  <label for="search-box">Bird Search</label>
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-
-  <ul class="search-result">
-    <li *ngFor="let bird of birds$ | async" >
-      <a routerLink="/birds/{{bird._id}}">
-        {{bird.name}}
-      </a>
-    </li>
-  </ul>
-</div> -->
-<!-- Heroes -->
-
-
-<!-- OG working code -->
-<!-- <h1>Search Component Component</h1>
-
-<button type="button" name="button" (click)="debugging()">Debug</button>
-
-<div class="container">
-  <div class="row">
-    <div class="search-bird-name">
-      <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search by name">
-      <h1>{{searchText}}</h1>
-    </div>
-
-    <div class="d-flex flex-wrap justify-content-evenly text-white">
-      <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | filter:searchText">
-        <a routerLink="/birds/{{bird._id}}">
-          <img src="{{bird.image}}" alt="photo of {{bird.name}}">
-          <h4 class="bird-name">{{bird.name}}</h4>
-        </a>
-      </div>
-    </div> -->
-
-
-    <!-- <div *ngFor="let bird of birds">
-      <p>Bird: {{bird}}</p>
-      <p>{{bird.name}}</p>
-      <p>{{bird.scientificName}}</p>
-      <p><img src="{{bird.image}}" alt="photo of a {{bird.name}}"></p>
-    </div> -->
-
-
-    <!-- <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Scientific Name</th>
-          <th>Image</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let bird of birds | filter:searchText">
-          <p>Bird: {{bird}}</p>
-          <td>{{bird.name}}</td>
-          <td>{{bird.scientificName}}</td>
-          <td><img src="{{bird.image}}" alt="photo of a {{bird.name}}"></td>
-        </tr>
-      </tbody>
-    </table> -->
-  <!-- </div>
-</div> -->
-<!-- OG working code -->
-
-
-<!-- always returns -->
-<!-- <h1>Search Component Component</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="search-bird-name">
-      <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
-      <h1>{{searchText}}</h1>
-    </div>
-
-    <div class="d-flex flex-wrap justify-content-evenly text-white">
-      <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | filter:searchText">
-        <a routerLink="/birds/{{bird._id}}">
-          <img src="{{bird.image}}" alt="photo of {{bird.name}}">
-          <h4 class="bird-name">{{bird.name}}</h4>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div> -->
-<!-- always returns -->
-
-
-
-
-<!-- With import { Ng2SearchPipeModule  } from "ng2-search-filter";  UNINSTALLED-->
-  <!-- <h1 class="title">Search</h1>
-  <div class="container">
-    <div class="row">
-      <div class="search-bird">
-        <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
-      </div>
-
-      <div class="d-flex flex-wrap justify-content-evenly text-white" *ngIf="searchText !== ''">
-        <div class="flex-item m-2 justify-content-center bg-secondary"  *ngFor="let bird of birds | filter:searchText">
-          <a routerLink="/birds/{{bird._id}}">
-            <img src="{{bird.image}}" alt="photo of {{bird.name}}">
-            <h4 class="bird-name">{{bird.name}}</h4>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div> -->
-<!-- With import { Ng2SearchPipeModule  } from "ng2-search-filter";  UNINSTALLED-->
