@@ -20,7 +20,6 @@ export class LoginModalComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    //private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +36,7 @@ export class LoginModalComponent implements OnInit {
   getUser(): void {
     this.auth.getUser()
     .subscribe(user => this.currentUser = user)
+    console.log(this.currentUser);
   }
 
   //Login user
