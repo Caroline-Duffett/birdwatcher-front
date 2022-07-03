@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
 import { User } from './user'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators'; //module that lets us error handle
@@ -13,9 +12,7 @@ export class AuthService {
 
   //URLs
   private createURL = 'http://localhost:3000/createaccount';
-  // private loginURL = 'http://localhost:3000/login';
   private loginURL = 'http://localhost:3000/sessions';
-  //private newURL = 'http://localhost:3000/new';
 
 
   //tells it that we are an app and to read/send json
@@ -30,17 +27,11 @@ export class AuthService {
   ) { }
 
 
-
-
-
-
-
-
-
   // Create Account: verison without USER and working with admin but not unique
   createUser(user: any) {
     return this.http.post<any>(this.createURL, user)
   }
+
 
   // Login (starts session)
   loginUser(user: User): Observable<User>{
@@ -48,55 +39,42 @@ export class AuthService {
     //console.log(user);
   }
 
+
   //get user in session
   getUser(): Observable<User> {
     return this.http.get<User>(this.loginURL, this.httpOptions).pipe(
       catchError(this.handleError<User>('getUser'))
     );
-    console.log("grabbed user");
+  }
+
+  //logout
+  logOut() {
+    return this.http.delete(this.loginURL).pipe(catchError(this.handleError('logOut')))
   }
 
 
-  // //get user in session
-  // getUser(): Observable<User{}> {
-  //   return this.http.get<User{}>(this.loginURL, this.httpOptions).pipe(
-  //     catchError(this.handleError<User{}>('getUser', {}))
-  //   );
-  //   console.log("grabbed user");
-  // }
+  //--- Error handling
+  // If http fails
+  // Lets app continue
+  /*
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+    private handleError<T>(operation = 'operation', result?: T) {
+      return (error: any): Observable<T> => {
+
+        // TODO: send the error to remote logging infrastructure
+        console.error(error); // log to console instead
+
+        // TODO: better job of transforming error for user consumption
+        //this.log(`${operation} failed: ${error.message}`);
+
+        // Let the app keep running by returning an empty result.
+        return of(result as T);
+      };
+    }
 
 
-
-
-    //logout
-      logOut() {
-        //console.log('auth loggedout')
-        //console.log(this.http.delete(this.loginURL, this.httpOptions));
-        //console.log(this.http.delete(this.loginURL, this.httpOptions));
-        return this.http.delete(this.loginURL).pipe(catchError(this.handleError('logOut')))
-      }
-
-
-    //--- Error handling
-    // If http fails
-    // Lets app continue
-    /*
-     * @param operation - name of the operation that failed
-     * @param result - optional value to return as the observable result
-     */
-      private handleError<T>(operation = 'operation', result?: T) {
-        return (error: any): Observable<T> => {
-
-          // TODO: send the error to remote logging infrastructure
-          console.error(error); // log to console instead
-
-          // TODO: better job of transforming error for user consumption
-          //this.log(`${operation} failed: ${error.message}`);
-
-          // Let the app keep running by returning an empty result.
-          return of(result as T);
-        };
-      }
 
   }
 
