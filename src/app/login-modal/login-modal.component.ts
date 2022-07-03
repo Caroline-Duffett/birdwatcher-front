@@ -16,7 +16,13 @@ export class LoginModalComponent implements OnInit {
     password: '',
     admin: false
   }
-  currentUser: any = {}
+  //currentUser: any = {}
+
+  currentUser: any = {
+    username: '',
+    password: '',
+    admin: false
+  }
 
 
   constructor(
@@ -24,6 +30,7 @@ export class LoginModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getUser()
   }
 
 
@@ -38,16 +45,15 @@ export class LoginModalComponent implements OnInit {
     this.auth.getUser()
     .subscribe(user => this.currentUser = user)
 
-    this.currentUser = this.currentUser.currentUser
-    console.log(this.currentUser);
-
-
+    // this.currentUser = this.currentUser.currentUser
+    // console.log(this.currentUser);
   }
 
   //Login user
   loginUser() {
     console.log(this.loginUserData);
     this.auth.loginUser(this.loginUserData).subscribe()
+    this.getUser()
   }
 
 
