@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   // loggedout = true;
 
   logOut() {
-    this.authService.logOut()
+    this.authService.logOut().subscribe()
     //console.log('nav logout');
   }
 
