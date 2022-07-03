@@ -29,30 +29,7 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  // // Create Account: verison without USER and working with admin but not unique
-  // createUser(user: any) {
-  //   return this.http.post<any>(this.createURL, user)
-  // }
-  //
-  // // Login (starts session)
-  // loginUser(user: User): Observable<User>{
-  //   // console.log('loginUser function');
-  //   // console.log(user);
-  //   return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
-  // }
-  //
-  // //get user in session
-  // getUser(): Observable<User> {
-  //   return this.http.get<User>(this.loginURL).pipe(
-  //     catchError(this.handleError<User>('getUser'))
-  //   );
-  // }
-  //
-  // //logout
-  //   logOut() {
-  //     console.log('loggedout')
-  //     return this.http.delete(this.loginURL, )
-  //   }
+
 
 
 
@@ -68,6 +45,7 @@ export class AuthService {
   // Login (starts session)
   loginUser(user: User): Observable<User>{
     return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+    //console.log(user);
   }
 
   //get user in session
@@ -75,25 +53,20 @@ export class AuthService {
     return this.http.get<User>(this.loginURL, this.httpOptions).pipe(
       catchError(this.handleError<User>('getUser'))
     );
+    console.log("grabbed user");
   }
 
-  // //logout
-  //   logOut() {
-  //     console.log('auth loggedout')
-  //     return this.http.delete<User>(this.loginURL, this.httpOptions).pipe(
-  //       catchError(this.handleError<User>('logOut'))
-  //     )
-  //   }
 
-  // //logout
-  //   logOut() {
-  //     //console.log('auth loggedout')
-  //     //console.log(this.http.delete(this.loginURL, this.httpOptions));
-  //     //console.log(this.http.delete(this.loginURL, this.httpOptions));
-  //     return this.http.delete(this.loginURL, this.httpOptions).pipe(
-  //       catchError(this.handleError('logOut'))
-  //     )
-  //   }
+  // //get user in session
+  // getUser(): Observable<User{}> {
+  //   return this.http.get<User{}>(this.loginURL, this.httpOptions).pipe(
+  //     catchError(this.handleError<User{}>('getUser', {}))
+  //   );
+  //   console.log("grabbed user");
+  // }
+
+
+
 
     //logout
       logOut() {
@@ -102,13 +75,6 @@ export class AuthService {
         //console.log(this.http.delete(this.loginURL, this.httpOptions));
         return this.http.delete(this.loginURL).pipe(catchError(this.handleError('logOut')))
       }
-
-
-
-
-
-
-
 
 
     //--- Error handling
@@ -133,6 +99,9 @@ export class AuthService {
       }
 
   }
+
+
+
 
 
 
@@ -314,3 +283,49 @@ export class AuthService {
   //   // return this.http.get(this.loginURL, req.sessions.currentUser).pipe(catchError(this.handleError<any>('loginUser')))
   //   console.log(this.http.get(this.newURL));
   //   return this.http.get(this.newURL)
+
+
+
+  // //logout
+  //   logOut() {
+  //     console.log('auth loggedout')
+  //     return this.http.delete<User>(this.loginURL, this.httpOptions).pipe(
+  //       catchError(this.handleError<User>('logOut'))
+  //     )
+  //   }
+
+  // //logout
+  //   logOut() {
+  //     //console.log('auth loggedout')
+  //     //console.log(this.http.delete(this.loginURL, this.httpOptions));
+  //     //console.log(this.http.delete(this.loginURL, this.httpOptions));
+  //     return this.http.delete(this.loginURL, this.httpOptions).pipe(
+  //       catchError(this.handleError('logOut'))
+  //     )
+  //   }
+
+
+  // // Create Account: verison without USER and working with admin but not unique
+  // createUser(user: any) {
+  //   return this.http.post<any>(this.createURL, user)
+  // }
+  //
+  // // Login (starts session)
+  // loginUser(user: User): Observable<User>{
+  //   // console.log('loginUser function');
+  //   // console.log(user);
+  //   return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+  // }
+  //
+  // //get user in session
+  // getUser(): Observable<User> {
+  //   return this.http.get<User>(this.loginURL).pipe(
+  //     catchError(this.handleError<User>('getUser'))
+  //   );
+  // }
+  //
+  // //logout
+  //   logOut() {
+  //     console.log('loggedout')
+  //     return this.http.delete(this.loginURL, )
+  //   }

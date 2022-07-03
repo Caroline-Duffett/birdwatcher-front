@@ -409,6 +409,8 @@ export class LoginModalComponent implements OnInit {
     admin: false
   }
 
+  currentUser:any = {}
+
   // username: string = ''
   // password: string = ''
   // admin: boolean = false
@@ -423,7 +425,8 @@ export class LoginModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //31
+
+  //Creates a user
   createUser() {
     console.log(this.createUserData);
     this.auth.createUser(this.createUserData).subscribe(
@@ -436,29 +439,18 @@ export class LoginModalComponent implements OnInit {
     )
   }
 
+  //Get the logged in user
+  getUser(): void {
+    this.auth.getUser()
+    .subscribe(user => this.currentUser = user)
+  }
 
-  //WORKING (kinda)
-    // //34
-    // loginUser() {
-    //   console.log(this.loginUserData);
-    //   this.auth.loginUser(this.loginUserData).subscribe(
-    //     // res => {
-    //     //   //console.log(res);
-    //     //   localStorage.setItem('token', res.token)
-    //     //   //this.router.navigate(['/special'])
-    //     // },
-    //     //   //err => console.log(err);
-    //   )
-    // }
-
-
-
-
-    //34
-    loginUser() {
-      console.log(this.loginUserData);
-      this.auth.loginUser(this.loginUserData).subscribe()
-    }
+  //Login user
+  loginUser() {
+    console.log(this.loginUserData);
+    this.auth.loginUser(this.loginUserData).subscribe()
+    this.getUser()
+  }
 
 
 
@@ -482,3 +474,18 @@ export class LoginModalComponent implements OnInit {
   }
 
 }
+
+//-------------------------- Graveyard ---------------------------//
+//WORKING (kinda)
+  // //34
+  // loginUser() {
+  //   console.log(this.loginUserData);
+  //   this.auth.loginUser(this.loginUserData).subscribe(
+  //     // res => {
+  //     //   //console.log(res);
+  //     //   localStorage.setItem('token', res.token)
+  //     //   //this.router.navigate(['/special'])
+  //     // },
+  //     //   //err => console.log(err);
+  //   )
+  // }
