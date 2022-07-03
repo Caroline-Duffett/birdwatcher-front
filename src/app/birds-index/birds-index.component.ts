@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core'; //Makes this a component in angular
-import {Bird} from '../bird'; //Calls in the bird model/schema we made
-import {BirdService} from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
+import { Bird } from '../bird'; //Calls in the bird model/schema we made
+import { BirdService } from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
 import { Location } from '@angular/common'; //Interacts with the browser URL
+
+
 
 //Links the premade files that goes with this component
 @Component({

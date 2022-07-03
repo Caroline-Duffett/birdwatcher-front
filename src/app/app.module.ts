@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here?, Lets u
 import { BirdNameFilterPipe } from './filter-pipes/name-filter.pipe';
 import { BirdRegionFilterPipe } from './filter-pipes/region-filter.pipe';
 import { BirdDescriptionFilterPipe } from './filter-pipes/description-filter.pipe';
+import { AlphabeticalOrderPipe } from './filter-pipes/alpha-order.pipe';
+
 
 
 
@@ -38,6 +40,7 @@ import { YourBirdsNavComponent } from './your-birds-nav/your-birds-nav.component
     BirdNameFilterPipe,
     BirdRegionFilterPipe,
     BirdDescriptionFilterPipe,
+    AlphabeticalOrderPipe,
     LoginModalComponent,
     YourBirdsPageComponent,
     YourBirdsNavComponent,
