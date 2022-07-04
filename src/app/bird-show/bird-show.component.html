@@ -1,52 +1,71 @@
+<!-- show page contents -->
 <div class="bird-page" *ngIf="bird">
-
-  <div class="btn-flexbox">
-    <button class="back-btn" type="button" (click)="backBtn()">Back</button>
-  </div>
-
-  <div class="bird-info">
-    <div class="bird-card">
-      <div class="img">
-        <img src="{{bird.image}}" alt="image of {{bird.name}}">
+  <div class="container bird-info">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-between">
+          <div class="d-flex align-items-baseline">
+            <h2 class="name">{{bird.name}}</h2>
+            <h5 class='s-name'>{{bird.scientificName}}</h5>
+          </div>
+          <button class="back-btn" type="button" (click)="backBtn()">Back</button>
+        </div>
+        <hr>
       </div>
-      <div class="name">
-        <h2>{{bird.name}}</h2>
-        <h3 class='s-name'>{{bird.scientificName}}</h3>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-md-12">
+        <img src="{{bird.imageShow}}" alt="image of {{bird.name}}">
+        <h5 class="mb-3 description">{{bird.description}}</h5>
       </div>
-      <div class="facts">
-        <h4>Food: {{bird.food}}</h4>
-        <h4>Nesting: {{bird.nesting}}</h4>
-        <h4>Behavior: {{bird.behavior}}</h4>
-        <h4>Habitat: {{bird.habitat}}</h4>
-        <h4>Conservation Status: {{bird.conservationStatus}}</h4>
-        <h4>Region: {{bird.region}}</h4>
-        <h4>Description: {{bird.description}}</h4>
+      <div class="bird-facts col-lg-4 col-md-12">
+        <h5 class='mb-5 mt-5'><b>Diet:</b> {{bird.food}}</h5>
+        <h5 class='mb-5'><b>Nesting:</b> {{bird.nesting}}</h5>
+        <h5 class='mb-5'><b>Behavior:</b>  {{bird.behavior}}</h5>
+        <h5 class='mb-5'><b>Habitat:</b>  {{bird.habitat}}</h5>
+        <h5 class='mb-5'><b>Conservation Status:</b>  {{bird.conservationStatus}}</h5>
+        <h5 class='mb-5'><b>Region:</b>  {{bird.region}}</h5>
       </div>
     </div>
   </div>
 
-  <div class="bird-btns">
-    <!-- Edit button opens modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-backdrop="static" data-keyboard="false">
-      Edit
-    </button>
-    <button class="delete-btn" type="button" class="delete" title="delete" (click)="delete(bird)">Delete</button>
+
+  <!-- Buttons that open modals -->
+  <div class="bird-btns text-center">
+    <div class="btn-flex d-flex justify-content-between mx-auto mt-5 mb-3">
+      <a class="edit" title="edit" data-toggle="modal" data-target="#editModal" data-backdrop="static" data-keyboard="false">Edit</a>
+      <a class="delete" title="delete" data-toggle='modal' data-target='#deleteModal'>Delete</a>
+    </div>
   </div>
+
+
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center mt-5 mb-3">
+        Are you sure you want to delete this bird?
+      </div>
+      <div class="yes-no mb-5">
+        <button type="button" class="btn btn-danger mx-3" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-success" (click)="delete(bird)" data-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <!-- Edit Form Modal -->
   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-
       <div class="modal-content w-70">
-
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+          <a class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
             <span aria-hidden="true">X</span>
-          </button>
+          </a>
         </div>
-
         <div class="modal-body">
           <div class="container mt-3 border border-secondary rounded w-100">
               <form #edit ngFrom (ngSubmit)="editSubmit()">
@@ -64,8 +83,14 @@
                 <br/>
 
                 <div class="form-group">
-                  <label for="image">Image: </label>
-                  <input type="url"  name="image" class="form-control" [(ngModel)]=bird.image placeholder="URL" required>
+                  <label for="imageIndex">Image for Index Page: </label>
+                  <input type="url"  name="imageIndex" class="form-control" [(ngModel)]=bird.imageIndex placeholder="URL" required>
+                </div>
+                <br/>
+
+                <div class="form-group">
+                  <label for="imageIndex">Image for Show Page: </label>
+                  <input type="url"  name="imageShow" class="form-control" [(ngModel)]=bird.imageShow placeholder="URL" required>
                 </div>
                 <br/>
 
@@ -112,17 +137,16 @@
                 <br/>
 
                 <div class="sumbit-btn text-center mb-2">
-                  <button class="btn btn-success" type="submit" data-dismiss="modal">Submit</button>
+                  <button class="btn btn-success" type="submit">Save Changes</button>
                 </div>
               </form>
           </div>
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
         </div>
       </div>
     </div>
   </div>
-
 </div>

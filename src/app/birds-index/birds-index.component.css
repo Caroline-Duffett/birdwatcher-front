@@ -17,3 +17,12 @@ img {
 #bird-card {
   width: 300px;
 }
+
+.add-bird {
+  text-align: center;
+}
+
+.flex-container {
+  width: 90%;
+  margin: 0 auto;
+}
