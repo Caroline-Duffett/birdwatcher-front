@@ -34,8 +34,11 @@ export class LoginModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getUser()
+    // this.getUser()
   }
+
+
+
 
 
   //Creates a user
@@ -48,20 +51,15 @@ export class LoginModalComponent implements OnInit {
   getUser(): void {
     this.auth.getUser()
     .subscribe(user => this.currentUser = user)
-    //this.currentUser = this.currentUser.currentUser
-    console.log('currentUser');
-    //console.log(this.currentUser);
-
     this.currentUser = this.currentUser.currentUser
     console.log(this.currentUser);
   }
 
   //Login user
   loginUser() {
-    this.loggedIn = true
-    //console.log(this.loginUserData);
     this.auth.loginUser(this.loginUserData).subscribe()
     this.getUser()
+    this.loggedIn = true
   }
 
 
