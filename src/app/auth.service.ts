@@ -9,6 +9,7 @@ import { Observable, of } from 'rxjs';
 })
 
 export class AuthService {
+  // loggedIn: boolean = false
 
   //URLs
   private createURL = 'http://localhost:3000/createaccount';
@@ -36,7 +37,6 @@ export class AuthService {
   // Login (starts session)
   loginUser(user: User): Observable<User>{
     return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
-    //console.log(user);
   }
 
 
@@ -47,9 +47,21 @@ export class AuthService {
     );
   }
 
+
+  //Does not work
+  // getUser() {
+  //   return this.http.get(this.loginURL, this.httpOptions).subscribe((res: any) => {
+  //     this.loggedIn.next(res.loggedIn)
+  //   })
+  // }
+
+
+
+
+
   //logout
   logOut() {
-    return this.http.delete(this.loginURL).pipe(catchError(this.handleError('logOut')))
+    return this.http.delete(this.loginURL, this.httpOptions).pipe(catchError(this.handleError('logOut')))
   }
 
 

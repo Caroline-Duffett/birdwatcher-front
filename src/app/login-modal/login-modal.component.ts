@@ -24,13 +24,15 @@ export class LoginModalComponent implements OnInit {
     admin: false
   }
 
+  loggedIn = false
+
 
   constructor(
     private auth: AuthService,
   ) { }
 
   ngOnInit(): void {
-    this.getUser()
+
   }
 
 
@@ -44,16 +46,30 @@ export class LoginModalComponent implements OnInit {
   getUser(): void {
     this.auth.getUser()
     .subscribe(user => this.currentUser = user)
+    console.log(this.currentUser);
 
     // this.currentUser = this.currentUser.currentUser
     // console.log(this.currentUser);
   }
 
+
+
+
+
+
   //Login user
   loginUser() {
     console.log(this.loginUserData);
     this.auth.loginUser(this.loginUserData).subscribe()
-    this.getUser()
+    //Does not work
+    // if (this.loginUserData === '' || this.loginUserData === undefined) {
+    //   this.loggedIn === false
+    //   console.log('setting false');
+    // } else {
+    //   this.loggedIn === true
+    //   console.log('setting true');
+    //
+    // }
   }
 
 
