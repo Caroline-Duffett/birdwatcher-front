@@ -3,13 +3,16 @@ import { User } from './user'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators'; //module that lets us error handle
 import { Observable, of } from 'rxjs';
+// import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  // loggedIn: boolean = false
+
+  loggedIn: boolean = false
 
   //URLs
   private createURL = 'http://localhost:3000/createaccount';
@@ -34,10 +37,15 @@ export class AuthService {
   }
 
 
+  //Does not work throws errors
   // Login (starts session)
-  loginUser(user: User): Observable<User>{
-    return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
-  }
+  // loginUser(user: User) {
+  //   this.http.post(this.loginURL, user, this.httpOptions).subscribe((res:any) => {
+  //     this.loggedIn.next(true);
+  //   }, (err) => {
+  //     this.loggedIn.next(false);
+  //   })
+  // }
 
 
   //get user in session
