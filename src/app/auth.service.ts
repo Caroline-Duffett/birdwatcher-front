@@ -11,6 +11,14 @@ import { Subject } from 'rxjs';
 })
 
 export class AuthService {
+  loggedIn: boolean = false;
+
+  // //for logging in a user
+  // currentUser: any = {
+  //   username: '',
+  //   password: '',
+  //   admin: false
+  // }
 
   //URLs
   private createURL = 'http://localhost:3000/createaccount';
@@ -38,6 +46,7 @@ export class AuthService {
   //Does not work throws errors
   // Login (starts session)
   loginUser(user: User): Observable<User>{
+    this.loggedIn = true
     return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
   }
 

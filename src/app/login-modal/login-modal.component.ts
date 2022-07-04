@@ -19,14 +19,14 @@ export class LoginModalComponent implements OnInit {
     admin: false
   }
 
-  //for logging in a user
+  //  for logging in a user
   currentUser: any = {
     username: '',
     password: '',
     admin: false
   }
 
-  loggedIn = true
+  loggedIn:boolean = false
 
 
   constructor(
@@ -58,6 +58,7 @@ export class LoginModalComponent implements OnInit {
 
   //Login user
   loginUser() {
+    this.loggedIn = true
     //console.log(this.loginUserData);
     this.auth.loginUser(this.loginUserData).subscribe()
     this.getUser()
