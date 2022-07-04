@@ -11,12 +11,13 @@ import {FormsModule} from '@angular/forms';
 export class LoginModalComponent implements OnInit {
 
   loginUserData:any = {}
+
   createUserData: any = {
     username: '',
     password: '',
     admin: false
   }
-  //currentUser: any = {}
+
 
   currentUser: any = {
     username: '',
@@ -32,6 +33,7 @@ export class LoginModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
   }
 
 
