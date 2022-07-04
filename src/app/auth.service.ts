@@ -39,13 +39,9 @@ export class AuthService {
 
   //Does not work throws errors
   // Login (starts session)
-  // loginUser(user: User) {
-  //   this.http.post(this.loginURL, user, this.httpOptions).subscribe((res:any) => {
-  //     this.loggedIn.next(true);
-  //   }, (err) => {
-  //     this.loggedIn.next(false);
-  //   })
-  // }
+  loginUser(user: User): Observable<User>{
+    return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
+  }
 
 
   //get user in session
