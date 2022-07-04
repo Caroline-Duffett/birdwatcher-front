@@ -16,6 +16,7 @@ import { Location } from '@angular/common'; //Interacts with the browser URL
 export class BirdsIndexComponent implements OnInit {
 
   birds: Bird[] = [] //sets birds property
+  showLoader: boolean = true
 
   constructor(
     private birdService: BirdService, //defines and injects the bird service we made
@@ -27,10 +28,20 @@ export class BirdsIndexComponent implements OnInit {
     this.getBirds();
   }
 
+
+
+  //Makes page loading symbol go away
+  // hideLoader() {
+  //   document.getElementById('#spinner').style.display = 'none';
+  // }
+
+
   //Gets the birds from the bird service (where the birds are being called in from database)
   getBirds(): void {
     this.birdService.getBirds()
     .subscribe(birds => this.birds = birds);
+    this.showLoader = false
+    // this.hideLoader()
   }
 
 }

@@ -6,3 +6,10 @@
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
+.back-btn {
+  border-radius: 15px;
+  padding: 5px 20px;
+  float: left;
+  margin-left: 1rem;
+}
