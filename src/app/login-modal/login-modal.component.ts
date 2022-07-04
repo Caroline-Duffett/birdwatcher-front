@@ -12,13 +12,14 @@ export class LoginModalComponent implements OnInit {
 
   loginUserData:any = {}
 
+  //for creating a user
   createUserData: any = {
     username: '',
     password: '',
     admin: false
   }
 
-
+  //for logging in a user
   currentUser: any = {
     username: '',
     password: '',
@@ -33,7 +34,7 @@ export class LoginModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.getUser()
   }
 
 
@@ -55,24 +56,10 @@ export class LoginModalComponent implements OnInit {
     console.log(this.currentUser);
   }
 
-
-
-
-
-
   //Login user
   loginUser() {
     //console.log(this.loginUserData);
     this.auth.loginUser(this.loginUserData).subscribe()
-    //Does not work
-    // if (this.loginUserData === '' || this.loginUserData === undefined) {
-    //   this.loggedIn === false
-    //   console.log('setting false');
-    // } else {
-    //   this.loggedIn === true
-    //   console.log('setting true');
-    //
-    // }
     this.getUser()
   }
 
@@ -510,3 +497,16 @@ export class LoginModalComponent implements OnInit {
   //
   // }
   //--------------------------------------------------------------------------- Can't post but shows form info ---//
+
+
+
+
+  //Does not work
+  // if (this.loginUserData === '' || this.loginUserData === undefined) {
+  //   this.loggedIn === false
+  //   console.log('setting false');
+  // } else {
+  //   this.loggedIn === true
+  //   console.log('setting true');
+  //
+  // }

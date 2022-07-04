@@ -12,8 +12,6 @@ import { Subject } from 'rxjs';
 
 export class AuthService {
 
-  loggedIn: boolean = false
-
   //URLs
   private createURL = 'http://localhost:3000/createaccount';
   private loginURL = 'http://localhost:3000/sessions';
