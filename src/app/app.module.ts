@@ -14,8 +14,6 @@ import { AlphabeticalOrderPipe } from './filter-pipes/alpha-order.pipe';
 
 
 
-
-
 // Components
 import { AppComponent } from './app.component';
 import { BirdsIndexComponent } from './birds-index/birds-index.component';
@@ -37,13 +35,13 @@ import { YourBirdsNavComponent } from './your-birds-nav/your-birds-nav.component
     WelcomePageComponent,
     NavbarComponent,
     SearchComponentComponent,
+    LoginModalComponent,
+    YourBirdsPageComponent,
+    YourBirdsNavComponent,
     BirdNameFilterPipe,
     BirdRegionFilterPipe,
     BirdDescriptionFilterPipe,
     AlphabeticalOrderPipe,
-    LoginModalComponent,
-    YourBirdsPageComponent,
-    YourBirdsNavComponent,
   ],
   imports: [
     BrowserModule,

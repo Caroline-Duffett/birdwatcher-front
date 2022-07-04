@@ -63,38 +63,6 @@ export class BirdService {
   }
 
 
-  // //Search
-  // searchBirdsName(term: string): Observable<Bird[]> {
-  //   if (!term.trim()) {
-  //     return of([])
-  //   } else {
-  //     return this.http.get<Bird[]>(this.birdsUrl)
-  //       .pipe(
-  //         //tap(_ => this.log('fetched birds')),
-  //         catchError(this.handleError<Bird[]>('searchBirdsName', []))
-  //       );
-  //   }
-  // }
-  //
-  //
-  // //***
-  // //Search GET Birds with name in search term
-  // searchBirds(term: string): Observable<Bird[]> {
-  //   if (!term.trim()) {
-  //     return of([]); // if no search results return and empty birds array
-  //   }
-  //   return this.http.get<Bird[]>(`${this.birdsUrl}/?name=${term}`).pipe(
-  //     // tap(x => x.length ?
-  //     //    this.log(`found birds matching "${term}"`) :
-  //     //    this.log(`no birds matching "${term}"`)),
-  //     catchError(this.handleError<Bird[]>('searchBirds', []))
-  //   );
-  // }
-  // //***
-
-
-
-
   //POST add a new bird to the server, (no errors)
   addBird(bird: Bird): Observable<Bird> {
     return this.http.post<Bird>(this.birdsUrl, bird, this.httpOptions).pipe(
