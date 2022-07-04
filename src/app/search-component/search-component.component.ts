@@ -14,11 +14,11 @@ export class SearchComponentComponent implements OnInit {
 
   birds: Bird[] = []//index way
   searchTextName: string = ''
-  searchTextRegion: string = ''
+  searchTextHabitat: string = ''
   searchTextDescription: string = ''
 
   searchByName = true;
-  searchByLocation = false;
+  searchByHabitat = false;
   searchByDescription = false;
 
   constructor(
@@ -40,20 +40,20 @@ export class SearchComponentComponent implements OnInit {
 
   nameSearch() {
     this.searchByName = true;
-    this.searchByLocation = false;
+    this.searchByHabitat = false;
     this.searchByDescription = false;
   }
 
 
-  locationSearch() {
+  habitatSearch() {
     this.searchByName = false;
-    this.searchByLocation = true;
+    this.searchByHabitat = true;
     this.searchByDescription = false;
   }
 
   descriptionSearch() {
     this.searchByName = false;
-    this.searchByLocation = false;
+    this.searchByHabitat = false;
     this.searchByDescription = true;
   }
 
