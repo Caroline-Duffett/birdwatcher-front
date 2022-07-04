@@ -61,8 +61,6 @@ export class AuthService {
 
 
 
-
-
   //logout
   logOut() {
     return this.http.delete(this.loginURL, this.httpOptions).pipe(catchError(this.handleError('logOut')))
