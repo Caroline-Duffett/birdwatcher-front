@@ -4,13 +4,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators'; //module that lets us error handle
 import { Observable, of } from 'rxjs';
 // import { Subject } from 'rxjs/Subject';
-import { Subject } from 'rxjs';
+// import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
+
+  loggedIn: boolean = false;
+
   // loggedIn: boolean = false;
 
   // //for logging in a user
@@ -43,11 +46,35 @@ export class AuthService {
   }
 
 
-  //Does not work throws errors
-  // Login (starts session)
+
+  // // Login (starts session)
   loginUser(user: User): Observable<User>{
     return this.http.post<User>(this.loginURL, user, this.httpOptions).pipe(catchError(this.handleError<any>('loginUser')))
   }
+
+
+
+
+  // doLogin(email: string, password: string) {
+  //   this.http.post(environment.apiUrl + '/login', {
+  //     email: email,
+  //     password: password
+  //   }, {
+  //     withCredentials: true
+  //   }).subscribe((resp: any) => {
+  //     this.loggedIn.next(true);
+  //     this.toastr.success(resp && resp.user && resp.user.name ? `Welcome ${resp.user.name}` : 'Logged in!');
+  //   }, (errorResp) => {
+  //     this.loggedIn.next(false);
+  //     errorResp.error ? this.toastr.error(errorResp.error.errorMessage) : this.toastr.error('An unknown error has occured.');
+  //   });
+  // }
+
+
+
+
+
+
 
 
   //get user in session
