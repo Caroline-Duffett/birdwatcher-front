@@ -23,7 +23,6 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponentComponent } from './search-component/search-component.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
-import { YourBirdsPageComponent } from './your-birds-page/your-birds-page.component';
 import { YourBirdsNavComponent } from './your-birds-nav/your-birds-nav.component';
 
 @NgModule({
@@ -36,7 +35,6 @@ import { YourBirdsNavComponent } from './your-birds-nav/your-birds-nav.component
     NavbarComponent,
     SearchComponentComponent,
     LoginModalComponent,
-    YourBirdsPageComponent,
     YourBirdsNavComponent,
     BirdNameFilterPipe,
     BirdHabitatFilterPipe,
