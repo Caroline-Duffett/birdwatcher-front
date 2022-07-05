@@ -1,10 +1,4 @@
-<p>your-birds-page works!</p>
-<div *ngIf="loggedIn" class="logout-btn">
-  <button type="button" name="button" (click)="logOut()">Logout</button>
-</div>
-
-
-<h5 *ngIf="loggedIn">Current user: {{currentUser.currentUser.username}}</h5>
+<!-- <h5 *ngIf="loggedIn">Current user: {{currentUser.currentUser.username}}</h5> -->
 
 <div *ngIf='loggedOut' class="login/createaccount">
   <div class="header">
@@ -57,4 +51,39 @@
     <a *ngIf="loginShow" class="create-account" type="button" name="button" (click)="loginToggle()">Need an account?</a>
     <a *ngIf="createShow" class="create-account" type="button" name="button" (click)="createToggle()">Login</a>
   </div>
+</div>
+
+
+
+
+
+<div *ngIf="loggedIn" class="logout-btn">
+  <div class="logout-btn">
+    <button type="button" name="button" (click)="logOut()">Logout</button>
+  </div>
+
+  <h2>Your Birds</h2>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Number</th>
+      <th scope="col">Date</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{usersbirds.birdName}}</td>
+      <td>{{usersbirds.numberOfBirds}}</td>
+      <td>{{usersbirds.date}}</td>
+      <td>{{usersbirds.location}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
 </div>
