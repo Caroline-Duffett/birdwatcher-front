@@ -36,7 +36,7 @@ export class BirdService {
   }
 
 
-  //-- GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
+  //-- GET bird (show) by id error handling
   getBirdNo404<Data>(_id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/?id=${_id}`;
     return this.http.get<Bird[]>(url)
@@ -47,7 +47,7 @@ export class BirdService {
   }
 
 
-  //-- GET bird (show) by id. Will 404 if id not found
+  //-- GET bird (show) by id
   getBird(_id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/${_id}`;
     return this.http.get<Bird>(url).pipe(
