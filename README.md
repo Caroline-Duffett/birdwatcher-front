@@ -1,6 +1,35 @@
 # Birdwatcher
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2. The frontend to my capstone project for General Assembly.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+## Explanation of the technologies used
+Angular with Typescript, Bootstrap, Express.js, and Rxjs were used for the development of the frontend. The purpose of this app was to make it easier for bird watchers to log which birds they have spotted, while also providing the user with information on different bird species. Users can view, edit, delete, and create birds on this app. A bird service was made to help implement these CRUD functionalities throughout the app. To make this service, I used HttpClient and HttpHeaders from angular and Observable, of, catchError, and map from Rxjs. The Angular modules I used were the BrowserModule, HttpClientModule, AppRoutingModule, and the FormsModule. In the app routing module, I created six routes, one to reroute to the welcome component, one for the welcome component, and four others for the index, show, add, and search components. The use of Angular's Location made it easy to create back buttons. The ActivatedRoute from angular router also made it possible to single out the selected bird for its show page. Due to issues with user authorization, which you can read more about in unsolved problems, there is currently no way for individuals to log their birds. I also utilized pipes to create a search feature and alphabetize the data. For the backend I used Express.js and Node.js (You can read more about it on the backend ReadMe). MongoDB Atlas was used as the database.
+
+## Approach taken
+The goal of this project was to learn a new technology on my own and be able to create a full CRUD app. I did some research on webstacks and decided to try out Angular (MEAN stack).
+
+
+## Links
+ - GitHub frontend: https://bird-watcher-front.herokuapp.com/welcome
+ - GitHub backend: https://bird-watcher-back.herokuapp.com/birds
+ - Heroku app frontend: https://github.com/Caroline-Duffett/birdwatcher-front
+ - Heroku app backend: https://github.com/Caroline-Duffett/birdwatcher-back
+
+## Installation Instructions
+
+
+## Paths
+
+
+## Unsolved Problems
+
+
+## Sources
+- Bird information: https://www.allaboutbirds.org/news/ & their respective Wikipedia pages
+- Tour of Heroes tutorial: https://angular.io/tutorial
+- Template-driven forms tutorial: https://angular.io/guide/forms
+- Filter pipes: https://www.youtube.com/watch?v=1TFSibbnkj0
+- Heroku deployment: https://www.youtube.com/watch?v=KVFrTf4VD2o
+- Bootstrap Documentation: https://getbootstrap.com/docs/5.2/getting-started/introduction/
 
 ## Development server
 
