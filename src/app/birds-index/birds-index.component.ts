@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'; //Makes this a component in angular
 import { Bird } from '../bird'; //Calls in the bird model/schema we made
 import { BirdService } from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
-// import { Location } from '@angular/common'; //Interacts with the browser URL
 
 
 
@@ -19,7 +18,6 @@ export class BirdsIndexComponent implements OnInit {
 
   constructor(
     private birdService: BirdService, //defines and injects the bird service we made
-    // private location: Location
   ) {}
 
   //Calls in the birds after component is constructured. Lifecycle hook
