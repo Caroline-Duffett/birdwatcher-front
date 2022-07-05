@@ -1,4 +1,4 @@
-
+/*----- Form color validators -----*/
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
 }
@@ -7,6 +7,7 @@
   border-left: 5px solid #a94442; /* red */
 }
 
+/*----- back button -----*/
 .back-btn {
   border-radius: 15px;
   padding: 5px 20px;
