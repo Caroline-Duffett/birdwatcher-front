@@ -62,7 +62,7 @@ export class YourBirdsPageComponent implements OnInit {
   //Login user
   loginUser() {
     this.auth.loginUser(this.loginUserData).subscribe()
-    this.getUser()
+    // this.getUser()
     // if (this.currentUser === undefined) {
     //   this.getUser()
     // } else {
@@ -74,6 +74,13 @@ export class YourBirdsPageComponent implements OnInit {
     //   this.loggedIn = true
     // }
     this.loggedIn = true
+  }
+
+  loginFunc() {
+    this.loginUser()
+    this.loginUser()
+    // this.loginUser()
+    this.getUser()
   }
 
   logOut() {
