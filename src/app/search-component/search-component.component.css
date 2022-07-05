@@ -1,3 +1,30 @@
+/* search heading */
+.title {
+  text-align: center;
+}
+
+
+/* search bar input */
+.search-bird {
+  text-align: center;
+}
+input {
+  width: 20rem;
+}
+
+
+/* search by buttons */
+.search-btns {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+button {
+  margin: 0px 20px;
+}
+
+
+/*-------------------- bird cards --------------------*/
 a {
   text-decoration: none;
 }
@@ -17,27 +44,4 @@ img {
 #bird-card {
   width: 300px;
 }
-
-.title {
-  text-align: center;
-}
-
-
-/* search */
-.search-bird {
-  text-align: center;
-}
-
-
-h1 {
-  margin-top: 2rem;
-}
-
-.search-btns {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-button {
-  margin: 0px 20px;
-}
+/*----------------------------------------------------*/

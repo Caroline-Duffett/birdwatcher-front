@@ -2,6 +2,8 @@
 
 <div class="container">
   <div class="row">
+
+    <!-- Seach by name -->
     <div class="name-search" *ngIf="searchByName">
       <div class="search-bird">
         <input type="text" name="search" [(ngModel)]="searchTextName" placeholder="Search by name">
@@ -21,8 +23,8 @@
       </div>
     </div>
 
-
-    <div class="region-search" *ngIf="searchByHabitat">
+    <!-- Search by habitat -->
+    <div class="habitat-search" *ngIf="searchByHabitat">
       <div class="search-bird">
         <input type="text" name="search" [(ngModel)]="searchTextHabitat" placeholder="Search by habitat">
       </div>
@@ -41,9 +43,7 @@
       </div>
     </div>
 
-
-
-
+    <!-- Search by description -->
     <div class="description-search" *ngIf="searchByDescription">
       <div class="search-bird">
         <input type="text" name="search" [(ngModel)]="searchTextDescription" placeholder="Describe bird">
@@ -62,7 +62,6 @@
         </div>
       </div>
     </div>
-
 
   </div>
 </div>

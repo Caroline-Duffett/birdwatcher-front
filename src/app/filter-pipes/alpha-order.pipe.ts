@@ -6,7 +6,6 @@ import {Bird} from '../bird';
 })
 
 export class AlphabeticalOrderPipe implements PipeTransform {
-
   transform(birds: Bird[], field: string): Bird[] {
     birds.sort((a: any, b: any) => {
       if (a[field] < b[field]) {
@@ -19,5 +18,4 @@ export class AlphabeticalOrderPipe implements PipeTransform {
     });
     return birds;
   }
-
 }
