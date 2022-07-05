@@ -2,6 +2,7 @@
 <div class="bird-page" *ngIf="bird">
 
   <div class="container bird-info">
+    <!-- row 1 -->
     <div class="row">
       <div class="col-12">
         <div class="d-flex justify-content-between">
@@ -14,6 +15,7 @@
         <hr>
       </div>
     </div>
+    <!-- row2 -->
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-12">
         <img src="{{bird.imageShow}}" alt="image of {{bird.name}}">
@@ -29,6 +31,7 @@
       </div>
     </div>
   </div>
+
   <!-- Buttons that open modals -->
   <div class="bird-btns text-center">
     <div class="btn-flex d-flex justify-content-between mx-auto mt-5 mb-3">

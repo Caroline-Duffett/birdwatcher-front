@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import {Bird} from '../bird'; //Calls in the bird model/schema we made
-import {BirdService} from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
+import { Bird } from '../bird'; //Calls in the bird model/schema we made
+import { BirdService } from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
 
 
 @Component({

@@ -1,3 +1,11 @@
+/* flexbox */
+.flex-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+/*-------------------- bird cards  --------------------*/
 a {
   text-decoration: none;
 }
@@ -17,12 +25,9 @@ img {
 #bird-card {
   width: 300px;
 }
+/*-----------------------------------------------------*/
 
+/* add a brid link */
 .add-bird {
   text-align: center;
-}
-
-.flex-container {
-  width: 90%;
-  margin: 0 auto;
 }

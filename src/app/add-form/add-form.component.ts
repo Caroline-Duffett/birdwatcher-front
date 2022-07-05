@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Bird} from '../bird';
-import {BirdService} from '../bird.service';
-import {Location} from '@angular/common'; //Interacts with the browser URL
-import {FormsModule} from '@angular/forms';
+import { Bird } from '../bird';
+import { BirdService } from '../bird.service';
+import { Location } from '@angular/common'; //Interacts with the browser URL
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-form',

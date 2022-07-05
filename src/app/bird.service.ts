@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'; //generated when made, allows us to 
 import { Bird } from './bird';  //calls in the bird model/schema we made
 import { HttpClient, HttpHeaders } from '@angular/common/http'; //connects to our database. Angular built in version of axios?
 import { Observable, of } from 'rxjs'; //researh this more
-import { catchError, map} from 'rxjs/operators'; //module that lets us error handle
+import { catchError, map } from 'rxjs/operators'; //module that lets us error handle
 
 
 @Injectable({
