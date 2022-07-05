@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { User } from '../user';
+import { UsersBirds } from '../usersbirds';
+import { UsersbirdsService } from '../usersbirds.service';
+import { AuthService } from '../auth.service';
 import {FormsModule} from '@angular/forms';
+
 
 @Component({
   selector: 'app-your-birds-page',
@@ -9,6 +12,8 @@ import {FormsModule} from '@angular/forms';
   styleUrls: ['./your-birds-page.component.css']
 })
 export class YourBirdsPageComponent implements OnInit {
+
+    //----- User auth ------//
   loginUserData:any = {}
 
   //for creating a user
@@ -31,19 +36,27 @@ export class YourBirdsPageComponent implements OnInit {
     admin: false
   }
 
-
   loggedIn: boolean = false
   loggedOut: boolean = true
 
+
+
+    //----- Users Birds Index ------//
+  usersBirds: UsersBirds[] = []
+
+
+
   constructor(
     private auth: AuthService,
+    private usersBirdService: UsersbirdsService
   ) { }
 
   ngOnInit(): void {
-
+    this.getUsersBirds()
   }
 
 
+  //----- User auth ------//
   //Creates a user
   createUser() {
     console.log(this.createUserData);
@@ -75,6 +88,7 @@ export class YourBirdsPageComponent implements OnInit {
     // }
     this.loggedIn = true
     this.loggedOut = false
+    // this.getUsersBirds()
   }
 
   // loginFunc() {
@@ -113,5 +127,11 @@ export class YourBirdsPageComponent implements OnInit {
     this.createShow = false;
   }
 
+
+    //----- Users Birds Index ------//
+    getUsersBirds(): void {
+      this.usersBirdService.getUsersBirds()
+
+    }
 
 }
