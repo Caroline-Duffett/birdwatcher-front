@@ -3,7 +3,6 @@ import { Bird } from '../bird'; //Calls in the bird model/schema we made
 import { BirdService } from '../bird.service'; //Imports (injects?) the bird service we set up. Service connects us to database? Brings in the data?
 
 
-
 //Links the premade files that goes with this component
 @Component({
   selector: 'app-birds-index',
