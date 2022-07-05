@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'; //generated when made, allows us to inject/import to other components?
-import {Bird} from './bird';  //calls in the bird model/schema we made
+import { Bird } from './bird';  //calls in the bird model/schema we made
 import { HttpClient, HttpHeaders } from '@angular/common/http'; //connects to our database. Angular built in version of axios?
 import { Observable, of } from 'rxjs'; //researh this more
 import { catchError, map, tap } from 'rxjs/operators'; //module that lets us error handle
@@ -11,7 +11,6 @@ import { catchError, map, tap } from 'rxjs/operators'; //module that lets us err
 
 
 export class BirdService {
-
 
   //private birdsUrl = 'http://localhost:3000/birds' //Local database
   private birdsUrl = 'https://bird-watcher-back.herokuapp.com/birds' //Heroku database
@@ -28,7 +27,7 @@ export class BirdService {
   ) { }
 
 
-  // GET brids (index) from the server
+  //-- GET brids (index) from the server
   getBirds(): Observable<Bird[]> {
     return this.http.get<Bird[]>(this.birdsUrl)
       .pipe(
@@ -38,7 +37,7 @@ export class BirdService {
   }
 
 
-  /// GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
+  //-- GET bird (show) by id. Will return `undefined` if id is not found. How the 404 error gets displayed
   getBirdNo404<Data>(_id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/?id=${_id}`;
     return this.http.get<Bird[]>(url)
@@ -53,7 +52,7 @@ export class BirdService {
   }
 
 
-  // GET bird (show) by id. Will 404 if id not found
+  //-- GET bird (show) by id. Will 404 if id not found
   getBird(_id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/${_id}`;
     return this.http.get<Bird>(url).pipe(
@@ -63,7 +62,7 @@ export class BirdService {
   }
 
 
-  //POST add a new bird to the server, (no errors)
+  //-- POST add a new bird to the server, (no errors)
   addBird(bird: Bird): Observable<Bird> {
     return this.http.post<Bird>(this.birdsUrl, bird, this.httpOptions).pipe(
       //tap((newBird: Bird) => this.log(`added bird with id=${newBird._id}`)),
@@ -72,7 +71,7 @@ export class BirdService {
   }
 
 
-  // //DELETE the bird from the server
+  //-- DELETE the bird from the server
   deleteBird(_id: string): Observable<Bird> {
     const url = `${this.birdsUrl}/${_id}`;
     return this.http.delete<Bird>(url, this.httpOptions).pipe(
@@ -82,7 +81,7 @@ export class BirdService {
   }
 
 
-  //PUT update the bird on the server
+  //-- PUT update the bird on the server
   updateBird(bird: Bird): Observable<any> {
     const id = bird._id;
     const url = `${this.birdsUrl}/${id}`;
@@ -94,25 +93,12 @@ export class BirdService {
 
 
   //--- Error handling
-  // If http fails
-  // Lets app continue
-  /*
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-    private handleError<T>(operation = 'operation', result?: T) {
-      return (error: any): Observable<T> => {
-
-        // TODO: send the error to remote logging infrastructure
-        console.error(error); // log to console instead
-
-        // TODO: better job of transforming error for user consumption
-        //this.log(`${operation} failed: ${error.message}`);
-
-        // Let the app keep running by returning an empty result.
-        return of(result as T);
-      };
-    }
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    };
+  }
 
 }
 
