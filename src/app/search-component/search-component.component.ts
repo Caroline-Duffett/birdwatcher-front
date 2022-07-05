@@ -12,11 +12,12 @@ import {BirdService} from '../bird.service'; //Imports (injects?) the bird servi
 
 export class SearchComponentComponent implements OnInit {
 
-  birds: Bird[] = []//index way
+  birds: Bird[] = [] //brings in all birds
   searchTextName: string = ''
   searchTextHabitat: string = ''
   searchTextDescription: string = ''
 
+  //make default be name search
   searchByName = true;
   searchByHabitat = false;
   searchByDescription = false;
@@ -25,11 +26,9 @@ export class SearchComponentComponent implements OnInit {
     private birdService: BirdService //defines and injects the bird service we made
   ) { }
 
-
   ngOnInit(): void {
     this.getBirds();
   }
-
 
   //Gets the birds from the bird service (where the birds are being called in from database)
   getBirds(): void {
@@ -37,13 +36,12 @@ export class SearchComponentComponent implements OnInit {
     .subscribe(birds => this.birds = birds);
   }
 
-
+  // toggles for which searchbar displays
   nameSearch() {
     this.searchByName = true;
     this.searchByHabitat = false;
     this.searchByDescription = false;
   }
-
 
   habitatSearch() {
     this.searchByName = false;
@@ -56,6 +54,5 @@ export class SearchComponentComponent implements OnInit {
     this.searchByHabitat = false;
     this.searchByDescription = true;
   }
-
 
 }
