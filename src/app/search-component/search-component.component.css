@@ -8,8 +8,10 @@
 .search-bird {
   text-align: center;
 }
+
 input {
-  width: 20rem;
+  width: 30%;
+  min-width: 15rem;
 }
 
 
