@@ -62,7 +62,7 @@ export class YourBirdsPageComponent implements OnInit {
   //Login user
   loginUser() {
     this.auth.loginUser(this.loginUserData).subscribe()
-    // this.getUser()
+    this.getUser()
     // if (this.currentUser === undefined) {
     //   this.getUser()
     // } else {
@@ -74,14 +74,15 @@ export class YourBirdsPageComponent implements OnInit {
     //   this.loggedIn = true
     // }
     this.loggedIn = true
+    this.loggedOut = false
   }
 
-  loginFunc() {
-    this.loginUser()
-    this.loginUser()
-    // this.loginUser()
-    this.getUser()
-  }
+  // loginFunc() {
+  //   this.loginUser()
+  //   this.loginUser()
+  //   // this.loginUser()
+  //   this.getUser()
+  // }
 
   logOut() {
     this.auth.logOut().subscribe()
@@ -89,6 +90,7 @@ export class YourBirdsPageComponent implements OnInit {
     // console.log('loggedout user');
     // console.log(this.currentUser);
     this.loggedIn = false
+    this.loggedOut = true
   }
 
 
