@@ -9,10 +9,9 @@ export class BirdNameFilterPipe implements PipeTransform {
   transform(birds: Bird[], searchTextName: string): Bird[] {
     if (!birds || !searchTextName) {
       return [];
+    } else {
+      return birds.filter(bird =>
+        bird.name.toLowerCase().indexOf(searchTextName.toLowerCase()) !== -1 || bird.scientificName.toLowerCase().indexOf(searchTextName.toLowerCase()) !== -1)
     }
-
-    return birds.filter(bird =>
-      bird.name.toLowerCase().indexOf(searchTextName.toLowerCase()) !== -1 || bird.scientificName.toLowerCase().indexOf(searchTextName.toLowerCase()) !== -1)
   }
-
 }
