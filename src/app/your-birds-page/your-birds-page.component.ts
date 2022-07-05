@@ -25,6 +25,13 @@ export class YourBirdsPageComponent implements OnInit {
     admin: false
   }
 
+  loggedOutUser: any = {
+    username: '',
+    password: '',
+    admin: false
+  }
+
+
   loggedIn: boolean = false
   loggedOut: boolean = true
 
@@ -33,6 +40,7 @@ export class YourBirdsPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
   }
 
 
@@ -47,18 +55,33 @@ export class YourBirdsPageComponent implements OnInit {
     this.auth.getUser()
     .subscribe(user => this.currentUser = user)
     this.currentUser = this.currentUser.currentUser
-    console.log(this.currentUser);
+    //console.log(this.currentUser);
+
   }
 
   //Login user
   loginUser() {
     this.auth.loginUser(this.loginUserData).subscribe()
     this.getUser()
+    // if (this.currentUser === undefined) {
+    //   this.getUser()
+    // } else {
+    //   this.loggedIn = true
+    // }
+    // if (this.currentUser === undefined) {
+    //   this.getUser()
+    // } else {
+    //   this.loggedIn = true
+    // }
     this.loggedIn = true
   }
 
   logOut() {
     this.auth.logOut().subscribe()
+    this.currentUser = this.loggedOutUser
+    // console.log('loggedout user');
+    // console.log(this.currentUser);
+    this.loggedIn = false
   }
 
 
