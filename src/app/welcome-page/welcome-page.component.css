@@ -1,7 +1,9 @@
+/* italics for scientific name */
 .sn {
   font-style: italic;
 }
 
+/* carousel */
 .image-carousel-div {
   width: 90%;
 }

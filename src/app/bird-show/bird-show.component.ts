@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core'; //Makes this a component in angular
+import { Component, OnInit } from '@angular/core'; //Makes this a component in angular
 import { Bird } from '../bird'; //Calls in the bird model/schema we made
 import { ActivatedRoute } from '@angular/router'; //Shows current snapshot of the route?
 import { Location } from '@angular/common'; //Interacts with the browser URL
@@ -18,7 +18,7 @@ export class BirdShowComponent implements OnInit {
 
 
   //Defines bird property and error handling if undefined
-  bird: Bird | undefined;
+  bird: Bird | undefined; //sets bird property
   birds: Bird[] = [] //sets birds property (need this here to get the birds again after delete)
 
   constructor(
@@ -72,64 +72,6 @@ export class BirdShowComponent implements OnInit {
   delete(bird: Bird): void {
     this.birdService.deleteBird(bird._id).subscribe();
     this.location.back()
-    //window.location.reload() //Does not fix what we need
     this.getBirds()
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-//====================================================================================================================//
-//                                                      Grave Yard
-//====================================================================================================================//
-//-------------------------------------------------------------------------------------------- If id were a number ---//
-  // //Gets the bird you clicked on, doing so by id
-  // getBird(): void {
-  //    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
-  //    this.birdService.getBird(id)
-  //      .subscribe(bird => this.bird = bird);
-  // }
-//--------------------------------------------------------------------------------------------------------------------//
-
-
-//-------------------------------------------------------------------------------------------- If id were a string ---//
-  // //Gets the bird you clicked on, doing so by id
-  // getBird(): void {
-  //    const id = this.route.snapshot.paramMap.get('id')!;
-  //    this.birdService.getBird(id)
-  //      .subscribe(bird => this.bird = bird);
-  // }
-//--------------------------------------------------------------------------------------------------------------------//
-
-
-//------------------------------------------------------------------------------- Delete if I ever need to filter ---//
-  // delete(bird: Bird): void {
-  //   // this.birds = this.birds.filter(b => b !== bird);
-  //   this.birdService.deleteBird(bird._id).subscribe();
-  //   this.location.back()
-  // }
-//--------------------------------------------------------------------------------------------------------------------//
-
-
-//--------------------------------------------------------------------------------------------------- Older Stuff ---//
-// //Deletes the bird and redirects you back to the index page
-// delete(bird: Bird): void {
-//   this.birdService.deleteBird(bird.id).subscribe();
-//   this.location.back()
-// }
-
-// //Gets the bird you clicked on, doing so by id
-// getBird(): void {
-//    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
-//    this.birdService.getBird(id)
-//      .subscribe(bird => this.bird = bird);
-// }
-//--------------------------------------------------------------------------------------------------------------------//
