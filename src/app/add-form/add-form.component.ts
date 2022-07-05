@@ -24,6 +24,7 @@ export class AddFormComponent implements OnInit {
 
   }
 
+  // defines input variables
   name: string = ''
   scientificName: string = ''
   imageIndex: string = ''
@@ -49,6 +50,7 @@ export class AddFormComponent implements OnInit {
   }
 
 
+  //error hnadling
   acceptedName = true;
   acceptedScientificName = true;
   acceptedImageIndex = true;
@@ -62,6 +64,7 @@ export class AddFormComponent implements OnInit {
   acceptedDescription = true;
 
 
+  // gets submited values
   submit(add: any): void {
     const newBird = {
       name: add.form.value.name,
@@ -125,7 +128,6 @@ export class AddFormComponent implements OnInit {
     } else {
       this.acceptedHabitat = true;
     }
-
 
     if (add.form.controls.conservationStatus.status === "INVALID") {
       this.acceptedConservationStatus = false;

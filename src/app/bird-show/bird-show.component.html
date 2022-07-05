@@ -1,5 +1,6 @@
 <!-- show page contents -->
 <div class="bird-page" *ngIf="bird">
+
   <div class="container bird-info">
     <div class="row">
       <div class="col-12">
@@ -28,8 +29,6 @@
       </div>
     </div>
   </div>
-
-
   <!-- Buttons that open modals -->
   <div class="bird-btns text-center">
     <div class="btn-flex d-flex justify-content-between mx-auto mt-5 mb-3">
@@ -39,21 +38,20 @@
   </div>
 
 
-
   <!-- Delete Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body text-center mt-5 mb-3">
-        Are you sure you want to delete this bird?
-      </div>
-      <div class="yes-no mb-5">
-        <button type="button" class="btn btn-danger mx-3" data-dismiss="modal">No</button>
-        <button type="button" class="btn btn-success" (click)="delete(bird)" data-dismiss="modal">Yes</button>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center mt-5 mb-3">
+          Are you sure you want to delete this bird?
+        </div>
+        <div class="yes-no mb-5">
+          <button type="button" class="btn btn-danger mx-3" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-success" (click)="delete(bird)" data-dismiss="modal">Yes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
   <!-- Edit Form Modal -->
